@@ -1,21 +1,22 @@
 {
-  "recorded_at": "2026-10-20T09:39:08.515Z",
-  "recording_process_wall_seconds": 164,
+  "recorded_at": "2026-10-20T11:25:51.605Z",
+  "recording_process_wall_seconds": 173,
   "viewport": "1440x1000",
   "real_api": true,
   "fixtures": false,
   "voiceover": false,
+  "opening_scene_verified_rag": true,
   "map_tiles": "normal browser requests; no prefetch",
   "public_anchor_id": "osm:way:454853233",
   "responses": [
     {
-      "mode": "search_only",
-      "poi_count": 3,
+      "mode": "rag",
+      "poi_count": 2,
       "semantic_ready": true
     },
     {
-      "mode": "search_only",
-      "poi_count": 3,
+      "mode": "rag",
+      "poi_count": 2,
       "semantic_ready": true
     },
     {
@@ -37,32 +38,32 @@
   "caption_method": "recording-only DOM annotations; no changes to responses or application source",
   "captions": [
     {
-      "at_seconds": 3.96,
+      "at_seconds": 1.09,
       "text": "Есть час рядом с EXPO. Найдём конкретные варианты."
     },
     {
-      "at_seconds": 26.5,
-      "text": "1 / 4 · Реальные места, рекомендуемое время и источник."
+      "at_seconds": 27.39,
+      "text": "Вот что нашлось рядом. Gemini объясняет, почему эти места подходят."
     },
     {
-      "at_seconds": 40.65,
-      "text": "Факты имеют источник. Неизвестные свойства остаются неизвестными."
+      "at_seconds": 41.9,
+      "text": "Можно открыть источник и проверить сведения о месте."
     },
     {
-      "at_seconds": 66.32,
-      "text": "2 / 4 · Меняем 60 минут на 30 — сервер пересчитывает подбор."
+      "at_seconds": 71.28,
+      "text": "Теперь у нас полчаса. Проверим, что предложит сервис."
     },
     {
-      "at_seconds": 77.01,
-      "text": "3 / 4 · Интерес к интерактивному музею подкреплён официальным описанием."
+      "at_seconds": 89.92,
+      "text": "Другой запрос: интерактивный музей. Открываем официальный источник."
     },
     {
-      "at_seconds": 101.19,
-      "text": "4 / 4 · Без подтверждения розетки место не проходит строгое условие."
+      "at_seconds": 110.36,
+      "text": "А если нужна обязательная розетка? Проверим ещё одно условие."
     },
     {
-      "at_seconds": 119.37,
-      "text": "Прозрачный результат: что искали, что подтвердили, чего пока не знаем."
+      "at_seconds": 135.94,
+      "text": "Поиск и Gemini работают вместе. Пешеходные маршруты ещё предстоит подключить."
     }
   ]
 }

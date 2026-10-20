@@ -12,17 +12,23 @@ const path = require('path');
   const responses=[];
   const captions=[];
   let observedMode='not_requested';
+  let observedCount=null;
   page.on('response',async response=>{
     if(response.url().endsWith('/api/recommend')&&response.status()===200){
       const body=await response.json();
       observedMode=body.mode;
+      observedCount=body.recommendations.length;
       responses.push({mode:body.mode,poi_count:body.recommendations.length,semantic_ready:body.dataset.semantic_ready});
+      await page.evaluate(({mode,count})=>{
+        const label=document.querySelector('#qadam-recording-caption > div');
+        if(label) label.textContent='QADAM · '+(count===0?'НЕТ СОВПАДЕНИЙ':mode==='rag'?'ОТВЕТ GEMINI ПО НАЙДЕННЫМ МЕСТАМ':'РЕЗЕРВНЫЙ ПОИСК');
+      },{mode:observedMode,count:observedCount}).catch(()=>{});
     }
   });
   const pause=ms=>page.waitForTimeout(ms);
   const caption=async(text)=>{
     captions.push({at_seconds:Number(((Date.now()-started)/1000).toFixed(2)),text});
-    await page.evaluate(({text,mode})=>{
+    await page.evaluate(({text,mode,count})=>{
     let panel=document.getElementById('qadam-recording-caption');
     if(!panel){
       panel=document.createElement('div');panel.id='qadam-recording-caption';
@@ -31,10 +37,15 @@ const path = require('path');
     }
     panel.replaceChildren();
     const label=document.createElement('div');label.style.cssText='font-size:11px;letter-spacing:1px;color:#c8d8d1;margin-bottom:4px';
-    label.textContent='ЗАПИСЬ РЕАЛЬНОГО ДЕМО · '+(mode==='rag'?'RAG':mode==='not_requested'?'ЛОКАЛЬНЫЕ ДАННЫЕ':'ПОИСК БЕЗ ГЕНЕРАЦИИ');
+    label.textContent='QADAM · '+(count===0?'НЕТ СОВПАДЕНИЙ':mode==='rag'?'ОТВЕТ GEMINI ПО НАЙДЕННЫМ МЕСТАМ':mode==='not_requested'?'АСТАНА':'РЕЗЕРВНЫЙ ПОИСК');
     const line=document.createElement('div');line.style.cssText='font-size:18px;line-height:1.3';line.textContent=text;
     panel.append(label,line);
-    },{text,mode:observedMode});
+    },{text,mode:observedMode,count:observedCount});
+  };
+  const productShot=async(name)=>{
+    await page.locator('#qadam-recording-caption').evaluate(el=>el.style.visibility='hidden');
+    await page.screenshot({path:path.join(__dirname,name)});
+    await page.locator('#qadam-recording-caption').evaluate(el=>el.style.visibility='visible');
   };
   await page.goto(base,{waitUntil:'networkidle'});
   await caption('Есть час рядом с EXPO. Найдём конкретные варианты.');
@@ -47,22 +58,29 @@ const path = require('path');
   await page.getByTestId('query-input').pressSequentially('Хочу немного прогуляться рядом',{delay:65});
   await pause(5000);
   const first=page.waitForResponse(r=>r.url().endsWith('/api/recommend')&&r.request().method()==='POST',{timeout:90000});
-  await page.getByTestId('submit-recommend').click();await first;
+  await page.getByTestId('submit-recommend').click();
+  const firstPayload=await (await first).json();
+  if(firstPayload.mode!=='rag') throw new Error('The opening scene must show a real RAG response; recording stopped.');
+  observedMode=firstPayload.mode;observedCount=firstPayload.recommendations.length;
   await page.getByTestId('recommendation-card').first().waitFor();
-  await caption('1 / 4 · Реальные места, рекомендуемое время и источник.');
+  await page.getByTestId('recommendation-card').first().scrollIntoViewIfNeeded();
+  await pause(700);
+  await caption('Вот что нашлось рядом. Gemini объясняет, почему эти места подходят.');
+  await productShot('product-rag.png');
+  fs.writeFileSync(path.join(__dirname,'raw','rag-example.json'),JSON.stringify(firstPayload,null,2));
   await pause(14000);
   const card=page.getByTestId('recommendation-card').first();
   await card.scrollIntoViewIfNeeded();
   await card.getByText('Источники и сведения',{exact:true}).click();
-  await caption('Факты имеют источник. Неизвестные свойства остаются неизвестными.');
+  await caption('Можно открыть источник и проверить сведения о месте.');
   await pause(15000);
   await card.getByRole('button',{name:'На карте',exact:true}).click();
   await pause(10000);
   await page.getByTestId('time-30').scrollIntoViewIfNeeded();
   const recalc=page.waitForResponse(r=>r.url().endsWith('/api/recommend'),{timeout:90000});
   await page.getByTestId('time-30').click();await recalc;
-  await caption('2 / 4 · Меняем 60 минут на 30 — сервер пересчитывает подбор.');
-  await pause(10000);
+  await caption('Теперь у нас полчаса. Проверим, что предложит сервис.');
+  await pause(13000);
   const museumQuery='Есть 1–2 часа, хочется интерактивный музей';
   const museumResult=page.waitForResponse(r=>r.url().endsWith('/api/recommend')&&
     r.request().postDataJSON()?.query===museumQuery,{timeout:90000});
@@ -74,18 +92,22 @@ const path = require('path');
     throw new Error('Expected evidenced interactive museum for recording; stop rather than claim unsupported description.');
   const museumCard=page.getByTestId('recommendation-card').first();
   await museumCard.waitFor();await museumCard.scrollIntoViewIfNeeded();
-  await caption('3 / 4 · Интерес к интерактивному музею подкреплён официальным описанием.');
+  await caption('Другой запрос: интерактивный музей. Открываем официальный источник.');
   await museumCard.getByText('Источники и сведения',{exact:true}).click();
-  await pause(17000);
+  await productShot('product-museum.png');
+  await pause(20000);
+  await caption('А если нужна обязательная розетка? Проверим ещё одно условие.');
   await page.getByTestId('query-input').fill('Кофе с обязательной розеткой');
   await pause(7000);
   const strict=page.waitForResponse(r=>r.url().endsWith('/api/recommend'),{timeout:90000});
   await page.getByTestId('submit-recommend').click();await strict;
-  await caption('4 / 4 · Без подтверждения розетки место не проходит строгое условие.');
+  await page.locator('.empty-results').scrollIntoViewIfNeeded();
+  await page.locator('.empty-results').screenshot({path:path.join(__dirname,'product-empty.png')});
   await pause(18000);
   const trace=page.locator('details.trace summary');
   if(await trace.count()){await trace.click();await trace.scrollIntoViewIfNeeded();}
-  await caption('Прозрачный результат: что искали, что подтвердили, чего пока не знаем.');
+  await caption('Поиск и Gemini работают вместе. Пешеходные маршруты ещё предстоит подключить.');
+  await pause(24000);
   while(Date.now()-started<150000) await pause(Math.min(10000,150000-(Date.now()-started)));
   const video=page.video();
   await context.close();
@@ -94,7 +116,7 @@ const path = require('path');
   await browser.close();
   fs.writeFileSync(path.join(__dirname,'recording.json'),JSON.stringify({
     recorded_at:new Date().toISOString(),recording_process_wall_seconds:Math.round((Date.now()-started)/1000),
-    viewport:'1440x1000',real_api:true,fixtures:false,voiceover:false,
+    viewport:'1440x1000',real_api:true,fixtures:false,voiceover:false,opening_scene_verified_rag:true,
     map_tiles:'normal browser requests; no prefetch',public_anchor_id:landmark.id,responses
     ,caption_method:'recording-only DOM annotations; no changes to responses or application source',captions
   },null,2));

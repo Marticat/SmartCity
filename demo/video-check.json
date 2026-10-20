@@ -1,6 +1,15 @@
 {
-  "duration": 149.76,
+  "duration": 159.64,
   "width": 1440,
   "height": 1000,
-  "readyState": 4
+  "readyState": 4,
+  "scene_review_seconds": [
+    5,
+    31,
+    46,
+    75,
+    94,
+    114,
+    140
+  ]
 }
