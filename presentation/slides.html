@@ -18,7 +18,7 @@
   <p class="eyebrow">Контекст вместо длинного списка</p>
   <h2>На что у тебя есть время?</h2>
   <div class="columns">
-    <div><div class="column-index">01</div><h3>Прогуляться</h3><p>30–90 минут рядом.<br>Место, занятие и понятная оценка.</p></div>
+    <div><div class="column-index">01</div><h3>Прогуляться</h3><p>30–120 минут рядом.<br>Место, занятие и понятная оценка.</p></div>
     <div><div class="column-index">02</div><h3>Кофе и ноутбук</h3><p>Обязательную розетку подтверждаем данными.</p></div>
     <div><div class="column-index">03</div><h3>С ребёнком</h3><p>Парки, площадки и музеи с учётом контекста.</p></div>
   </div>
@@ -42,8 +42,8 @@
 <section class="slide">
   <p class="eyebrow">Данные и RAG</p>
   <h2>Места из города,<br>объяснения из найденных данных</h2>
-  <p class="path"><strong>OpenStreetMap</strong> → snapshot и нормализация<br><strong>Локальный индекс</strong> → география и ограничения<br><strong>E5 + FTS5</strong> → ранжированный набор POI<br><strong>Gemini</strong> → проверка ID и evidence → карточки</p>
-  <p class="note" id="dataset-note">814 POI · сбор 20.10.2026 · 5 ориентиров отдельно. © OpenStreetMap contributors · ODbL 1.0.</p>
+  <p class="path"><strong>OpenStreetMap + официальные источники</strong> → факты<br><strong>География, условия, E5 + FTS5</strong> → кандидаты<br><strong>Gemini</strong> → связный текст со слотами фактов<br><strong>Валидация + reviewer</strong> → карточки или шаблон</p>
+  <p class="note" id="dataset-note">814 POI · 6 описаний по официальным источникам · 5 ориентиров отдельно. © OpenStreetMap contributors · ODbL 1.0.</p>
   <span class="number">04 / 08</span>
 </section>
 <section class="slide">
@@ -60,16 +60,16 @@
 <section class="slide">
   <p class="eyebrow">Проверка прототипа</p>
   <h2>Результаты, которые можно повторить</h2>
-  <div id="measured-results" class="large-list"><p><strong>59</strong> автоматических тестов · <strong>12</strong> браузерных проверок</p><p><strong>11 / 12</strong> заданных мест найдены в top-3</p><p><strong>41 мс</strong> — медиана 9 тёплых API запросов без LLM</p></div>
-  <div class="rule" style="margin-top:30px"><h3>Сложный сценарий: обязательная розетка</h3><p>Без подтверждения — отсутствие подходящих мест.<br>Это полезный результат, а не повод выдумать услугу.</p></div>
-  <p class="note">Маленькая выборка поиска по названиям, не общая оценка релевантности. Live LLM не проверен: нужен ключ. Метод: docs/verification.md.</p>
+  <div id="measured-results" class="large-list"><p><strong>120</strong> автотестов · <strong>16</strong> браузерных сценариев</p><p><strong>17 / 17</strong> разговорных кейсов: объективные условия</p><p><strong>11 / 12</strong> заданных мест найдены в top-3</p></div>
+  <div class="rule" style="margin-top:30px"><h3>Независимый прогон нашёл ошибку</h3><p>«Wi-Fi не обязателен» ошибочно стал фильтром.<br>Исправлено; исходные запросы и метки сохранены.</p></div>
+  <p class="note">Полезность для человека ещё не оценена. Gemini и ORS live-check: skipped — нужны ключи. Метод и полные результаты: docs/verification.md.</p>
   <span class="number">06 / 08</span>
 </section>
 <section class="slide">
   <p class="eyebrow">Приватность и развитие</p>
   <h2>Локальный подбор.<br>Понятные внешние обращения.</h2>
   <div class="split" style="grid-template-columns:1fr 1fr">
-    <div><h3>Прототип</h3><p>Без аккаунта и истории поиска. Геолокация необязательна.</p><p class="small muted">LLM получает категории и разрешённые данные POI. Погода — округлённую точку. Карта обращается к серверу тайлов.</p></div>
+    <div><h3>Прототип</h3><p>Без аккаунта и истории поиска. Геолокация необязательна.</p><p class="small muted">LLM получает темы, факты POI и грубые диапазоны расстояния. Погода — округлённую точку. Карта обращается к серверу тайлов.</p></div>
     <div><h3>B2B-гипотеза</h3><p>Городские сервисы, гостиницы, университеты и культурные площадки.</p><p class="small muted">Партнёрства и выручка не заявлены. Продвижение — только с маркировкой и сохранением релевантности.</p></div>
   </div>
   <p class="note">Данные могут быть неполными. Доступность места и пути нужно проверять; обещаний безопасности и гарантии времени нет.</p>
@@ -80,7 +80,7 @@
   <h2 style="font-size:64px;margin-top:44px">Проверить на прогулке</h2>
   <p class="lead">Реальные входы.<br>Подтверждённые свойства.<br>Обратная связь пользователей.</p>
   <p class="muted" style="margin-top:42px;font-size:24px">Локальное демо: http://127.0.0.1:8000<br>Запуск и материалы: README.md</p>
-  <p id="external-blockers" class="small muted">Для полного RAG нужен серверный GEMINI_API_KEY.<br>Публичная публикация и YouTube выполняются из аккаунта владельца.</p>
+  <p id="external-blockers" class="small muted">Владельцу: ключ Gemini → live-check → публикация.<br>Точные команды и проверка статуса: docs/readiness.md</p>
   <span class="number">08 / 08</span>
 </section>
 <script>

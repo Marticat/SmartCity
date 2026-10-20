@@ -1,0 +1,20 @@
+{
+  "tested_at": "2026-10-20T09:33:59.200Z",
+  "checks": [
+    {
+      "name": "Out-of-order responses",
+      "passed": true,
+      "detail": "Delayed older response cannot replace newer selection; isolated labelled response fixtures"
+    },
+    {
+      "name": "Network failure and retry",
+      "passed": true,
+      "detail": "Error is visible, old cards removed, retry restores real results"
+    },
+    {
+      "name": "Manual map origin",
+      "passed": true,
+      "detail": "Map selection submits actual new coordinates in POST body"
+    }
+  ]
+}

@@ -11,13 +11,15 @@
   },
   "opening_hours": 116,
   "address": 57,
-  "source_description": 0,
-  "derived_description": 814,
+  "source_description": 6,
+  "derived_description": 808,
   "known_attributes": {
-    "indoor": 8,
+    "indoor": 10,
     "wifi": 24,
     "sockets": 0,
     "wheelchair": 37,
-    "free": 1
+    "free": 1,
+    "interactive": 1,
+    "quiet": 0
   }
 }

@@ -4,10 +4,13 @@
  */
 const { chromium } = require('../frontend/node_modules/@playwright/test');
 const fs = require('node:fs');
+const path = require('node:path');
 const assert = require('node:assert/strict');
 const BASE = process.env.QADAM_URL || 'http://127.0.0.1:8000';
+const OUTPUT = path.resolve(process.env.QADAM_ARTIFACTS || 'artifacts');
 
 (async () => {
+  fs.mkdirSync(OUTPUT, { recursive: true });
   const browser = await chromium.launch();
   const context = await browser.newContext({ viewport: { width: 1440, height: 1000 }, reducedMotion: 'reduce' });
   await context.route('https://tile.openstreetmap.org/**', route => route.abort());
@@ -62,7 +65,7 @@ const BASE = process.env.QADAM_URL || 'http://127.0.0.1:8000';
     assert.equal(origin.label, 'Точка на карте');
     assert(origin.latitude !== locations[0].latitude || origin.longitude !== locations[0].longitude);
     checks.push({ name: 'Manual map origin', passed: true, detail: 'Map selection submits actual new coordinates in POST body' });
-    fs.writeFileSync('artifacts/resilience-verification.json', JSON.stringify({ tested_at: new Date().toISOString(), checks }, null, 2));
+    fs.writeFileSync(path.join(OUTPUT, 'resilience-verification.json'), JSON.stringify({ tested_at: new Date().toISOString(), checks }, null, 2));
     console.log(JSON.stringify({ passed: checks.length, checks }, null, 2));
   } finally { await browser.close(); }
 })().catch(error => { console.error(error); process.exitCode = 1; });

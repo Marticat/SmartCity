@@ -79,3 +79,84 @@ def test_negated_service_is_not_required():
 def test_weekday_exception_does_not_claim_open(instant):
     monday = instant.replace(day=19)
     assert opening_status("Mo-Fr 09:00-18:00; Mo off", monday) != "open"
+
+
+@pytest.mark.parametrize("query,expected", [("У меня 1–2 часа", 120), ("У меня два часа", 120),
+    ("Я могу погулять полтора часа", 90), ("Хочу интересно провести час с ребёнком", 60)])
+def test_natural_hour_budgets(query, expected):
+    intent = parse_intent(request(query=query, time_budget_minutes=180))
+    assert intent.time_budget_minutes == expected
+
+
+def test_coordinated_optional_services_are_both_optional():
+    intent = parse_intent(request(query="Хочу выпить кофе и спокойно поработать. Желательно Wi-Fi и розетки, если есть."))
+    assert not intent.hard_constraints.wifi_required and not intent.hard_constraints.sockets_required
+    assert {"prefer_wifi", "prefer_sockets", "prefer_quiet"} <= set(intent.soft_preferences)
+    assert "quiet" in intent.unsupported_preferences
+
+
+def test_sanitized_themes_keep_no_original_query():
+    query = "Ночью с ребёнком хочу фотографировать архитектуру и узнать историю, но не кафе"
+    intent = parse_intent(request(query=query))
+    assert {"night", "family", "photography", "architecture", "history"} <= set(intent.interests)
+    assert intent.party_context == "family" and "cafe" in intent.excluded_categories
+    assert query not in intent.interests
+
+
+@pytest.mark.parametrize("query,attr", [("Обязательно тихое место", "quiet"), ("Только интерактивный музей", "interactive")])
+def test_required_preferences_never_accept_unknown(query, attr, poi_factory, instant):
+    req = request(query=query)
+    intent = parse_intent(req)
+    assert attr in intent.required_attributes
+    category = "museum" if attr == "interactive" else "park"
+    unknown = poi_factory(id="unknown", category=category)
+    without_evidence = poi_factory(id="unsupported", category=category, attributes={attr: True})
+    confirmed = poi_factory(id="confirmed", category=category, attributes={attr: True}, field_provenance={f"attributes.{attr}": {}, "category": {}})
+    assert [p.id for p, _, _ in filter_candidates([unknown, without_evidence, confirmed], req, intent, instant)] == ["confirmed"]
+
+
+def test_night_requires_actual_visit_datetime(instant):
+    assert parse_intent(request(query="Хочу погулять ночью")).clarification
+    assert parse_intent(request(query="Хочу погулять ночью", visit_datetime=instant.replace(hour=18))).clarification is None
+
+
+def test_negated_interactive_theme_is_not_promoted():
+    assert "interactive" not in parse_intent(request(query="Не хочу интерактив, хочу историю")).interests
+
+
+def test_mne_is_not_mistaken_for_negation_ne():
+    intent = parse_intent(request(query="Мне кафе, мне тихое место"))
+    assert intent.desired_categories == ["cafe"] and not intent.excluded_categories
+    assert "quiet" in intent.interests
+
+
+@pytest.mark.parametrize("query", [
+    "Хочу ночную прогулку", "Необычную ночную активность", "Маршрут ночной прогулки",
+    "Хочу ночные фотографии", "Для ночных прогулок", "Хочу вечернюю прогулку",
+    "Вечерний маршрут", "Погулять вечером", "Погулять ночью",
+])
+def test_night_and_evening_word_forms_require_datetime(query):
+    intent = parse_intent(request(query=query))
+    assert "night" in intent.interests and intent.clarification
+
+
+def test_incidental_word_is_not_night():
+    assert "night" not in parse_intent(request(query="Хочу цветочную лавку и кофе")).interests
+    assert "night" not in parse_intent(request(query="Хочу купить ночник")).interests
+
+
+@pytest.mark.parametrize("query", [
+    "Кофе на полчаса. Розетка не нужна, Wi-Fi не обязателен.",
+    "Wi-Fi не обязателен", "Розетка не обязательна", "Розетки не обязательны",
+    "Не обязательно Wi-Fi", "Не обязателен Wi-Fi", "Не обязательны розетки",
+])
+def test_optional_negation_grammatical_forms(query):
+    intent = parse_intent(request(query=query))
+    assert not intent.hard_constraints.wifi_required
+    assert not intent.hard_constraints.sockets_required
+
+
+def test_gui_required_wifi_is_preserved_despite_neutral_text():
+    intent = parse_intent(request(query="Wi-Fi не обязателен", constraints=Constraints(wifi_required=True)))
+    assert intent.hard_constraints.wifi_required
+    assert intent.conflicts

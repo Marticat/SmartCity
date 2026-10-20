@@ -6,6 +6,7 @@ import uuid
 from collections import defaultdict, deque
 from contextlib import asynccontextmanager
 from datetime import datetime, timedelta, timezone
+from zoneinfo import ZoneInfo
 from pathlib import Path
 from fastapi import FastAPI, HTTPException, Query, Request
 from fastapi.middleware.cors import CORSMiddleware
@@ -88,6 +89,12 @@ async def recommend_impl(request: RecommendRequest):
         summary="", dataset=dataset, warnings=list(intent.conflicts),
         trace=Trace(candidate_count=len(store.pois), sources=["OpenStreetMap"], retrieval_method="semantic + FTS5 / RRF" if dataset.semantic_ready else "FTS5"))
     def done():
+        for recommendation in response.recommendations:
+            for field in recommendation.evidence_field_ids:
+                provenance = recommendation.poi.field_provenance.get(field, {})
+                source = provenance.get("source_url") if isinstance(provenance, dict) else None
+                if isinstance(source, str) and source.startswith(("https://", "http://")) and "openstreetmap.org/" not in source and source not in response.trace.sources:
+                    response.trace.sources.append(source)
         response.trace.elapsed_ms = round((time.perf_counter()-start)*1000, 2)
         response.dataset = store.status()
         return response
@@ -113,15 +120,27 @@ async def recommend_impl(request: RecommendRequest):
         response.warnings.append(store.semantic_error or "Семантический индекс не готов: работает ограниченный текстовый поиск.")
     response.trace.applied_constraints = [
         f"Время: {intent.time_budget_minutes} мин",
+        *([f"Начало визита: {intent.visit_datetime.astimezone(ZoneInfo('Asia/Almaty')).strftime('%d.%m.%Y %H:%M')} (Астана)"] if intent.visit_datetime else []),
         "Пешком; географический фильтр до ранжирования",
         *([f"Категории: {', '.join(intent.desired_categories)}"] if intent.desired_categories else []),
         *([f"Исключены: {', '.join(intent.excluded_categories)}"] if intent.excluded_categories else []),
         *[key for key, value in intent.hard_constraints.model_dump().items() if value],
         *[f"Без свойства: {key}" for key in intent.excluded_attributes],
+        *[f"Обязательно подтверждено: {key}" for key in intent.required_attributes],
+        *[f"Интерес: {key}" for key in intent.interests],
         *(["Учтено возвращение"] if intent.return_to_start else []),
     ]
     filtered = filter_candidates(store.pois, request, intent, now)
     response.trace.filtered_count = len(filtered)
+    preference_labels = {"quiet": "тишина", "interactive": "интерактивные занятия", "sockets": "розетки", "wifi": "Wi-Fi"}
+    required_services = [attribute for attribute, field in (("sockets", "sockets_required"), ("wifi", "wifi_required")) if getattr(intent.hard_constraints, field)]
+    for attribute in sorted(set(intent.unsupported_preferences + required_services + [v.removeprefix("prefer_") for v in intent.soft_preferences if v in {"prefer_sockets", "prefer_wifi"}])):
+        confirmed = any(p.attributes.get(attribute) is True and f"attributes.{attribute}" in p.field_provenance for p, _, _ in filtered)
+        if not confirmed:
+            requirement = "Обязательное условие не выполнено." if attribute in required_services or attribute in intent.required_attributes else "Это пожелание не считаем выполненным."
+            response.warnings.append(f"Поблизости не нашли подтверждения: {preference_labels[attribute]}. {requirement}")
+    if "night" in intent.interests:
+        response.warnings.append("Безопасность, освещение и доступ ночью не подтверждены. Проверьте условия перед выходом.")
     if not filtered:
         response.summary = "Не нашли мест с подтверждением всех условий."
         response.warnings.append("Попробуйте увеличить время или снять одно обязательное условие. Неизвестные свойства не считаются выполненными.")
@@ -139,8 +158,16 @@ async def recommend_impl(request: RecommendRequest):
     # RRF is combined with small, explicit deterministic proximity/context bonuses.
     generic_query = not request.query.strip() or request.query.strip().casefold() in {"кофе", "кафе", "coffee", "cafe", "парк", "park", "прогулка", "walk", "музей", "museum", "с ребёнком"}
     proximity_weight = 0.04 if generic_query else 0.012
+    thematic_categories = {
+        "photography": {"park", "artwork", "viewpoint", "attraction"},
+        "architecture": {"attraction", "theatre", "museum", "artwork"},
+        "history": {"museum", "attraction", "gallery"},
+        "family": {"park", "playground", "museum"},
+    }
     ranked.sort(key=lambda item: -(item[1] + proximity_weight/(1+info[item[0].id][0]/500) + (0.08 if prefer_inside and item[0].attributes.get("indoor") is True else 0)
         + (0.02 if "prefer_walk" in intent.soft_preferences and not prefer_inside and item[0].category in {"park", "viewpoint", "attraction", "artwork"} else 0)
+        + sum(0.012 for theme in intent.interests if item[0].category in thematic_categories.get(theme, set()))
+        + sum(0.02 for attr in ("quiet", "interactive") if f"prefer_{attr}" in intent.soft_preferences and item[0].attributes.get(attr) is True and f"attributes.{attr}" in item[0].field_provenance)
         + sum(0.005 for attr in ("wifi", "sockets") if f"prefer_{attr}" in intent.soft_preferences and item[0].attributes.get(attr) is True)))
     route_deadline = time.monotonic() + 20
     for place, score in ranked[:8]:
@@ -187,6 +214,16 @@ async def recommend_impl(request: RecommendRequest):
             else f"Вариант для остановки рядом: {category_label.lower()}.",
             f"От старта {round(distance)} м {'по пешеходной сети' if method == 'walking' else 'по прямой'}; на посещение рекомендуем {visit_min}–{visit_max} мин."
         ]
+        if place.description_origin == "official_source_summary" and "description" in place.field_provenance:
+            reasons.insert(1, "По официальному источнику: " + place.description)
+            evidence.append("description")
+        for attribute in ("quiet", "interactive"):
+            if attribute in intent.interests:
+                if place.attributes.get(attribute) is True and f"attributes.{attribute}" in place.field_provenance:
+                    evidence.append(f"attributes.{attribute}")
+                    reasons.append("Источник описывает интерактивные элементы; их доступность на день визита уточните." if attribute == "interactive" else "Тишина отмечена в источнике; обстановка может измениться.")
+                else:
+                    caveats.append("Интерактивные занятия не подтверждены." if attribute == "interactive" else "Тишина и текущая загруженность не подтверждены.")
         for key, needed in (("indoor", intent.hard_constraints.indoor_only), ("wifi", intent.hard_constraints.wifi_required), ("sockets", intent.hard_constraints.sockets_required), ("wheelchair", intent.hard_constraints.wheelchair_required), ("free", intent.hard_constraints.free_only)):
             if needed and place.attributes.get(key) is True:
                 evidence.append("attributes." + key)
@@ -205,7 +242,14 @@ async def recommend_impl(request: RecommendRequest):
     generated, warning = await generator.generate(response.recommendations, intent)
     if generated:
         selected = {r.poi.id: r for r in response.recommendations}
-        response.recommendations = [selected[r.poi_id].model_copy(update={"suggested_activity": r.suggested_activity, "activity_origin": "ai"}) for r in generated.recommendations]
+        response.recommendations = [selected[r.poi_id].model_copy(update={
+            "why_suitable": r.why_suitable,
+            "evidence_field_ids": r.evidence_field_ids,
+            "suggested_activity": r.suggested_activity,
+            "activity_origin": "ai",
+            # Mandatory caveats belong to the backend and survive model selection.
+            "caveats": list(dict.fromkeys([*selected[r.poi_id].caveats, *r.caveats])),
+        }) for r in generated.recommendations]
         response.mode = "rag" if store.semantic_ready else "lexical_only"
         response.summary = generated.summary
     else:

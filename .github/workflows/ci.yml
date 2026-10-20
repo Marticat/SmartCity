@@ -37,6 +37,8 @@ jobs:
           curl -fsS http://127.0.0.1:8000/health
           curl -fsS http://127.0.0.1:8000/ | grep QADAM
           node scripts/verify-browser.cjs
+          node scripts/verify-resilience.cjs
+          node scripts/verify-context.cjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:

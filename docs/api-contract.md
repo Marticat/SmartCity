@@ -19,6 +19,9 @@ No precise user location in GET URLs. No search history persisted.
 `constraints` `{indoor_only, wheelchair_required, wifi_required, sockets_required, free_only, open_now}` booleans;
 `less_outdoors` bool; `excluded_poi_ids` string[];
 `visit_datetime` ISO timezone-aware string or null.
+The UI offers optional Astana local date/time and sends an explicit `+05:00` offset.
+Night/evening requests without `visit_datetime` return a clarification instead of
+applying daytime opening hours. Explicit text and UI time budgets use the smaller value.
 
 ## Response
 `request_id`, `mode`: rag|search_only|lexical_only|test;
@@ -43,3 +46,16 @@ POI minimally: `id`, `name`, `latitude`, `longitude`, `category`, `source_url`,
 `address`: string|null, `description`, `description_origin`, `coordinate_kind`,
 `opening_hours_raw`: string|null, `collected_at`, `source_updated_at`: string|null,
 `attributes`: Record<string,bool|null>, `field_provenance`: object, `tags`: object.
+
+`description_origin=official_source_summary` identifies reviewed enrichment.
+`field_provenance.description` includes `source_url`, `source_name`, `collected_at`,
+`method`, and `value`; the POI's main `source_url` still identifies its OSM record.
+Additional `attributes.interactive` and `attributes.quiet` use the same tri-state
+and evidence rules. Their explicit mandatory text requirements are parsed server-side.
+
+In `rag` mode, `why_suitable` and `suggested_activity` are generated and validated.
+Facts in the generator's internal contract use server-rendered slots; that internal
+syntax is never exposed in this API. `activity_origin=ai` distinguishes generated
+ideas even when embeddings are unavailable and the response mode is `lexical_only`.
+All mandatory server caveats are retained. Structural validation and a second model
+review are risk reductions, not a proof that free prose can never contain errors.

@@ -1,0 +1,56 @@
+{
+  "tested_at": "2026-10-20T09:33:54.150Z",
+  "base_url": "http://127.0.0.1:8001",
+  "tiles": "blocked during automation",
+  "checks": [
+    {
+      "name": "Initial render",
+      "passed": true,
+      "detail": "No geolocation permission required"
+    },
+    {
+      "name": "Live selection to recommendations",
+      "passed": true,
+      "detail": {
+        "mode": "lexical_only",
+        "count": 3,
+        "semantic_ready": false
+      }
+    },
+    {
+      "name": "Card/map synchronization",
+      "passed": true,
+      "detail": "Selecting a card selects its numbered map marker"
+    },
+    {
+      "name": "Time recalculation",
+      "passed": true,
+      "detail": "30-minute selection submits a new request"
+    },
+    {
+      "name": "Mobile 390px",
+      "passed": true,
+      "detail": "List/map switching; no horizontal overflow"
+    },
+    {
+      "name": "Strict unknown amenity",
+      "passed": true,
+      "detail": "No fabricated socket availability; empty result shown"
+    },
+    {
+      "name": "Session reset",
+      "passed": true,
+      "detail": "Location, query and recommendations cleared; no localStorage"
+    },
+    {
+      "name": "Denied geolocation",
+      "passed": true,
+      "detail": "Manual landmark selection remains usable"
+    },
+    {
+      "name": "Runtime",
+      "passed": true,
+      "detail": "No browser JavaScript exceptions"
+    }
+  ]
+}

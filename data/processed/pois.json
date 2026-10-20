@@ -4042,7 +4042,10 @@
     "name_ru": "Национальный музей Республики Казахстан",
     "name_kk": null,
     "name_en": "National Museum of the Republic of Kazakhstan",
-    "alternative_names": [],
+    "alternative_names": [
+      "Национальный музей Республики Казахстан",
+      "Национальный музей"
+    ],
     "latitude": 51.1182297,
     "longitude": 71.4693823,
     "coordinate_kind": "node",
@@ -4061,18 +4064,19 @@
       "wikimedia_commons": "Category:National Museum of the Republic of Kazakhstan"
     },
     "address": null,
-    "description": "Музей. Адрес в источнике не указан.",
-    "description_origin": "derived_from_tags",
+    "description": "Музей знакомит с археологией, историей и этнографией Казахстана. В описании залов палеонтологии и древней истории указаны сенсорные информационные киоски. На дату проверки сайт сообщает: зал «Астана» закрыт на обновление экспозиции.",
+    "description_origin": "official_source_summary",
     "opening_hours_raw": null,
     "timezone": "Asia/Almaty",
     "website": "https://nmrk.kz/",
     "public_contact": null,
     "attributes": {
-      "indoor": null,
+      "indoor": true,
       "wifi": null,
       "sockets": null,
       "wheelchair": null,
-      "free": null
+      "free": null,
+      "interactive": true
     },
     "field_provenance": {
       "name": {
@@ -4094,11 +4098,42 @@
         "source_url": "https://www.openstreetmap.org/node/4894937300",
         "collected_at": "2026-10-20T08:38:35.367740+00:00",
         "source_updated_at": "2026-01-23T04:12:07Z"
+      },
+      "description": {
+        "source_url": "https://nmrk.kz/ru/structure/exhibition-activities/",
+        "source_name": "Национальный музей Республики Казахстан",
+        "collected_at": "2026-10-20T09:17:00+00:00",
+        "method": "reviewed_official_summary",
+        "value": "Музей знакомит с археологией, историей и этнографией Казахстана. В описании залов палеонтологии и древней истории указаны сенсорные информационные киоски. На дату проверки сайт сообщает: зал «Астана» закрыт на обновление экспозиции."
+      },
+      "alternative_names": {
+        "source_url": "https://nmrk.kz/ru/structure/exhibition-activities/",
+        "source_name": "Национальный музей Республики Казахстан",
+        "collected_at": "2026-10-20T09:17:00+00:00",
+        "method": "reviewed_official_summary",
+        "value": [
+          "Национальный музей Республики Казахстан",
+          "Национальный музей"
+        ]
+      },
+      "attributes.indoor": {
+        "source_url": "https://nmrk.kz/ru/structure/exhibition-activities/",
+        "source_name": "Национальный музей Республики Казахстан",
+        "collected_at": "2026-10-20T09:17:00+00:00",
+        "method": "reviewed_official_summary",
+        "value": true
+      },
+      "attributes.interactive": {
+        "source_url": "https://nmrk.kz/ru/structure/exhibition-activities/",
+        "source_name": "Национальный музей Республики Казахстан",
+        "collected_at": "2026-10-20T09:17:00+00:00",
+        "method": "reviewed_official_summary",
+        "value": true
       }
     },
     "source_updated_at": "2026-01-23T04:12:07Z",
     "collected_at": "2026-10-20T08:38:35.367740+00:00",
-    "content_hash": "b6cddc4c01d2bee35e6e8aab93baeb877f7daeab9527cf5713fda5987b47c9fe"
+    "content_hash": "e3b67b08e6448cfd34d614686bdb2a3bc957954956ebfaa817dc1a46657f197b"
   },
   {
     "id": "osm:node:4920065833",
@@ -27411,7 +27446,9 @@
     "name_ru": null,
     "name_kk": null,
     "name_en": null,
-    "alternative_names": [],
+    "alternative_names": [
+      "Astana Ballet"
+    ],
     "latitude": 51.0992346,
     "longitude": 71.4196527,
     "coordinate_kind": "polygon_center",
@@ -27428,14 +27465,14 @@
       "theatre:genre": "ballet"
     },
     "address": "Ұлы Дала даңғылы, 43",
-    "description": "Театр; в данных указан адрес: Ұлы Дала даңғылы, 43.",
-    "description_origin": "derived_from_tags",
+    "description": "Репертуар театра сочетает классический балет и современные хореографические постановки. Основная сцена работает в здании, открытом в 2016 году, со зрительным залом и оркестровой ямой. Спектакль и длительность посещения выбирают по актуальной афише.",
+    "description_origin": "official_source_summary",
     "opening_hours_raw": null,
     "timezone": "Asia/Almaty",
     "website": null,
     "public_contact": null,
     "attributes": {
-      "indoor": null,
+      "indoor": true,
       "wifi": null,
       "sockets": null,
       "wheelchair": null,
@@ -27466,11 +27503,34 @@
         "source_url": "https://www.openstreetmap.org/way/499328449",
         "collected_at": "2026-10-20T08:38:35.367740+00:00",
         "value": "Ұлы Дала даңғылы, 43"
+      },
+      "description": {
+        "source_url": "https://astanaballet.com/ru/pages/o-teatre",
+        "source_name": "Театр «Астана Балет»",
+        "collected_at": "2026-10-20T09:17:00+00:00",
+        "method": "reviewed_official_summary",
+        "value": "Репертуар театра сочетает классический балет и современные хореографические постановки. Основная сцена работает в здании, открытом в 2016 году, со зрительным залом и оркестровой ямой. Спектакль и длительность посещения выбирают по актуальной афише."
+      },
+      "alternative_names": {
+        "source_url": "https://astanaballet.com/ru/pages/o-teatre",
+        "source_name": "Театр «Астана Балет»",
+        "collected_at": "2026-10-20T09:17:00+00:00",
+        "method": "reviewed_official_summary",
+        "value": [
+          "Astana Ballet"
+        ]
+      },
+      "attributes.indoor": {
+        "source_url": "https://astanaballet.com/ru/pages/o-teatre",
+        "source_name": "Театр «Астана Балет»",
+        "collected_at": "2026-10-20T09:17:00+00:00",
+        "method": "reviewed_official_summary",
+        "value": true
       }
     },
     "source_updated_at": "2025-12-05T09:08:04Z",
     "collected_at": "2026-10-20T08:38:35.367740+00:00",
-    "content_hash": "f32500a3115c38d929218ada50ab413755a9bd1926860324b94e608e78a23952"
+    "content_hash": "b5cab8f21fa10715cabda9b535a9e00e8299721f389841a3d1367f6e75212652"
   },
   {
     "id": "osm:way:499764844",
@@ -29658,7 +29718,10 @@
     "name_ru": "Триумфальная арка Мангилик Ел",
     "name_kk": null,
     "name_en": "Mäñgilik El Triumphal Arch",
-    "alternative_names": [],
+    "alternative_names": [
+      "Триумфальная арка Мәңгілік Ел",
+      "Триумфальная арка Мангилик Ел"
+    ],
     "latitude": 51.1043034,
     "longitude": 71.4300836,
     "coordinate_kind": "polygon_center",
@@ -29677,8 +29740,8 @@
       "wikipedia": "en:Mäñgilik El Triumphal Arch"
     },
     "address": null,
-    "description": "Достопримечательность. Адрес в источнике не указан.",
-    "description_origin": "derived_from_tags",
+    "description": "Триумфальная арка «Мәңгілік Ел» посвящена независимости Казахстана. На её стенах можно рассматривать национальные орнаменты и исторические барельефы. Это описание наружного осмотра, а не подтверждение доступа на смотровую площадку.",
+    "description_origin": "official_source_summary",
     "opening_hours_raw": null,
     "timezone": "Asia/Almaty",
     "website": null,
@@ -29710,11 +29773,28 @@
         "source_url": "https://www.openstreetmap.org/way/549307755",
         "collected_at": "2026-10-20T08:38:35.367740+00:00",
         "source_updated_at": "2025-12-05T09:08:04Z"
+      },
+      "description": {
+        "source_url": "https://www.visitastana.kz/ru/about-city/what-to-see/",
+        "source_name": "Visit Astana — городской туристический портал",
+        "collected_at": "2026-10-20T09:17:00+00:00",
+        "method": "reviewed_official_summary",
+        "value": "Триумфальная арка «Мәңгілік Ел» посвящена независимости Казахстана. На её стенах можно рассматривать национальные орнаменты и исторические барельефы. Это описание наружного осмотра, а не подтверждение доступа на смотровую площадку."
+      },
+      "alternative_names": {
+        "source_url": "https://www.visitastana.kz/ru/about-city/what-to-see/",
+        "source_name": "Visit Astana — городской туристический портал",
+        "collected_at": "2026-10-20T09:17:00+00:00",
+        "method": "reviewed_official_summary",
+        "value": [
+          "Триумфальная арка Мәңгілік Ел",
+          "Триумфальная арка Мангилик Ел"
+        ]
       }
     },
     "source_updated_at": "2025-12-05T09:08:04Z",
     "collected_at": "2026-10-20T08:38:35.367740+00:00",
-    "content_hash": "ac7cc8c8697dffb13233b603b7bdd00c0d4acf89afcfcdbf18ece93f0cbb1582"
+    "content_hash": "95ddc7aa8ae227e34f8465b3c16043459ed39d300e515b316aab3ef09c4f193d"
   },
   {
     "id": "osm:way:556574284",
@@ -33140,7 +33220,9 @@
     "name_ru": "Астана Опера",
     "name_kk": null,
     "name_en": "Astana Opera",
-    "alternative_names": [],
+    "alternative_names": [
+      "Astana Opera"
+    ],
     "latitude": 51.1354512,
     "longitude": 71.410753,
     "coordinate_kind": "polygon_center",
@@ -33160,8 +33242,8 @@
       "wikipedia": "en:Astana Opera"
     },
     "address": "Қонаев көшесі, 1",
-    "description": "Театр; в данных указан адрес: Қонаев көшесі, 1.",
-    "description_origin": "derived_from_tags",
+    "description": "Театр оперы и балета открылся в 2013 году. Его архитектура соединяет классические формы с казахскими национальными мотивами. Осмотр здания снаружи и посещение спектакля — разные варианты; доступ внутрь и билеты проверяют по афише.",
+    "description_origin": "official_source_summary",
     "opening_hours_raw": null,
     "timezone": "Asia/Almaty",
     "website": "https://astanaopera.kz/",
@@ -33198,11 +33280,27 @@
         "source_url": "https://www.openstreetmap.org/way/917478479",
         "collected_at": "2026-10-20T08:38:35.367740+00:00",
         "value": "Қонаев көшесі, 1"
+      },
+      "description": {
+        "source_url": "https://astanaopera.kz/en/about-theatre",
+        "source_name": "Astana Opera",
+        "collected_at": "2026-10-20T09:17:00+00:00",
+        "method": "reviewed_official_summary",
+        "value": "Театр оперы и балета открылся в 2013 году. Его архитектура соединяет классические формы с казахскими национальными мотивами. Осмотр здания снаружи и посещение спектакля — разные варианты; доступ внутрь и билеты проверяют по афише."
+      },
+      "alternative_names": {
+        "source_url": "https://astanaopera.kz/en/about-theatre",
+        "source_name": "Astana Opera",
+        "collected_at": "2026-10-20T09:17:00+00:00",
+        "method": "reviewed_official_summary",
+        "value": [
+          "Astana Opera"
+        ]
       }
     },
     "source_updated_at": "2025-11-29T10:07:23Z",
     "collected_at": "2026-10-20T08:38:35.367740+00:00",
-    "content_hash": "d013003b73b2b209f4d81a0730e1c93753e923ad712543d9ad0c4bb7055254a4"
+    "content_hash": "1db57caf898c3d70b63e337b1d3359403e988696bd85687fa0b8f716876449e5"
   },
   {
     "id": "osm:way:963855443",
@@ -35920,7 +36018,9 @@
     "name_ru": "Ботанический сад",
     "name_kk": "Ботаникалық бақ",
     "name_en": "Botanical Garden",
-    "alternative_names": [],
+    "alternative_names": [
+      "Ботанический сад Астаны"
+    ],
     "latitude": 51.1061652,
     "longitude": 71.4165705,
     "coordinate_kind": "polygon_center",
@@ -35940,8 +36040,8 @@
       "wikipedia": "kk:Ботаникалық бақ (Астана)"
     },
     "address": null,
-    "description": "Парк. Адрес в источнике не указан.",
-    "description_origin": "derived_from_tags",
+    "description": "В Ботаническом саду есть прогулочные дорожки, зоны отдыха и детские площадки; здесь знакомятся с растениями и проводят ботанические исследования. Описание относится к саду в целом: вход в оранжерею и её расписание нужно проверять отдельно.",
+    "description_origin": "official_source_summary",
     "opening_hours_raw": null,
     "timezone": "Asia/Almaty",
     "website": "https://www.astanabotsad.kz/",
@@ -35973,11 +36073,27 @@
         "source_url": "https://www.openstreetmap.org/way/1196402246",
         "collected_at": "2026-10-20T08:38:35.367740+00:00",
         "source_updated_at": "2026-09-26T20:20:55Z"
+      },
+      "description": {
+        "source_url": "https://visitastana.kz/ru/about-city/what-to-see/botanicheskiy-sad/",
+        "source_name": "Visit Astana — городской туристический портал",
+        "collected_at": "2026-10-20T09:17:00+00:00",
+        "method": "reviewed_official_summary",
+        "value": "В Ботаническом саду есть прогулочные дорожки, зоны отдыха и детские площадки; здесь знакомятся с растениями и проводят ботанические исследования. Описание относится к саду в целом: вход в оранжерею и её расписание нужно проверять отдельно."
+      },
+      "alternative_names": {
+        "source_url": "https://visitastana.kz/ru/about-city/what-to-see/botanicheskiy-sad/",
+        "source_name": "Visit Astana — городской туристический портал",
+        "collected_at": "2026-10-20T09:17:00+00:00",
+        "method": "reviewed_official_summary",
+        "value": [
+          "Ботанический сад Астаны"
+        ]
       }
     },
     "source_updated_at": "2026-09-26T20:20:55Z",
     "collected_at": "2026-10-20T08:38:35.367740+00:00",
-    "content_hash": "f5f2854cca3065acf69b5558aed10ebd478ce966579960e5198c0e89d0568c75"
+    "content_hash": "98fac2565ba470cd9606665eea46e6dc35500a043016b225154b6d5dbc985e3e"
   },
   {
     "id": "osm:way:1204592699",
@@ -36226,7 +36342,9 @@
     "name_ru": "Мост Атырау",
     "name_kk": "Атырау көпірі",
     "name_en": null,
-    "alternative_names": [],
+    "alternative_names": [
+      "Мост Атырау"
+    ],
     "latitude": 51.1560749,
     "longitude": 71.4249916,
     "coordinate_kind": "polygon_center",
@@ -36243,8 +36361,8 @@
       "tourism": "attraction"
     },
     "address": null,
-    "description": "Достопримечательность. Адрес в источнике не указан.",
-    "description_origin": "derived_from_tags",
+    "description": "Пешеходный мост «Атырау» открылся в 2018 году. Со стороны парка и амфитеатра установлен памятник каспийскому осетру. Мост подходит как тема для прогулки с наблюдением за городской архитектурой; состояние прохода проверяют на месте.",
+    "description_origin": "official_source_summary",
     "opening_hours_raw": null,
     "timezone": "Asia/Almaty",
     "website": null,
@@ -36276,11 +36394,27 @@
         "source_url": "https://www.openstreetmap.org/way/1239177393",
         "collected_at": "2026-10-20T08:38:35.367740+00:00",
         "source_updated_at": "2025-12-23T08:44:44Z"
+      },
+      "description": {
+        "source_url": "https://visitnursultan.kz/ru/place/most-atyrau-kpiri",
+        "source_name": "Городской туристический портал Visit Nur-Sultan",
+        "collected_at": "2026-10-20T09:17:00+00:00",
+        "method": "reviewed_official_summary",
+        "value": "Пешеходный мост «Атырау» открылся в 2018 году. Со стороны парка и амфитеатра установлен памятник каспийскому осетру. Мост подходит как тема для прогулки с наблюдением за городской архитектурой; состояние прохода проверяют на месте."
+      },
+      "alternative_names": {
+        "source_url": "https://visitnursultan.kz/ru/place/most-atyrau-kpiri",
+        "source_name": "Городской туристический портал Visit Nur-Sultan",
+        "collected_at": "2026-10-20T09:17:00+00:00",
+        "method": "reviewed_official_summary",
+        "value": [
+          "Мост Атырау"
+        ]
       }
     },
     "source_updated_at": "2025-12-23T08:44:44Z",
     "collected_at": "2026-10-20T08:38:35.367740+00:00",
-    "content_hash": "314aa90cf81cdd700a8b202821c22ff4c314c6893000ceb5932dc7ee6cbfda24"
+    "content_hash": "bb36b55e427729f4ff531bfa7a01ca37772476ebf6ea9a5b1ce97a5b4c84b838"
   },
   {
     "id": "osm:way:1268733713",

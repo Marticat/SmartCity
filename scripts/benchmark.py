@@ -1,5 +1,6 @@
 """Frozen real-POI retrieval evaluation; no provider calls and no fabricated labels."""
 import json
+import argparse
 import platform
 import statistics
 import time
@@ -14,13 +15,24 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--allow-dataset-update", action="store_true",
+                        help="Explicit cross-version evaluation with unchanged frozen labels; all labeled IDs must still exist")
+    parser.add_argument("--output", default="tests/benchmark/results.json")
+    args = parser.parse_args()
     labels = json.loads((ROOT / "tests/benchmark/frozen.json").read_text(encoding="utf-8"))
     start = time.perf_counter()
     store = Store()
     store.load_model()
     cold_ms = (time.perf_counter() - start) * 1000
-    if store.checksum != labels["dataset_checksum"]:
+    changed_dataset = store.checksum != labels["dataset_checksum"]
+    if changed_dataset and not args.allow_dataset_update:
         raise SystemExit("Frozen dataset checksum mismatch; do not silently relabel evaluation.")
+    labeled_ids = {case["anchor_id"] for case in labels["cases"]} | {
+        poi_id for case in labels["cases"] for poi_id in case["relevant_ids"]}
+    missing_ids = labeled_ids - set(store.by_id)
+    if missing_ids:
+        raise SystemExit("Frozen label IDs missing in current dataset; evaluation aborted: " + ", ".join(sorted(missing_ids)))
     rows = []
     for case in labels["cases"]:
         anchor = store.by_id[case["anchor_id"]]
@@ -51,6 +63,7 @@ def main():
     result = {
         "measured_at":datetime.now(timezone.utc).isoformat(),"platform":platform.platform(),"python":platform.python_version(),
         "dataset_checksum":store.checksum,"labels_checksum":digest(labels),"model":store.index_manifest.get("model"),
+        "label_dataset_checksum":labels["dataset_checksum"],"explicit_cross_version_evaluation":changed_dataset,
         "model_revision":store.index_manifest.get("revision"),"semantic_ready":store.semantic_ready,
         "mode":"hybrid_retrieval" if store.semantic_ready else "lexical_only",
         "cases":len(rows),"named_query_hit_at_3":sum(r["hit"] for r in named)/len(named),
@@ -61,7 +74,9 @@ def main():
         "warm_retrieval_median_ms":round(statistics.median(timings),2),"warm_retrieval_max_ms":max(timings),
         "provider_calls":0,"results":rows,
     }
-    (ROOT / "tests/benchmark/results.json").write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
+    output=ROOT/args.output
+    output.parent.mkdir(parents=True,exist_ok=True)
+    output.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
     print(json.dumps({k:v for k,v in result.items() if k != "results"}, ensure_ascii=False, indent=2))
 
 

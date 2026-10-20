@@ -7,6 +7,7 @@ from datetime import datetime, timezone
 import httpx
 from backend.app.config import BBOX, DATA_DIR, USER_AGENT
 from backend.app.data import atomic_json, digest, normalize_elements
+from backend.app.enrichment import apply_enrichment
 from backend.app.schemas.models import POI
 
 ENDPOINT = "https://overpass-api.de/api/interpreter"
@@ -53,9 +54,12 @@ def collect(refresh=False, normalize_only=False, validate=False):
     pois, reasons = normalize_elements(raw["elements"], collected)
     if not pois:
         raise RuntimeError("No usable records; previous snapshot retained")
+    pois, enrichment = apply_enrichment(pois, DATA_DIR / "enrichment" / "official-pois.json")
     rows = [p.model_dump(mode="json") for p in pois]
-    quality = {"categories": dict(Counter(p.category for p in pois)), "opening_hours": sum(bool(p.opening_hours_raw) for p in pois), "address": sum(bool(p.address) for p in pois), "source_description": 0, "derived_description": len(pois), "known_attributes": {k: sum(p.attributes.get(k) is not None for p in pois) for k in ("indoor", "wifi", "sockets", "wheelchair", "free")}}
+    described = sum(p.description_origin == "official_source_summary" for p in pois)
+    quality = {"categories": dict(Counter(p.category for p in pois)), "opening_hours": sum(bool(p.opening_hours_raw) for p in pois), "address": sum(bool(p.address) for p in pois), "source_description": described, "derived_description": len(pois) - described, "known_attributes": {k: sum(p.attributes.get(k) is not None for p in pois) for k in ("indoor", "wifi", "sockets", "wheelchair", "free", "interactive", "quiet")}}
     manifest = {"collected_at": collected, "source": "OpenStreetMap / Overpass API", "source_url": ENDPOINT, "license": "ODbL 1.0", "attribution": "© OpenStreetMap contributors", "area": {"kind": "demo_bounding_box", "bbox_south_west_north_east": BBOX, "description": "Central Astana and EXPO demo rectangle; not an administrative boundary"}, "query": QUERY, "raw_count": len(raw["elements"]), "accepted_count": len(pois), "rejected_count": sum(reasons.values()), "rejection_reasons": reasons, "checksum": digest(rows), "raw_checksum": digest(raw), "source_base_timestamp": raw.get("osm3s", {}).get("timestamp_osm_base"), "quality": quality}
+    manifest["enrichment"] = enrichment
     atomic_json(rawpath, raw)
     atomic_json(DATA_DIR / "processed" / "pois.json", rows)
     atomic_json(DATA_DIR / "manifests" / "collection.json", manifest)

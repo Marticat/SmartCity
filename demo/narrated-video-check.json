@@ -1,0 +1,14 @@
+{
+  "checked_at": "2026-10-20T09:41:09.907287+00:00",
+  "complete_decode": true,
+  "duration_seconds": 149.76,
+  "width": 1440,
+  "height": 1000,
+  "video_codec": "H.264",
+  "audio_codec": "AAC",
+  "synthetic_voice": true,
+  "mean_volume_db": -27.2,
+  "max_volume_db": -4.9,
+  "bytes": 24014733,
+  "sha256": "d96a5542e7a5a893c3a7aecab05cab8daf7888d88a457138e99873228856fdb6"
+}

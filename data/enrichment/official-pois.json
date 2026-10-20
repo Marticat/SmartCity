@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "method": "Reviewed short factual summaries from official venue or city tourism pages. No live availability inference. Recheck pages before renewing reviewed_at.",
+  "records": [
+    {
+      "poi_id": "osm:node:4894937300",
+      "expected_category": "museum",
+      "expected_name": "Қазақстан Республикасының Ұлттық Мұражайы",
+      "alternative_names": ["Национальный музей Республики Казахстан", "Национальный музей"],
+      "source_url": "https://nmrk.kz/ru/structure/exhibition-activities/",
+      "source_name": "Национальный музей Республики Казахстан",
+      "reviewed_at": "2026-10-20T09:17:00+00:00",
+      "description": "Музей знакомит с археологией, историей и этнографией Казахстана. В описании залов палеонтологии и древней истории указаны сенсорные информационные киоски. На дату проверки сайт сообщает: зал «Астана» закрыт на обновление экспозиции.",
+      "attributes": {"indoor": true, "interactive": true},
+      "check_terms": ["палеонтологии", "touch-screen", "зал закрыт"],
+      "identity_note": "Название музея и официальный домен совпадают с OSM; адрес на сайте — Тауелсиздик, 54."
+    },
+    {
+      "poi_id": "osm:way:1196402246",
+      "expected_category": "park",
+      "expected_name": "Ботаникалық бақ",
+      "alternative_names": ["Ботанический сад Астаны"],
+      "source_url": "https://visitastana.kz/ru/about-city/what-to-see/botanicheskiy-sad/",
+      "source_name": "Visit Astana — городской туристический портал",
+      "reviewed_at": "2026-10-20T09:17:00+00:00",
+      "description": "В Ботаническом саду есть прогулочные дорожки, зоны отдыха и детские площадки; здесь знакомятся с растениями и проводят ботанические исследования. Описание относится к саду в целом: вход в оранжерею и её расписание нужно проверять отдельно.",
+      "attributes": {},
+      "check_terms": ["дорожки", "детские площадки", "исследования"],
+      "identity_note": "OSM name:ru — Ботанический сад; координаты и название соответствуют городской странице."
+    },
+    {
+      "poi_id": "osm:way:499328449",
+      "expected_category": "theatre",
+      "expected_name": "Астана балет",
+      "alternative_names": ["Astana Ballet"],
+      "source_url": "https://astanaballet.com/ru/pages/o-teatre",
+      "source_name": "Театр «Астана Балет»",
+      "reviewed_at": "2026-10-20T09:17:00+00:00",
+      "description": "Репертуар театра сочетает классический балет и современные хореографические постановки. Основная сцена работает в здании, открытом в 2016 году, со зрительным залом и оркестровой ямой. Спектакль и длительность посещения выбирают по актуальной афише.",
+      "attributes": {"indoor": true},
+      "check_terms": ["хореографическими", "2016", "Оркестровая яма"],
+      "identity_note": "Название и положение здания совпадают; официальный адрес — проспект Ұлы дала, 43."
+    },
+    {
+      "poi_id": "osm:way:917478479",
+      "expected_category": "theatre",
+      "expected_name": "Астана Опера",
+      "alternative_names": ["Astana Opera"],
+      "source_url": "https://astanaopera.kz/en/about-theatre",
+      "source_name": "Astana Opera",
+      "reviewed_at": "2026-10-20T09:17:00+00:00",
+      "description": "Театр оперы и балета открылся в 2013 году. Его архитектура соединяет классические формы с казахскими национальными мотивами. Осмотр здания снаружи и посещение спектакля — разные варианты; доступ внутрь и билеты проверяют по афише.",
+      "attributes": {},
+      "check_terms": ["2013", "architecture", "Kazakh"],
+      "identity_note": "Официальный домен страницы совпадает с website в записи OSM."
+    },
+    {
+      "poi_id": "osm:way:549307755",
+      "expected_category": "attraction",
+      "expected_name": "Мәңгілік Ел салтанат қақпасы",
+      "alternative_names": ["Триумфальная арка Мәңгілік Ел", "Триумфальная арка Мангилик Ел"],
+      "source_url": "https://www.visitastana.kz/ru/about-city/what-to-see/",
+      "source_name": "Visit Astana — городской туристический портал",
+      "reviewed_at": "2026-10-20T09:17:00+00:00",
+      "description": "Триумфальная арка «Мәңгілік Ел» посвящена независимости Казахстана. На её стенах можно рассматривать национальные орнаменты и исторические барельефы. Это описание наружного осмотра, а не подтверждение доступа на смотровую площадку.",
+      "attributes": {},
+      "check_terms": ["Триумфальная арка", "барельефы", "орнаментами"],
+      "identity_note": "Русское и казахское названия относятся к арке на проспекте Мангилик Ел."
+    },
+    {
+      "poi_id": "osm:way:1239177393",
+      "expected_category": "attraction",
+      "expected_name": "Атырау көпірі",
+      "alternative_names": ["Мост Атырау"],
+      "source_url": "https://visitnursultan.kz/ru/place/most-atyrau-kpiri",
+      "source_name": "Городской туристический портал Visit Nur-Sultan",
+      "reviewed_at": "2026-10-20T09:17:00+00:00",
+      "description": "Пешеходный мост «Атырау» открылся в 2018 году. Со стороны парка и амфитеатра установлен памятник каспийскому осетру. Мост подходит как тема для прогулки с наблюдением за городской архитектурой; состояние прохода проверяют на месте.",
+      "attributes": {},
+      "check_terms": ["пешеходного моста", "2018", "осетру"],
+      "identity_note": "Казахское название OSM совпадает с названием моста в официальном туристическом описании."
+    }
+  ]
+}

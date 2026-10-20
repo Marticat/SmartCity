@@ -124,12 +124,21 @@ class Store:
         if query.strip():
             q = query.casefold()
             landmark_matches = [p for p in self.landmarks if q in " ".join([p.name, *p.alternative_names]).casefold()]
+            # A location picker is a name search, not a recommendation search.
+            # Exact/phrase name matches must precede incidental description words.
+            def name_rank(place):
+                aliases = [getattr(place, k, None) for k in ("name", "name_ru", "name_kk", "name_en")]
+                aliases += getattr(place, "alternative_names", [])
+                normalized = [re.sub(r"\W+", " ", a.casefold()).strip() for a in aliases if a]
+                needle = re.sub(r"\W+", " ", q).strip()
+                return 0 if needle in normalized else 1 if any(needle in a for a in normalized) else 2
+            name_matches = [p for p in self.pois if name_rank(p) < 2]
             ids = self.lexical(query)
             if not ids:
                 q = query.casefold()
                 ids = [p.id for p in self.pois if q in " ".join(filter(None, [p.name, p.name_ru, p.name_en, p.name_kk, *p.alternative_names])).casefold()]
-            merged = {p.id: p for p in [*landmark_matches, *[self.by_id[id] for id in ids if id in self.by_id]]}
-            return list(merged.values())[:limit]
+            merged = {p.id: p for p in [*landmark_matches, *name_matches, *[self.by_id[id] for id in ids if id in self.by_id]]}
+            return sorted(merged.values(), key=name_rank)[:limit]
         # Landmarks selected by actual recorded name, no fabricated coordinates.
         names = ("нұр әлем", "nur alem", "байтерек", "бәйтерек", "ботан", "центральный парк")
         landmarks = [p for term in names for p in self.pois if term in p.name.casefold()]

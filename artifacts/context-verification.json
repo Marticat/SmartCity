@@ -1,0 +1,23 @@
+{
+  "tested_at": "2026-10-20T09:31:01.629Z",
+  "checks": [
+    {
+      "name": "Night needs a planned time",
+      "passed": true
+    },
+    {
+      "name": "Astana time independent of browser timezone",
+      "passed": true,
+      "detail": "Honolulu browser sends22:30+05:00; future weather is not invented"
+    },
+    {
+      "name": "Scheduled visit reset",
+      "passed": true
+    },
+    {
+      "name": "Official enrichment visible and cited",
+      "passed": true,
+      "detail": "Real museum source and closed-hall caveat survive fallback"
+    }
+  ]
+}

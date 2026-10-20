@@ -2,7 +2,7 @@
   "model": "intfloat/multilingual-e5-small",
   "requested_revision": "main",
   "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
-  "dataset_checksum": "4db3250364d8808631d559fd381318fa730d36dda331734407d958b5efc4ced7",
+  "dataset_checksum": "73d19201cb01a2eaaea87661edad69d694ed13a4eb797b5423678659bb59e74d",
   "poi_ids": [
     "osm:node:455447680",
     "osm:node:798212555",
@@ -823,5 +823,5 @@
   "normalized": true,
   "query_prefix": "query: ",
   "document_prefix": "passage: ",
-  "elapsed_seconds": 14.657
+  "elapsed_seconds": 14.533
 }

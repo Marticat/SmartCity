@@ -1,0 +1,54 @@
+{
+  "checked_at": "2026-10-20T09:19:11.099941+00:00",
+  "purpose": "Reachability/change signal only. This does not verify every claim or renew the source review.",
+  "results": [
+    {
+      "poi_id": "osm:node:4894937300",
+      "source_url": "https://nmrk.kz/ru/structure/exhibition-activities/",
+      "status": "page_reachable_terms_present",
+      "missing_terms": [],
+      "text_sha256": "597436599e3af83245017439f021f8f6c6b0b3bab091a49b30b1256e987227f6",
+      "reviewed_at_unchanged": "2026-10-20T09:17:00+00:00"
+    },
+    {
+      "poi_id": "osm:way:1196402246",
+      "source_url": "https://visitastana.kz/ru/about-city/what-to-see/botanicheskiy-sad/",
+      "status": "page_reachable_terms_present",
+      "missing_terms": [],
+      "text_sha256": "22e75d03b86a665831bd469258a6e68ab4c6c6e501441581630a904f6e28d8c7",
+      "reviewed_at_unchanged": "2026-10-20T09:17:00+00:00"
+    },
+    {
+      "poi_id": "osm:way:499328449",
+      "source_url": "https://astanaballet.com/ru/pages/o-teatre",
+      "status": "page_reachable_terms_present",
+      "missing_terms": [],
+      "text_sha256": "f1072718caca8447e771952c8a731ea1c6cbf0a93e85953e6ece5b3916ecf888",
+      "reviewed_at_unchanged": "2026-10-20T09:17:00+00:00"
+    },
+    {
+      "poi_id": "osm:way:917478479",
+      "source_url": "https://astanaopera.kz/en/about-theatre",
+      "status": "page_reachable_terms_present",
+      "missing_terms": [],
+      "text_sha256": "803cb6259e5e9e4a62f5fa58f30853608af423d32cef5ed9b7eccc149e73fd48",
+      "reviewed_at_unchanged": "2026-10-20T09:17:00+00:00"
+    },
+    {
+      "poi_id": "osm:way:549307755",
+      "source_url": "https://www.visitastana.kz/ru/about-city/what-to-see/",
+      "status": "page_reachable_terms_present",
+      "missing_terms": [],
+      "text_sha256": "8f7962f4ab7bbf013253955016d01d55b379e3e71bc833a449e32b3a5bf7122b",
+      "reviewed_at_unchanged": "2026-10-20T09:17:00+00:00"
+    },
+    {
+      "poi_id": "osm:way:1239177393",
+      "source_url": "https://visitnursultan.kz/ru/place/most-atyrau-kpiri",
+      "status": "page_reachable_terms_present",
+      "missing_terms": [],
+      "text_sha256": "38025556b5c4937aa19930a5e40601ae4e97904a6dab7e34d46ba2e3d6663be2",
+      "reviewed_at_unchanged": "2026-10-20T09:17:00+00:00"
+    }
+  ]
+}

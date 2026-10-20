@@ -23,7 +23,7 @@
     "spatial_name_duplicate": 2,
     "restricted_access": 8
   },
-  "checksum": "4db3250364d8808631d559fd381318fa730d36dda331734407d958b5efc4ced7",
+  "checksum": "73d19201cb01a2eaaea87661edad69d694ed13a4eb797b5423678659bb59e74d",
   "raw_checksum": "c7858cf788dd68b655b4ac21813ffb7f8e3b81b91c726133f38008ffb80e1332",
   "source_base_timestamp": "2026-10-20T08:36:01Z",
   "quality": {
@@ -39,14 +39,31 @@
     },
     "opening_hours": 116,
     "address": 57,
-    "source_description": 0,
-    "derived_description": 814,
+    "source_description": 6,
+    "derived_description": 808,
     "known_attributes": {
-      "indoor": 8,
+      "indoor": 10,
       "wifi": 24,
       "sockets": 0,
       "wheelchair": 37,
-      "free": 1
+      "free": 1,
+      "interactive": 1,
+      "quiet": 0
     }
+  },
+  "enrichment": {
+    "applied": 6,
+    "poi_ids": [
+      "osm:node:4894937300",
+      "osm:way:1196402246",
+      "osm:way:499328449",
+      "osm:way:917478479",
+      "osm:way:549307755",
+      "osm:way:1239177393"
+    ],
+    "skipped": [],
+    "bundle_checksum": "a432cdfe5ddfd4cde5c2f458144a276c9bf6403f73413b1d21a738f51c7802b6",
+    "review_max_age_days": 180,
+    "method": "reviewed_official_summaries_applied_during_normalization"
   }
 }

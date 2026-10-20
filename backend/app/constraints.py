@@ -25,6 +25,8 @@ class QueryIntent(BaseModel):
     excluded_poi_ids: list[str] = Field(default_factory=list)
     conflicts: list[str] = Field(default_factory=list)
     excluded_attributes: list[str] = Field(default_factory=list)
+    required_attributes: list[str] = Field(default_factory=list)
+    unsupported_preferences: list[str] = Field(default_factory=list)
     clarification: str | None = None
 
 
@@ -42,12 +44,12 @@ def supported(origin):
 def attribute_preference(query, pattern):
     """Small auditable language subset, including neutral and optional mentions."""
     term = rf"(?:{pattern})\w*"
-    neutral = rf"(?:не\s+(?:нуж[а-я]*|обязатель[а-я]*|требуется|важ[а-я]*)\s+(?:\w+\s+){{0,2}}{term}|{term}\s+(?:мне\s+)?не\s+(?:нуж[а-я]*|обязатель[а-я]*|важ[а-я]*|требуется)|(?:don't|do not)\s+need\s+{term})"
+    neutral = rf"(?:не\s+(?:нуж[а-я]*|обязател[а-я]*|требуется|важ[а-я]*)\s+(?:\w+\s+){{0,2}}{term}|{term}\s+(?:мне\s+)?не\s+(?:нуж[а-я]*|обязател[а-я]*|важ[а-я]*|требуется)|(?:don't|do not)\s+need\s+{term})"
     if re.search(neutral, query):
         return "neutral"
     if re.search(rf"(?:без\s+|no\s+){term}", query):
         return "excluded"
-    if re.search(rf"(?:желатель[а-я]*|по возможности|если есть|предпочитаю|prefer)\s+(?:\w+\s+){{0,2}}{term}|{term}\s+(?:желатель[а-я]*|по возможности|если есть)", query):
+    if re.search(rf"(?:желатель[а-я]*|по возможности|если есть|предпочитаю|prefer)[^.!?;]{{0,70}}{term}|{term}[\s,]*(?:желатель[а-я]*|по возможности|если есть)", query):
         return "optional"
     return "required" if re.search(term, query) else None
 
@@ -58,7 +60,7 @@ def parse_intent(request: RecommendRequest):
     mapping = {"cafe": r"кафе|кофе|coffee|cafe|кофехана", "museum": r"музе[йяеюи]|museum", "park": r"парк|park|саябақ", "playground": r"площадк|playground", "gallery": r"галере|gallery", "theatre": r"театр|theatr"}
     desired, excluded = [], []
     for cat, pattern in mapping.items():
-        if re.search(rf"(?:не\s+(?:(?:хочу|нуж[а-я]*|интересу[а-я]*)\s+)?(?:ни\s+)?|без\s+|ни\s+|not\s+|no\s+|avoid\s+)(?:{pattern})", q):
+        if re.search(rf"(?<!\w)(?:не\s+(?:(?:хочу|нуж[а-я]*|интересу[а-я]*)\s+)?(?:ни\s+)?|без\s+|ни\s+|not\s+|no\s+|avoid\s+)(?:{pattern})", q):
             excluded.append(cat)
         elif re.search(pattern, q):
             desired.append(cat)
@@ -75,6 +77,30 @@ def parse_intent(request: RecommendRequest):
     soft = ["less_outdoors"] if request.less_outdoors else []
     if request.preset == "walk":
         soft.append("prefer_walk")
+    interests = []
+    themes = {
+        "quiet": r"тихо|тих[а-я]*|тишин|спокойно\s+поработ|quiet",
+        "interactive": r"интерактив|interactive|hands.on",
+        "photography": r"фотограф|сфотограф|фото|photograph|photo",
+        "architecture": r"архитектур|architecture|здани[яй]",
+        "history": r"истори[яиючес]|history|historical",
+        "family": r"реб[её]н|детьми|семь[еёю]|family|children|kids",
+        "night": r"(?<!\w)(?:ноч(?:ь|ью|и|ей|ам|ами|ах)|ночн(?:ой|ую|ые|ых|ым|ыми|ая|ое|ого|ому|ом)|вечер(?:ом|а|у|е|ов|ами|ах)?|вечерн(?:ий|яя|ее|ие|юю|их|им|ими|его|ему|ем|ей))\b|\bnight\b|after\s+dark",
+    }
+    for interest, pattern in themes.items():
+        if re.search(pattern, q) and not re.search(rf"(?<!\w)(?:не\s+(?:(?:хочу|интерес[а-я]*)\s+)?|без\s+|not\s+|no\s+)(?:{pattern})", q):
+            interests.append(interest)
+    if request.preset == "family" and "family" not in interests:
+        interests.append("family")
+    required_attributes, unsupported = [], []
+    for attribute in ("quiet", "interactive"):
+        if attribute in interests:
+            pattern = themes[attribute]
+            if re.search(rf"(?:обязательно|только|непременно|must)[^.!?;]{{0,45}}(?:{pattern})", q):
+                required_attributes.append(attribute)
+            else:
+                soft.append("prefer_" + attribute)
+            unsupported.append(attribute)
     excluded_attributes = []
     for attribute, field, pattern in (
         ("sockets", "sockets_required", r"розетк|socket|power outlet"),
@@ -97,15 +123,18 @@ def parse_intent(request: RecommendRequest):
         hard.open_now = True
     budget = request.time_budget_minutes
     minute_range = re.search(r"(\d{1,3})\s*[-–—]\s*(\d{1,3})\s*(?:мин|minute|min\b)", q)
+    hour_range = re.search(r"(\d{1,2})\s*[-–—]\s*(\d{1,2})\s*(?:час|hour)", q)
     match = re.search(r"(\d{1,3})\s*(?:мин|minute|min\b)", q)
     hour_match = re.search(r"(\d{1,2})\s*(?:час|hour)", q)
     text_budget = (
         max(map(int, minute_range.groups())) if minute_range else
+        max(map(int, hour_range.groups())) * 60 if hour_range else
         int(match.group(1)) if match else
         int(hour_match.group(1)) * 60 if hour_match else
         30 if re.search(r"полчаса|полчас|half an hour", q) else
         90 if re.search(r"полтора часа", q) else
-        60 if re.search(r"до\s+часа|один\s+час|one\s+hour", q) else None
+        120 if re.search(r"два\s+часа|двух\s+часов|two\s+hours", q) else
+        60 if re.search(r"до\s+часа|один\s+час|one\s+hour|(?:есть|меня|провести)\s+час(?:\s|$)", q) else None
     )
     clarification = None
     if text_budget is not None:
@@ -116,14 +145,17 @@ def parse_intent(request: RecommendRequest):
             clarification = "Подбор рассчитан минимум на 10 минут. У вас есть столько времени или нужно остаться на месте?"
     if any(getattr(hard, field) and attribute in excluded_attributes for attribute, field in (("wifi", "wifi_required"), ("sockets", "sockets_required"))):
         clarification = "Обязательный фильтр противоречит тексту запроса. Какое требование оставить?"
+    if "night" in interests and request.visit_datetime is None:
+        clarification = "На какую дату и время планируете вечернюю или ночную прогулку? Дневное расписание не подтверждает доступ ночью."
     if re.search(r"вылет|до\s+рейса|flight|аэропорт", q):
         clarification = "Где вы сейчас и к какому времени нужно быть в аэропорту? Без времени дороги и запаса прогулку до рейса не обещаем."
     if re.search(r"крыш|стройк|техническ.*проход|секретн", q):
         clarification = "Можем подобрать только публичные места без закрытых крыш и технических проходов. Подойдёт парк или публичная достопримечательность?"
     return QueryIntent(origin=request.origin, time_budget_minutes=budget, desired_categories=[c for c in desired if c not in excluded], excluded_categories=excluded,
-                       interests=[request.query], party_context="family" if request.preset == "family" or "ребён" in q or "ребен" in q else "individual",
+                       interests=interests, party_context="family" if "family" in interests else "individual",
                        hard_constraints=hard, soft_preferences=soft, return_to_start=request.return_to_start or bool(re.search(r"вернуть|обратно|return", q)),
-                       visit_datetime=request.visit_datetime, excluded_poi_ids=request.excluded_poi_ids, conflicts=conflicts, excluded_attributes=excluded_attributes, clarification=clarification)
+                       visit_datetime=request.visit_datetime, excluded_poi_ids=request.excluded_poi_ids, conflicts=conflicts, excluded_attributes=excluded_attributes,
+                       required_attributes=required_attributes, unsupported_preferences=unsupported, clarification=clarification)
 
 
 DAY = {"Mo": 0, "Tu": 1, "We": 2, "Th": 3, "Fr": 4, "Sa": 5, "Su": 6}
@@ -198,6 +230,8 @@ def filter_candidates(pois, request, intent, now):
         if intent.desired_categories and poi.category not in intent.desired_categories:
             continue
         if any(required[k] and poi.attributes.get(k) is not True for k in required):
+            continue
+        if any(poi.attributes.get(key) is not True or f"attributes.{key}" not in poi.field_provenance for key in intent.required_attributes):
             continue
         if any(poi.attributes.get(k) is not False for k in intent.excluded_attributes):
             continue

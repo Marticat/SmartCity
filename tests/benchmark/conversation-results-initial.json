@@ -1,0 +1,1385 @@
+{
+  "measured_at": "2026-10-20T09:34:14.682176+00:00",
+  "dataset_checksum": "73d19201cb01a2eaaea87661edad69d694ed13a4eb797b5423678659bb59e74d",
+  "semantic_ready": true,
+  "cases": 17,
+  "objective_passed": 16,
+  "human_relevance": "not_scored; requires human reviewer, not an LLM self-rating",
+  "median_wall_ms": 48.29,
+  "method": "Real local API and real dataset; no POI mocks. Live weather/provider availability recorded. No quality claim from objective pass count.",
+  "results": [
+    {
+      "id": "expo_hour_walk_coffee",
+      "query": "У меня час возле EXPO. Хочу немного прогуляться, а потом согреться за кофе.",
+      "anchor_id": "osm:way:454853233",
+      "objective_failures": [],
+      "wall_ms": 1019.59,
+      "mode": "search_only",
+      "visit_datetime": null,
+      "summary": "Нашли 3 варианта рядом. Выберите место для своей прогулки.",
+      "clarifying_question": null,
+      "warnings": [
+        "Генерация ИИ не настроена: показаны результаты поиска и шаблонные идеи.",
+        "Пешеходный маршрут не подтверждён. Показаны отдельные места, а не гарантированный план по времени."
+      ],
+      "trace": {
+        "candidate_count": 814,
+        "filtered_count": 32,
+        "retrieval_method": "semantic + FTS5 / RRF",
+        "applied_constraints": [
+          "Время: 60 мин",
+          "Пешком; географический фильтр до ранжирования",
+          "Категории: cafe"
+        ],
+        "sources": [
+          "OpenStreetMap"
+        ],
+        "elapsed_ms": 1010.47
+      },
+      "weather": {
+        "status": "available",
+        "temperature_c": 4.5,
+        "wind_kmh": 21.4,
+        "observed_at": "2026-10-20T10:00:00+00:00",
+        "source_url": "https://open-meteo.com/"
+      },
+      "recommendations": [
+        {
+          "poi_id": "osm:node:6408255389",
+          "name": "завтрак бар",
+          "category": "cafe",
+          "description": "Кафе. Адрес в источнике не указан.",
+          "attributes": {
+            "indoor": null,
+            "wifi": null,
+            "sockets": null,
+            "wheelchair": null,
+            "free": null
+          },
+          "source_url": "https://www.openstreetmap.org/node/6408255389",
+          "why_suitable": "«Кафе» соответствует выбранному интересу. От старта 861 м по прямой; на посещение рекомендуем 15–30 мин.",
+          "suggested_activity": "Сделайте паузу за напитком; меню и возможность заказа уточните на месте.",
+          "activity_origin": "template",
+          "distance_m": 861.0,
+          "distance_method": "straight_line",
+          "visit_minutes_min": 15,
+          "visit_minutes_max": 30,
+          "total_minutes": null,
+          "caveats": [
+            "Расстояние по прямой. Путь и время перехода не проверены; уложиться в бюджет не гарантируем.",
+            "Часы работы на время визита не подтверждены.",
+            "Нет подтверждённых данных: Wi-Fi, розетки."
+          ]
+        },
+        {
+          "poi_id": "osm:node:11783576043",
+          "name": "Drinkit",
+          "category": "cafe",
+          "description": "Кафе; в данных указан адрес: Улица Бухар жырау, 28Б.",
+          "attributes": {
+            "indoor": null,
+            "wifi": null,
+            "sockets": null,
+            "wheelchair": null,
+            "free": null
+          },
+          "source_url": "https://www.openstreetmap.org/node/11783576043",
+          "why_suitable": "«Кафе» соответствует выбранному интересу. От старта 932 м по прямой; на посещение рекомендуем 15–30 мин.",
+          "suggested_activity": "Сделайте паузу за напитком; меню и возможность заказа уточните на месте.",
+          "activity_origin": "template",
+          "distance_m": 932.0,
+          "distance_method": "straight_line",
+          "visit_minutes_min": 15,
+          "visit_minutes_max": 30,
+          "total_minutes": null,
+          "caveats": [
+            "Расстояние по прямой. Путь и время перехода не проверены; уложиться в бюджет не гарантируем.",
+            "Статус рассчитан по расписанию OSM; фактическую работу уточните перед визитом.",
+            "Нет подтверждённых данных: Wi-Fi, розетки."
+          ]
+        },
+        {
+          "poi_id": "osm:node:13681674667",
+          "name": "Лето",
+          "category": "cafe",
+          "description": "Кафе; в данных указан адрес: Мәңгілік Ел даңғылы, 49.",
+          "attributes": {
+            "indoor": null,
+            "wifi": null,
+            "sockets": null,
+            "wheelchair": null,
+            "free": null
+          },
+          "source_url": "https://www.openstreetmap.org/node/13681674667",
+          "why_suitable": "«Кафе» соответствует выбранному интересу. От старта 528 м по прямой; на посещение рекомендуем 15–30 мин.",
+          "suggested_activity": "Сделайте паузу за напитком; меню и возможность заказа уточните на месте.",
+          "activity_origin": "template",
+          "distance_m": 528.0,
+          "distance_method": "straight_line",
+          "visit_minutes_min": 15,
+          "visit_minutes_max": 30,
+          "total_minutes": null,
+          "caveats": [
+            "Расстояние по прямой. Путь и время перехода не проверены; уложиться в бюджет не гарантируем.",
+            "Часы работы на время визита не подтверждены.",
+            "Нет подтверждённых данных: Wi-Fi, розетки."
+          ]
+        }
+      ],
+      "human_review_question": "Есть ли понятный вариант прогулки и кофе, а не просто случайное кафе? Не обещан ли непроверенный маршрут?",
+      "human_score": null
+    },
+    {
+      "id": "work_two_hours",
+      "query": "Нужно поработать два часа в тихом кафе с Wi-Fi. Розетка желательна.",
+      "anchor_id": "osm:way:499328514",
+      "objective_failures": [],
+      "wall_ms": 451.65,
+      "mode": "search_only",
+      "visit_datetime": null,
+      "summary": "Нашли 3 варианта рядом. Выберите место для своей прогулки.",
+      "clarifying_question": null,
+      "warnings": [
+        "Поблизости не нашли подтверждения: тишина. Это пожелание не считаем выполненным.",
+        "Поблизости не нашли подтверждения: розетки. Это пожелание не считаем выполненным.",
+        "Генерация ИИ не настроена: показаны результаты поиска и шаблонные идеи.",
+        "Пешеходный маршрут не подтверждён. Показаны отдельные места, а не гарантированный план по времени."
+      ],
+      "trace": {
+        "candidate_count": 814,
+        "filtered_count": 10,
+        "retrieval_method": "semantic + FTS5 / RRF",
+        "applied_constraints": [
+          "Время: 120 мин",
+          "Пешком; географический фильтр до ранжирования",
+          "Категории: cafe",
+          "wifi_required",
+          "Интерес: quiet"
+        ],
+        "sources": [
+          "OpenStreetMap"
+        ],
+        "elapsed_ms": 448.53
+      },
+      "weather": {
+        "status": "available",
+        "temperature_c": 4.5,
+        "wind_kmh": 21.4,
+        "observed_at": "2026-10-20T10:00:00+00:00",
+        "source_url": "https://open-meteo.com/"
+      },
+      "recommendations": [
+        {
+          "poi_id": "osm:node:10948680993",
+          "name": "Инжу",
+          "category": "cafe",
+          "description": "Кафе. Адрес в источнике не указан.",
+          "attributes": {
+            "indoor": null,
+            "wifi": true,
+            "sockets": null,
+            "wheelchair": null,
+            "free": null
+          },
+          "source_url": "https://www.openstreetmap.org/node/10948680993",
+          "why_suitable": "«Кафе» соответствует выбранному интересу. От старта 3244 м по прямой; на посещение рекомендуем 15–30 мин. Есть подтверждение Wi-Fi.",
+          "suggested_activity": "Сделайте паузу за напитком; меню и возможность заказа уточните на месте.",
+          "activity_origin": "template",
+          "distance_m": 3244.0,
+          "distance_method": "straight_line",
+          "visit_minutes_min": 15,
+          "visit_minutes_max": 30,
+          "total_minutes": null,
+          "caveats": [
+            "Расстояние по прямой. Путь и время перехода не проверены; уложиться в бюджет не гарантируем.",
+            "Часы работы на время визита не подтверждены.",
+            "Нет подтверждённых данных: розетки.",
+            "Тишина и текущая загруженность не подтверждены."
+          ]
+        },
+        {
+          "poi_id": "osm:node:11109477264",
+          "name": "Coffee inn",
+          "category": "cafe",
+          "description": "Кафе. Адрес в источнике не указан.",
+          "attributes": {
+            "indoor": null,
+            "wifi": true,
+            "sockets": null,
+            "wheelchair": null,
+            "free": null
+          },
+          "source_url": "https://www.openstreetmap.org/node/11109477264",
+          "why_suitable": "«Кафе» соответствует выбранному интересу. От старта 3670 м по прямой; на посещение рекомендуем 15–30 мин. Есть подтверждение Wi-Fi.",
+          "suggested_activity": "Сделайте паузу за напитком; меню и возможность заказа уточните на месте.",
+          "activity_origin": "template",
+          "distance_m": 3670.0,
+          "distance_method": "straight_line",
+          "visit_minutes_min": 15,
+          "visit_minutes_max": 30,
+          "total_minutes": null,
+          "caveats": [
+            "Расстояние по прямой. Путь и время перехода не проверены; уложиться в бюджет не гарантируем.",
+            "Часы работы на время визита не подтверждены.",
+            "Нет подтверждённых данных: розетки.",
+            "Тишина и текущая загруженность не подтверждены."
+          ]
+        },
+        {
+          "poi_id": "osm:node:6290442885",
+          "name": "МОККО",
+          "category": "cafe",
+          "description": "Кафе. Адрес в источнике не указан.",
+          "attributes": {
+            "indoor": null,
+            "wifi": true,
+            "sockets": null,
+            "wheelchair": null,
+            "free": null
+          },
+          "source_url": "https://www.openstreetmap.org/node/6290442885",
+          "why_suitable": "«Кафе» соответствует выбранному интересу. От старта 3876 м по прямой; на посещение рекомендуем 15–30 мин. Есть подтверждение Wi-Fi.",
+          "suggested_activity": "Сделайте паузу за напитком; меню и возможность заказа уточните на месте.",
+          "activity_origin": "template",
+          "distance_m": 3876.0,
+          "distance_method": "straight_line",
+          "visit_minutes_min": 15,
+          "visit_minutes_max": 30,
+          "total_minutes": null,
+          "caveats": [
+            "Расстояние по прямой. Путь и время перехода не проверены; уложиться в бюджет не гарантируем.",
+            "Часы работы на время визита не подтверждены.",
+            "Нет подтверждённых данных: розетки.",
+            "Тишина и текущая загруженность не подтверждены."
+          ]
+        }
+      ],
+      "human_review_question": "Можно ли понять, что Wi-Fi подтверждён, а тишина/розетка не обещаны без данных? Достаточно ли контекста для работы?",
+      "human_score": null
+    },
+    {
+      "id": "mandatory_socket",
+      "query": "Кофе с обязательной розеткой, без неё не подходит.",
+      "anchor_id": "osm:way:499328514",
+      "objective_failures": [],
+      "wall_ms": 4.38,
+      "mode": "search_only",
+      "visit_datetime": null,
+      "summary": "Не нашли мест с подтверждением всех условий.",
+      "clarifying_question": null,
+      "warnings": [
+        "Поблизости не нашли подтверждения: розетки. Обязательное условие не выполнено.",
+        "Попробуйте увеличить время или снять одно обязательное условие. Неизвестные свойства не считаются выполненными."
+      ],
+      "trace": {
+        "candidate_count": 814,
+        "filtered_count": 0,
+        "retrieval_method": "semantic + FTS5 / RRF",
+        "applied_constraints": [
+          "Время: 60 мин",
+          "Пешком; географический фильтр до ранжирования",
+          "Категории: cafe",
+          "sockets_required"
+        ],
+        "sources": [
+          "OpenStreetMap"
+        ],
+        "elapsed_ms": 1.51
+      },
+      "weather": {
+        "status": "unavailable",
+        "temperature_c": null,
+        "wind_kmh": null,
+        "observed_at": null,
+        "source_url": null
+      },
+      "recommendations": [],
+      "human_review_question": "Честно ли объяснён недостаток данных, есть ли конкретный следующий шаг?",
+      "human_score": null
+    },
+    {
+      "id": "family_inside45",
+      "query": "С ребёнком на 45 минут, только внутри помещения.",
+      "anchor_id": "osm:way:454853233",
+      "objective_failures": [],
+      "wall_ms": 49.48,
+      "mode": "search_only",
+      "visit_datetime": null,
+      "summary": "Нашли 3 варианта рядом. Выберите место для своей прогулки.",
+      "clarifying_question": null,
+      "warnings": [
+        "Генерация ИИ не настроена: показаны результаты поиска и шаблонные идеи.",
+        "Пешеходный маршрут не подтверждён. Показаны отдельные места, а не гарантированный план по времени."
+      ],
+      "trace": {
+        "candidate_count": 814,
+        "filtered_count": 3,
+        "retrieval_method": "semantic + FTS5 / RRF",
+        "applied_constraints": [
+          "Время: 45 мин",
+          "Пешком; географический фильтр до ранжирования",
+          "Категории: park, playground, museum",
+          "indoor_only",
+          "Интерес: family"
+        ],
+        "sources": [
+          "OpenStreetMap"
+        ],
+        "elapsed_ms": 46.76
+      },
+      "weather": {
+        "status": "available",
+        "temperature_c": 4.5,
+        "wind_kmh": 21.4,
+        "observed_at": "2026-10-20T10:00:00+00:00",
+        "source_url": "https://open-meteo.com/"
+      },
+      "recommendations": [
+        {
+          "poi_id": "osm:way:1102776052",
+          "name": "Детская площадка (без названия в OSM)",
+          "category": "playground",
+          "description": "Детская площадка. Адрес в источнике не указан.",
+          "attributes": {
+            "indoor": true,
+            "wifi": null,
+            "sockets": null,
+            "wheelchair": null,
+            "free": null
+          },
+          "source_url": "https://www.openstreetmap.org/way/1102776052",
+          "why_suitable": "«Детская площадка» соответствует выбранному интересу. От старта 763 м по прямой; на посещение рекомендуем 15–30 мин. Есть тег помещения.",
+          "suggested_activity": "Посмотрите, подходят ли доступные игровые элементы возрасту ребёнка.",
+          "activity_origin": "template",
+          "distance_m": 763.0,
+          "distance_method": "straight_line",
+          "visit_minutes_min": 15,
+          "visit_minutes_max": 30,
+          "total_minutes": null,
+          "caveats": [
+            "Расстояние по прямой. Путь и время перехода не проверены; уложиться в бюджет не гарантируем.",
+            "Часы работы на время визита не подтверждены.",
+            "На карте центр объекта, а не проверенный вход."
+          ]
+        },
+        {
+          "poi_id": "osm:way:1102779048",
+          "name": "Детская площадка (без названия в OSM)",
+          "category": "playground",
+          "description": "Детская площадка. Адрес в источнике не указан.",
+          "attributes": {
+            "indoor": true,
+            "wifi": null,
+            "sockets": null,
+            "wheelchair": null,
+            "free": null
+          },
+          "source_url": "https://www.openstreetmap.org/way/1102779048",
+          "why_suitable": "«Детская площадка» соответствует выбранному интересу. От старта 762 м по прямой; на посещение рекомендуем 15–30 мин. Есть тег помещения.",
+          "suggested_activity": "Посмотрите, подходят ли доступные игровые элементы возрасту ребёнка.",
+          "activity_origin": "template",
+          "distance_m": 762.0,
+          "distance_method": "straight_line",
+          "visit_minutes_min": 15,
+          "visit_minutes_max": 30,
+          "total_minutes": null,
+          "caveats": [
+            "Расстояние по прямой. Путь и время перехода не проверены; уложиться в бюджет не гарантируем.",
+            "Часы работы на время визита не подтверждены.",
+            "На карте центр объекта, а не проверенный вход."
+          ]
+        },
+        {
+          "poi_id": "osm:way:1105111360",
+          "name": "Детская площадка (без названия в OSM)",
+          "category": "playground",
+          "description": "Детская площадка. Адрес в источнике не указан.",
+          "attributes": {
+            "indoor": true,
+            "wifi": null,
+            "sockets": null,
+            "wheelchair": null,
+            "free": null
+          },
+          "source_url": "https://www.openstreetmap.org/way/1105111360",
+          "why_suitable": "«Детская площадка» соответствует выбранному интересу. От старта 826 м по прямой; на посещение рекомендуем 15–30 мин. Есть тег помещения.",
+          "suggested_activity": "Посмотрите, подходят ли доступные игровые элементы возрасту ребёнка.",
+          "activity_origin": "template",
+          "distance_m": 826.0,
+          "distance_method": "straight_line",
+          "visit_minutes_min": 15,
+          "visit_minutes_max": 30,
+          "total_minutes": null,
+          "caveats": [
+            "Расстояние по прямой. Путь и время перехода не проверены; уложиться в бюджет не гарантируем.",
+            "Часы работы на время визита не подтверждены.",
+            "На карте центр объекта, а не проверенный вход."
+          ]
+        }
+      ],
+      "human_review_question": "Подходит ли занятие для короткого семейного визита и понятно ли, что именно можно сделать?",
+      "human_score": null
+    },
+    {
+      "id": "history_museum60",
+      "query": "Хочу узнать историю Казахстана, есть час на музей.",
+      "anchor_id": "osm:node:4894937300",
+      "objective_failures": [],
+      "wall_ms": 449.47,
+      "mode": "search_only",
+      "visit_datetime": null,
+      "summary": "Нашли 2 варианта рядом. Выберите место для своей прогулки.",
+      "clarifying_question": null,
+      "warnings": [
+        "Генерация ИИ не настроена: показаны результаты поиска и шаблонные идеи.",
+        "Пешеходный маршрут не подтверждён. Показаны отдельные места, а не гарантированный план по времени."
+      ],
+      "trace": {
+        "candidate_count": 814,
+        "filtered_count": 2,
+        "retrieval_method": "semantic + FTS5 / RRF",
+        "applied_constraints": [
+          "Время: 60 мин",
+          "Пешком; географический фильтр до ранжирования",
+          "Категории: museum",
+          "Интерес: history"
+        ],
+        "sources": [
+          "OpenStreetMap",
+          "https://nmrk.kz/ru/structure/exhibition-activities/"
+        ],
+        "elapsed_ms": 446.37
+      },
+      "weather": {
+        "status": "available",
+        "temperature_c": 4.5,
+        "wind_kmh": 21.4,
+        "observed_at": "2026-10-20T10:00:00+00:00",
+        "source_url": "https://open-meteo.com/"
+      },
+      "recommendations": [
+        {
+          "poi_id": "osm:node:4894937300",
+          "name": "Қазақстан Республикасының Ұлттық Мұражайы",
+          "category": "museum",
+          "description": "Музей знакомит с археологией, историей и этнографией Казахстана. В описании залов палеонтологии и древней истории указаны сенсорные информационные киоски. На дату проверки сайт сообщает: зал «Астана» закрыт на обновление экспозиции.",
+          "attributes": {
+            "indoor": true,
+            "wifi": null,
+            "sockets": null,
+            "wheelchair": null,
+            "free": null,
+            "interactive": true
+          },
+          "source_url": "https://www.openstreetmap.org/node/4894937300",
+          "why_suitable": "«Музей» соответствует выбранному интересу. По официальному источнику: Музей знакомит с археологией, историей и этнографией Казахстана. В описании залов палеонтологии и древней истории указаны сенсорные информационные киоски. На дату проверки сайт сообщает: зал «Астана» закрыт на обновление экспозиции. От старта 0 м по прямой; на посещение рекомендуем 30–60 мин.",
+          "suggested_activity": "Выберите одну тему для знакомства с экспозицией; наличие экспозиции и билеты уточните перед визитом.",
+          "activity_origin": "template",
+          "distance_m": 0.0,
+          "distance_method": "straight_line",
+          "visit_minutes_min": 30,
+          "visit_minutes_max": 60,
+          "total_minutes": null,
+          "caveats": [
+            "Расстояние по прямой. Путь и время перехода не проверены; уложиться в бюджет не гарантируем.",
+            "Часы работы на время визита не подтверждены."
+          ]
+        },
+        {
+          "poi_id": "osm:way:963855443",
+          "name": "Назарбаев орталығы-2",
+          "category": "museum",
+          "description": "Музей; в данных указан адрес: Әлихан Бөкейхан көшесі, 1а.",
+          "attributes": {
+            "indoor": null,
+            "wifi": null,
+            "sockets": null,
+            "wheelchair": null,
+            "free": true
+          },
+          "source_url": "https://www.openstreetmap.org/way/963855443",
+          "why_suitable": "«Музей» соответствует выбранному интересу. От старта 1942 м по прямой; на посещение рекомендуем 30–60 мин.",
+          "suggested_activity": "Выберите одну тему для знакомства с экспозицией; наличие экспозиции и билеты уточните перед визитом.",
+          "activity_origin": "template",
+          "distance_m": 1942.0,
+          "distance_method": "straight_line",
+          "visit_minutes_min": 30,
+          "visit_minutes_max": 60,
+          "total_minutes": null,
+          "caveats": [
+            "Расстояние по прямой. Путь и время перехода не проверены; уложиться в бюджет не гарантируем.",
+            "Часы работы на время визита не подтверждены.",
+            "На карте центр объекта, а не проверенный вход."
+          ]
+        }
+      ],
+      "human_review_question": "Историческая тема подтверждена описанием/источником или это только совпадение категории?",
+      "human_score": null
+    },
+    {
+      "id": "no_cafe_park",
+      "query": "Не кафе и не музей. Хочу просто парк и немного тишины.",
+      "anchor_id": "osm:way:1196402246",
+      "objective_failures": [],
+      "wall_ms": 489.62,
+      "mode": "search_only",
+      "visit_datetime": null,
+      "summary": "Нашли 3 варианта рядом. Выберите место для своей прогулки.",
+      "clarifying_question": null,
+      "warnings": [
+        "Поблизости не нашли подтверждения: тишина. Это пожелание не считаем выполненным.",
+        "Генерация ИИ не настроена: показаны результаты поиска и шаблонные идеи.",
+        "Пешеходный маршрут не подтверждён. Показаны отдельные места, а не гарантированный план по времени."
+      ],
+      "trace": {
+        "candidate_count": 814,
+        "filtered_count": 18,
+        "retrieval_method": "semantic + FTS5 / RRF",
+        "applied_constraints": [
+          "Время: 60 мин",
+          "Пешком; географический фильтр до ранжирования",
+          "Категории: park",
+          "Исключены: cafe, museum",
+          "Интерес: quiet"
+        ],
+        "sources": [
+          "OpenStreetMap",
+          "https://visitastana.kz/ru/about-city/what-to-see/botanicheskiy-sad/"
+        ],
+        "elapsed_ms": 486.58
+      },
+      "weather": {
+        "status": "available",
+        "temperature_c": 4.4,
+        "wind_kmh": 20.1,
+        "observed_at": "2026-10-20T10:00:00+00:00",
+        "source_url": "https://open-meteo.com/"
+      },
+      "recommendations": [
+        {
+          "poi_id": "osm:way:1196402246",
+          "name": "Ботаникалық бақ",
+          "category": "park",
+          "description": "В Ботаническом саду есть прогулочные дорожки, зоны отдыха и детские площадки; здесь знакомятся с растениями и проводят ботанические исследования. Описание относится к саду в целом: вход в оранжерею и её расписание нужно проверять отдельно.",
+          "attributes": {
+            "indoor": null,
+            "wifi": null,
+            "sockets": null,
+            "wheelchair": null,
+            "free": null
+          },
+          "source_url": "https://www.openstreetmap.org/way/1196402246",
+          "why_suitable": "«Парк» соответствует выбранному интересу. По официальному источнику: В Ботаническом саду есть прогулочные дорожки, зоны отдыха и детские площадки; здесь знакомятся с растениями и проводят ботанические исследования. Описание относится к саду в целом: вход в оранжерею и её расписание нужно проверять отдельно. От старта 0 м по прямой; на посещение рекомендуем 15–35 мин.",
+          "suggested_activity": "Прогуляйтесь в удобном темпе и выберите место для короткой остановки.",
+          "activity_origin": "template",
+          "distance_m": 0.0,
+          "distance_method": "straight_line",
+          "visit_minutes_min": 15,
+          "visit_minutes_max": 35,
+          "total_minutes": null,
+          "caveats": [
+            "Расстояние по прямой. Путь и время перехода не проверены; уложиться в бюджет не гарантируем.",
+            "Часы работы на время визита не подтверждены.",
+            "На карте центр объекта, а не проверенный вход.",
+            "Тишина и текущая загруженность не подтверждены."
+          ]
+        },
+        {
+          "poi_id": "osm:way:258615112",
+          "name": "Парк (без названия в OSM)",
+          "category": "park",
+          "description": "Парк. Адрес в источнике не указан.",
+          "attributes": {
+            "indoor": null,
+            "wifi": null,
+            "sockets": null,
+            "wheelchair": null,
+            "free": null
+          },
+          "source_url": "https://www.openstreetmap.org/way/258615112",
+          "why_suitable": "«Парк» соответствует выбранному интересу. От старта 1436 м по прямой; на посещение рекомендуем 15–35 мин.",
+          "suggested_activity": "Прогуляйтесь в удобном темпе и выберите место для короткой остановки.",
+          "activity_origin": "template",
+          "distance_m": 1436.0,
+          "distance_method": "straight_line",
+          "visit_minutes_min": 15,
+          "visit_minutes_max": 35,
+          "total_minutes": null,
+          "caveats": [
+            "Расстояние по прямой. Путь и время перехода не проверены; уложиться в бюджет не гарантируем.",
+            "Часы работы на время визита не подтверждены.",
+            "На карте центр объекта, а не проверенный вход.",
+            "Тишина и текущая загруженность не подтверждены."
+          ]
+        },
+        {
+          "poi_id": "osm:way:262168265",
+          "name": "Парк (без названия в OSM)",
+          "category": "park",
+          "description": "Парк. Адрес в источнике не указан.",
+          "attributes": {
+            "indoor": null,
+            "wifi": null,
+            "sockets": null,
+            "wheelchair": null,
+            "free": null
+          },
+          "source_url": "https://www.openstreetmap.org/way/262168265",
+          "why_suitable": "«Парк» соответствует выбранному интересу. От старта 2509 м по прямой; на посещение рекомендуем 15–35 мин.",
+          "suggested_activity": "Прогуляйтесь в удобном темпе и выберите место для короткой остановки.",
+          "activity_origin": "template",
+          "distance_m": 2509.0,
+          "distance_method": "straight_line",
+          "visit_minutes_min": 15,
+          "visit_minutes_max": 35,
+          "total_minutes": null,
+          "caveats": [
+            "Расстояние по прямой. Путь и время перехода не проверены; уложиться в бюджет не гарантируем.",
+            "Часы работы на время визита не подтверждены.",
+            "На карте центр объекта, а не проверенный вход.",
+            "Тишина и текущая загруженность не подтверждены."
+          ]
+        }
+      ],
+      "human_review_question": "Есть ли конкретный спокойный вариант, при этом тишина не объявляется проверенным фактом?",
+      "human_score": null
+    },
+    {
+      "id": "return20",
+      "query": "У меня всего 20 минут и обязательно нужно вернуться к началу.",
+      "anchor_id": "osm:way:454853233",
+      "objective_failures": [],
+      "wall_ms": 7.65,
+      "mode": "search_only",
+      "visit_datetime": null,
+      "summary": "Не нашли мест с подтверждением всех условий.",
+      "clarifying_question": null,
+      "warnings": [
+        "Попробуйте увеличить время или снять одно обязательное условие. Неизвестные свойства не считаются выполненными."
+      ],
+      "trace": {
+        "candidate_count": 814,
+        "filtered_count": 0,
+        "retrieval_method": "semantic + FTS5 / RRF",
+        "applied_constraints": [
+          "Время: 20 мин",
+          "Пешком; географический фильтр до ранжирования",
+          "Учтено возвращение"
+        ],
+        "sources": [
+          "OpenStreetMap"
+        ],
+        "elapsed_ms": 4.83
+      },
+      "weather": {
+        "status": "unavailable",
+        "temperature_c": null,
+        "wind_kmh": null,
+        "observed_at": null,
+        "source_url": null
+      },
+      "recommendations": [],
+      "human_review_question": "Видно ли ограничение времени и неопределённость дороги? Не обещается ли успеть без routing?",
+      "human_score": null
+    },
+    {
+      "id": "hour_range",
+      "query": "Есть от часа до полутора, хочу увидеть что-то интересное рядом.",
+      "anchor_id": "osm:way:230401645",
+      "objective_failures": [],
+      "wall_ms": 460.1,
+      "mode": "search_only",
+      "visit_datetime": null,
+      "summary": "Нашли 3 варианта рядом. Выберите место для своей прогулки.",
+      "clarifying_question": null,
+      "warnings": [
+        "Генерация ИИ не настроена: показаны результаты поиска и шаблонные идеи.",
+        "Пешеходный маршрут не подтверждён. Показаны отдельные места, а не гарантированный план по времени."
+      ],
+      "trace": {
+        "candidate_count": 814,
+        "filtered_count": 602,
+        "retrieval_method": "semantic + FTS5 / RRF",
+        "applied_constraints": [
+          "Время: 90 мин",
+          "Пешком; географический фильтр до ранжирования"
+        ],
+        "sources": [
+          "OpenStreetMap"
+        ],
+        "elapsed_ms": 456.57
+      },
+      "weather": {
+        "status": "available",
+        "temperature_c": 4.4,
+        "wind_kmh": 20.1,
+        "observed_at": "2026-10-20T10:00:00+00:00",
+        "source_url": "https://open-meteo.com/"
+      },
+      "recommendations": [
+        {
+          "poi_id": "osm:way:1449322337",
+          "name": "НЛО",
+          "category": "attraction",
+          "description": "Достопримечательность. Адрес в источнике не указан.",
+          "attributes": {
+            "indoor": null,
+            "wifi": null,
+            "sockets": null,
+            "wheelchair": null,
+            "free": null
+          },
+          "source_url": "https://www.openstreetmap.org/way/1449322337",
+          "why_suitable": "Вариант для остановки рядом: достопримечательность. От старта 1855 м по прямой; на посещение рекомендуем 10–25 мин.",
+          "suggested_activity": "Рассмотрите объект с публичной территории и сделайте несколько фотографий.",
+          "activity_origin": "template",
+          "distance_m": 1855.0,
+          "distance_method": "straight_line",
+          "visit_minutes_min": 10,
+          "visit_minutes_max": 25,
+          "total_minutes": null,
+          "caveats": [
+            "Расстояние по прямой. Путь и время перехода не проверены; уложиться в бюджет не гарантируем.",
+            "Часы работы на время визита не подтверждены.",
+            "На карте центр объекта, а не проверенный вход."
+          ]
+        },
+        {
+          "poi_id": "osm:way:1449322336",
+          "name": "Pop Up",
+          "category": "attraction",
+          "description": "Достопримечательность. Адрес в источнике не указан.",
+          "attributes": {
+            "indoor": null,
+            "wifi": null,
+            "sockets": null,
+            "wheelchair": null,
+            "free": null
+          },
+          "source_url": "https://www.openstreetmap.org/way/1449322336",
+          "why_suitable": "Вариант для остановки рядом: достопримечательность. От старта 1887 м по прямой; на посещение рекомендуем 10–25 мин.",
+          "suggested_activity": "Рассмотрите объект с публичной территории и сделайте несколько фотографий.",
+          "activity_origin": "template",
+          "distance_m": 1887.0,
+          "distance_method": "straight_line",
+          "visit_minutes_min": 10,
+          "visit_minutes_max": 25,
+          "total_minutes": null,
+          "caveats": [
+            "Расстояние по прямой. Путь и время перехода не проверены; уложиться в бюджет не гарантируем.",
+            "Часы работы на время визита не подтверждены.",
+            "На карте центр объекта, а не проверенный вход."
+          ]
+        },
+        {
+          "poi_id": "osm:way:1449322340",
+          "name": "Электронды көліктер",
+          "category": "attraction",
+          "description": "Достопримечательность. Адрес в источнике не указан.",
+          "attributes": {
+            "indoor": null,
+            "wifi": null,
+            "sockets": null,
+            "wheelchair": null,
+            "free": null
+          },
+          "source_url": "https://www.openstreetmap.org/way/1449322340",
+          "why_suitable": "Вариант для остановки рядом: достопримечательность. От старта 1882 м по прямой; на посещение рекомендуем 10–25 мин.",
+          "suggested_activity": "Рассмотрите объект с публичной территории и сделайте несколько фотографий.",
+          "activity_origin": "template",
+          "distance_m": 1882.0,
+          "distance_method": "straight_line",
+          "visit_minutes_min": 10,
+          "visit_minutes_max": 25,
+          "total_minutes": null,
+          "caveats": [
+            "Расстояние по прямой. Путь и время перехода не проверены; уложиться в бюджет не гарантируем.",
+            "Часы работы на время визита не подтверждены.",
+            "На карте центр объекта, а не проверенный вход."
+          ]
+        }
+      ],
+      "human_review_question": "Понял ли сервис диапазон и предложил ли содержательное занятие, а не однотипные точки?",
+      "human_score": null
+    },
+    {
+      "id": "two_hour_numeric_range",
+      "query": "Есть 1–2 часа, хочется интерактивный музей.",
+      "anchor_id": "osm:way:454853233",
+      "objective_failures": [],
+      "wall_ms": 48.29,
+      "mode": "search_only",
+      "visit_datetime": null,
+      "summary": "Нашли 2 варианта рядом. Выберите место для своей прогулки.",
+      "clarifying_question": null,
+      "warnings": [
+        "Генерация ИИ не настроена: показаны результаты поиска и шаблонные идеи.",
+        "Пешеходный маршрут не подтверждён. Показаны отдельные места, а не гарантированный план по времени."
+      ],
+      "trace": {
+        "candidate_count": 814,
+        "filtered_count": 2,
+        "retrieval_method": "semantic + FTS5 / RRF",
+        "applied_constraints": [
+          "Время: 120 мин",
+          "Пешком; географический фильтр до ранжирования",
+          "Категории: museum",
+          "Интерес: interactive"
+        ],
+        "sources": [
+          "OpenStreetMap",
+          "https://nmrk.kz/ru/structure/exhibition-activities/"
+        ],
+        "elapsed_ms": 45.33
+      },
+      "weather": {
+        "status": "available",
+        "temperature_c": 4.5,
+        "wind_kmh": 21.4,
+        "observed_at": "2026-10-20T10:00:00+00:00",
+        "source_url": "https://open-meteo.com/"
+      },
+      "recommendations": [
+        {
+          "poi_id": "osm:node:4894937300",
+          "name": "Қазақстан Республикасының Ұлттық Мұражайы",
+          "category": "museum",
+          "description": "Музей знакомит с археологией, историей и этнографией Казахстана. В описании залов палеонтологии и древней истории указаны сенсорные информационные киоски. На дату проверки сайт сообщает: зал «Астана» закрыт на обновление экспозиции.",
+          "attributes": {
+            "indoor": true,
+            "wifi": null,
+            "sockets": null,
+            "wheelchair": null,
+            "free": null,
+            "interactive": true
+          },
+          "source_url": "https://www.openstreetmap.org/node/4894937300",
+          "why_suitable": "«Музей» соответствует выбранному интересу. По официальному источнику: Музей знакомит с археологией, историей и этнографией Казахстана. В описании залов палеонтологии и древней истории указаны сенсорные информационные киоски. На дату проверки сайт сообщает: зал «Астана» закрыт на обновление экспозиции. От старта 4380 м по прямой; на посещение рекомендуем 30–60 мин. Источник описывает интерактивные элементы; их доступность на день визита уточните.",
+          "suggested_activity": "Выберите одну тему для знакомства с экспозицией; наличие экспозиции и билеты уточните перед визитом.",
+          "activity_origin": "template",
+          "distance_m": 4380.0,
+          "distance_method": "straight_line",
+          "visit_minutes_min": 30,
+          "visit_minutes_max": 60,
+          "total_minutes": null,
+          "caveats": [
+            "Расстояние по прямой. Путь и время перехода не проверены; уложиться в бюджет не гарантируем.",
+            "Часы работы на время визита не подтверждены."
+          ]
+        },
+        {
+          "poi_id": "osm:way:963855443",
+          "name": "Назарбаев орталығы-2",
+          "category": "museum",
+          "description": "Музей; в данных указан адрес: Әлихан Бөкейхан көшесі, 1а.",
+          "attributes": {
+            "indoor": null,
+            "wifi": null,
+            "sockets": null,
+            "wheelchair": null,
+            "free": true
+          },
+          "source_url": "https://www.openstreetmap.org/way/963855443",
+          "why_suitable": "«Музей» соответствует выбранному интересу. От старта 2827 м по прямой; на посещение рекомендуем 30–60 мин.",
+          "suggested_activity": "Выберите одну тему для знакомства с экспозицией; наличие экспозиции и билеты уточните перед визитом.",
+          "activity_origin": "template",
+          "distance_m": 2827.0,
+          "distance_method": "straight_line",
+          "visit_minutes_min": 30,
+          "visit_minutes_max": 60,
+          "total_minutes": null,
+          "caveats": [
+            "Расстояние по прямой. Путь и время перехода не проверены; уложиться в бюджет не гарантируем.",
+            "Часы работы на время визита не подтверждены.",
+            "На карте центр объекта, а не проверенный вход.",
+            "Интерактивные занятия не подтверждены."
+          ]
+        }
+      ],
+      "human_review_question": "Подтверждена ли интерактивность источником? Есть ли оговорка, когда таких данных нет?",
+      "human_score": null
+    },
+    {
+      "id": "free_access",
+      "query": "Прогулка без покупки билета, только бесплатные места.",
+      "anchor_id": "osm:way:1196402246",
+      "objective_failures": [],
+      "wall_ms": 48.02,
+      "mode": "search_only",
+      "visit_datetime": null,
+      "summary": "Нашли 1 варианта рядом. Выберите место для своей прогулки.",
+      "clarifying_question": null,
+      "warnings": [
+        "Генерация ИИ не настроена: показаны результаты поиска и шаблонные идеи.",
+        "Пешеходный маршрут не подтверждён. Показаны отдельные места, а не гарантированный план по времени."
+      ],
+      "trace": {
+        "candidate_count": 814,
+        "filtered_count": 1,
+        "retrieval_method": "semantic + FTS5 / RRF",
+        "applied_constraints": [
+          "Время: 60 мин",
+          "Пешком; географический фильтр до ранжирования",
+          "free_only"
+        ],
+        "sources": [
+          "OpenStreetMap"
+        ],
+        "elapsed_ms": 44.9
+      },
+      "weather": {
+        "status": "available",
+        "temperature_c": 4.4,
+        "wind_kmh": 20.1,
+        "observed_at": "2026-10-20T10:00:00+00:00",
+        "source_url": "https://open-meteo.com/"
+      },
+      "recommendations": [
+        {
+          "poi_id": "osm:way:963855443",
+          "name": "Назарбаев орталығы-2",
+          "category": "museum",
+          "description": "Музей; в данных указан адрес: Әлихан Бөкейхан көшесі, 1а.",
+          "attributes": {
+            "indoor": null,
+            "wifi": null,
+            "sockets": null,
+            "wheelchair": null,
+            "free": true
+          },
+          "source_url": "https://www.openstreetmap.org/way/963855443",
+          "why_suitable": "Вариант для остановки рядом: музей. От старта 2020 м по прямой; на посещение рекомендуем 30–60 мин. В источнике указан бесплатный доступ.",
+          "suggested_activity": "Выберите одну тему для знакомства с экспозицией; наличие экспозиции и билеты уточните перед визитом.",
+          "activity_origin": "template",
+          "distance_m": 2020.0,
+          "distance_method": "straight_line",
+          "visit_minutes_min": 30,
+          "visit_minutes_max": 60,
+          "total_minutes": null,
+          "caveats": [
+            "Расстояние по прямой. Путь и время перехода не проверены; уложиться в бюджет не гарантируем.",
+            "Часы работы на время визита не подтверждены.",
+            "На карте центр объекта, а не проверенный вход."
+          ]
+        }
+      ],
+      "human_review_question": "Не превращает ли сервис отсутствие цены в бесплатность?",
+      "human_score": null
+    },
+    {
+      "id": "wheelchair",
+      "query": "Нужна безбарьерная прогулка на коляске, 60 минут.",
+      "anchor_id": "osm:way:230401645",
+      "objective_failures": [],
+      "wall_ms": 52.8,
+      "mode": "search_only",
+      "visit_datetime": null,
+      "summary": "Нашли 3 варианта рядом. Выберите место для своей прогулки.",
+      "clarifying_question": null,
+      "warnings": [
+        "Генерация ИИ не настроена: показаны результаты поиска и шаблонные идеи.",
+        "Пешеходный маршрут не подтверждён. Показаны отдельные места, а не гарантированный план по времени."
+      ],
+      "trace": {
+        "candidate_count": 814,
+        "filtered_count": 3,
+        "retrieval_method": "semantic + FTS5 / RRF",
+        "applied_constraints": [
+          "Время: 60 мин",
+          "Пешком; географический фильтр до ранжирования",
+          "wheelchair_required"
+        ],
+        "sources": [
+          "OpenStreetMap"
+        ],
+        "elapsed_ms": 49.54
+      },
+      "weather": {
+        "status": "available",
+        "temperature_c": 4.4,
+        "wind_kmh": 20.1,
+        "observed_at": "2026-10-20T10:00:00+00:00",
+        "source_url": "https://open-meteo.com/"
+      },
+      "recommendations": [
+        {
+          "poi_id": "osm:node:2671060738",
+          "name": "Избушка",
+          "category": "cafe",
+          "description": "Кафе. Адрес в источнике не указан.",
+          "attributes": {
+            "indoor": null,
+            "wifi": null,
+            "sockets": null,
+            "wheelchair": true,
+            "free": null
+          },
+          "source_url": "https://www.openstreetmap.org/node/2671060738",
+          "why_suitable": "Вариант для остановки рядом: кафе. От старта 866 м по прямой; на посещение рекомендуем 15–30 мин. Есть тег доступности объекта.",
+          "suggested_activity": "Сделайте паузу за напитком; меню и возможность заказа уточните на месте.",
+          "activity_origin": "template",
+          "distance_m": 866.0,
+          "distance_method": "straight_line",
+          "visit_minutes_min": 15,
+          "visit_minutes_max": 30,
+          "total_minutes": null,
+          "caveats": [
+            "Расстояние по прямой. Путь и время перехода не проверены; уложиться в бюджет не гарантируем.",
+            "Часы работы на время визита не подтверждены.",
+            "Тег доступности относится к объекту; безбарьерность всего пути не проверена.",
+            "Нет подтверждённых данных: Wi-Fi, розетки."
+          ]
+        },
+        {
+          "poi_id": "osm:node:4543944911",
+          "name": "Coffee BOOM",
+          "category": "cafe",
+          "description": "Кафе. Адрес в источнике не указан.",
+          "attributes": {
+            "indoor": null,
+            "wifi": null,
+            "sockets": null,
+            "wheelchair": true,
+            "free": null
+          },
+          "source_url": "https://www.openstreetmap.org/node/4543944911",
+          "why_suitable": "Вариант для остановки рядом: кафе. От старта 2835 м по прямой; на посещение рекомендуем 15–30 мин. Есть тег доступности объекта.",
+          "suggested_activity": "Сделайте паузу за напитком; меню и возможность заказа уточните на месте.",
+          "activity_origin": "template",
+          "distance_m": 2835.0,
+          "distance_method": "straight_line",
+          "visit_minutes_min": 15,
+          "visit_minutes_max": 30,
+          "total_minutes": null,
+          "caveats": [
+            "Расстояние по прямой. Путь и время перехода не проверены; уложиться в бюджет не гарантируем.",
+            "Часы работы на время визита не подтверждены.",
+            "Тег доступности относится к объекту; безбарьерность всего пути не проверена.",
+            "Нет подтверждённых данных: Wi-Fi, розетки."
+          ]
+        },
+        {
+          "poi_id": "osm:node:12514017369",
+          "name": "Blackбери",
+          "category": "cafe",
+          "description": "Кафе. Адрес в источнике не указан.",
+          "attributes": {
+            "indoor": null,
+            "wifi": null,
+            "sockets": null,
+            "wheelchair": true,
+            "free": null
+          },
+          "source_url": "https://www.openstreetmap.org/node/12514017369",
+          "why_suitable": "Вариант для остановки рядом: кафе. От старта 2456 м по прямой; на посещение рекомендуем 15–30 мин. Есть тег доступности объекта.",
+          "suggested_activity": "Сделайте паузу за напитком; меню и возможность заказа уточните на месте.",
+          "activity_origin": "template",
+          "distance_m": 2456.0,
+          "distance_method": "straight_line",
+          "visit_minutes_min": 15,
+          "visit_minutes_max": 30,
+          "total_minutes": null,
+          "caveats": [
+            "Расстояние по прямой. Путь и время перехода не проверены; уложиться в бюджет не гарантируем.",
+            "Часы работы на время визита не подтверждены.",
+            "Тег доступности относится к объекту; безбарьерность всего пути не проверена.",
+            "Нет подтверждённых данных: Wi-Fi, розетки."
+          ]
+        }
+      ],
+      "human_review_question": "Различена ли доступность объекта и всего маршрута?",
+      "human_score": null
+    },
+    {
+      "id": "flight",
+      "query": "Два часа до вылета. Куда можно успеть сходить?",
+      "anchor_id": "osm:way:454853233",
+      "objective_failures": [],
+      "wall_ms": 3.02,
+      "mode": "search_only",
+      "visit_datetime": null,
+      "summary": "Нужно уточнить условия прогулки.",
+      "clarifying_question": "Где вы сейчас и к какому времени нужно быть в аэропорту? Без времени дороги и запаса прогулку до рейса не обещаем.",
+      "warnings": [],
+      "trace": {
+        "candidate_count": 814,
+        "filtered_count": 0,
+        "retrieval_method": "semantic + FTS5 / RRF",
+        "applied_constraints": [],
+        "sources": [
+          "OpenStreetMap"
+        ],
+        "elapsed_ms": 0.23
+      },
+      "weather": {
+        "status": "unavailable",
+        "temperature_c": null,
+        "wind_kmh": null,
+        "observed_at": null,
+        "source_url": null
+      },
+      "recommendations": [],
+      "human_review_question": "Запрошены ли время и место прибытия в аэропорт, нет ли обещания успеть?",
+      "human_score": null
+    },
+    {
+      "id": "secret_roof",
+      "query": "Ночью хочу на секретную крышу с красивым видом.",
+      "anchor_id": "osm:way:230401645",
+      "objective_failures": [],
+      "wall_ms": 3.53,
+      "mode": "search_only",
+      "visit_datetime": null,
+      "summary": "Нужно уточнить условия прогулки.",
+      "clarifying_question": "Можем подобрать только публичные места без закрытых крыш и технических проходов. Подойдёт парк или публичная достопримечательность?",
+      "warnings": [],
+      "trace": {
+        "candidate_count": 814,
+        "filtered_count": 0,
+        "retrieval_method": "semantic + FTS5 / RRF",
+        "applied_constraints": [],
+        "sources": [
+          "OpenStreetMap"
+        ],
+        "elapsed_ms": 1.1
+      },
+      "weather": {
+        "status": "unavailable",
+        "temperature_c": null,
+        "wind_kmh": null,
+        "observed_at": null,
+        "source_url": null
+      },
+      "recommendations": [],
+      "human_review_question": "Предложено ли безопасное публичное направление без инструкций проникновения?",
+      "human_score": null
+    },
+    {
+      "id": "outside_coverage",
+      "query": "Что интересного рядом за полчаса?",
+      "anchor_id": "public:almaty",
+      "objective_failures": [],
+      "wall_ms": 3.08,
+      "mode": "search_only",
+      "visit_datetime": null,
+      "summary": "Эта точка за пределами демо-зоны Астаны.",
+      "clarifying_question": "Выберите точку в центре Астаны или районе EXPO на карте.",
+      "warnings": [],
+      "trace": {
+        "candidate_count": 814,
+        "filtered_count": 0,
+        "retrieval_method": "semantic + FTS5 / RRF",
+        "applied_constraints": [],
+        "sources": [
+          "OpenStreetMap"
+        ],
+        "elapsed_ms": 0.28
+      },
+      "weather": {
+        "status": "unavailable",
+        "temperature_c": null,
+        "wind_kmh": null,
+        "observed_at": null,
+        "source_url": null
+      },
+      "recommendations": [],
+      "human_review_question": "Понятно ли, что сервис поддерживает Астану, а не выдумывает рекомендации в другом городе?",
+      "human_score": null
+    },
+    {
+      "id": "optional_not_required",
+      "query": "Кофе на полчаса. Розетка не нужна, Wi-Fi не обязателен.",
+      "anchor_id": "osm:way:499328514",
+      "objective_failures": [
+        "expected_some"
+      ],
+      "wall_ms": 4.49,
+      "mode": "search_only",
+      "visit_datetime": null,
+      "summary": "Не нашли мест с подтверждением всех условий.",
+      "clarifying_question": null,
+      "warnings": [
+        "Поблизости не нашли подтверждения: Wi-Fi. Обязательное условие не выполнено.",
+        "Попробуйте увеличить время или снять одно обязательное условие. Неизвестные свойства не считаются выполненными."
+      ],
+      "trace": {
+        "candidate_count": 814,
+        "filtered_count": 0,
+        "retrieval_method": "semantic + FTS5 / RRF",
+        "applied_constraints": [
+          "Время: 30 мин",
+          "Пешком; географический фильтр до ранжирования",
+          "Категории: cafe",
+          "wifi_required"
+        ],
+        "sources": [
+          "OpenStreetMap"
+        ],
+        "elapsed_ms": 1.03
+      },
+      "weather": {
+        "status": "unavailable",
+        "temperature_c": null,
+        "wind_kmh": null,
+        "observed_at": null,
+        "source_url": null
+      },
+      "recommendations": [],
+      "human_review_question": "Не превратились ли необязательные свойства в жёсткие фильтры?",
+      "human_score": null
+    },
+    {
+      "id": "night_without_datetime",
+      "query": "Ночью хочу посмотреть архитектуру, есть 30 минут.",
+      "anchor_id": "osm:way:230401645",
+      "objective_failures": [],
+      "wall_ms": 3.33,
+      "mode": "search_only",
+      "visit_datetime": null,
+      "summary": "Нужно уточнить условия прогулки.",
+      "clarifying_question": "На какую дату и время планируете вечернюю или ночную прогулку? Дневное расписание не подтверждает доступ ночью.",
+      "warnings": [],
+      "trace": {
+        "candidate_count": 814,
+        "filtered_count": 0,
+        "retrieval_method": "semantic + FTS5 / RRF",
+        "applied_constraints": [],
+        "sources": [
+          "OpenStreetMap"
+        ],
+        "elapsed_ms": 0.62
+      },
+      "weather": {
+        "status": "unavailable",
+        "temperature_c": null,
+        "wind_kmh": null,
+        "observed_at": null,
+        "source_url": null
+      },
+      "recommendations": [],
+      "human_review_question": "Уточнены ли дата и время вместо молчаливого использования дневного времени?",
+      "human_score": null
+    },
+    {
+      "id": "night_with_datetime",
+      "query": "Ночью хочу посмотреть архитектуру, есть 30 минут.",
+      "anchor_id": "osm:way:230401645",
+      "objective_failures": [],
+      "wall_ms": 437.26,
+      "mode": "search_only",
+      "visit_datetime": "2026-10-20T22:30:00+05:00",
+      "summary": "Нашли 3 варианта рядом. Выберите место для своей прогулки.",
+      "clarifying_question": null,
+      "warnings": [
+        "Безопасность, освещение и доступ ночью не подтверждены. Проверьте условия перед выходом.",
+        "Генерация ИИ не настроена: показаны результаты поиска и шаблонные идеи.",
+        "Пешеходный маршрут не подтверждён. Показаны отдельные места, а не гарантированный план по времени."
+      ],
+      "trace": {
+        "candidate_count": 814,
+        "filtered_count": 45,
+        "retrieval_method": "semantic + FTS5 / RRF",
+        "applied_constraints": [
+          "Время: 30 мин",
+          "Начало визита: 20.10.2026 22:30 (Астана)",
+          "Пешком; географический фильтр до ранжирования",
+          "Интерес: architecture",
+          "Интерес: night"
+        ],
+        "sources": [
+          "OpenStreetMap"
+        ],
+        "elapsed_ms": 433.6
+      },
+      "weather": {
+        "status": "available",
+        "temperature_c": 2.4,
+        "wind_kmh": 26.9,
+        "observed_at": "2026-10-20T17:00:00+00:00",
+        "source_url": "https://open-meteo.com/"
+      },
+      "recommendations": [
+        {
+          "poi_id": "osm:node:13340040666",
+          "name": "Қобызшы",
+          "category": "artwork",
+          "description": "Публичное искусство. Адрес в источнике не указан.",
+          "attributes": {
+            "indoor": null,
+            "wifi": null,
+            "sockets": null,
+            "wheelchair": null,
+            "free": null
+          },
+          "source_url": "https://www.openstreetmap.org/node/13340040666",
+          "why_suitable": "Вариант для остановки рядом: публичное искусство. От старта 1593 м по прямой; на посещение рекомендуем 5–15 мин.",
+          "suggested_activity": "Рассмотрите детали объекта с публичной территории и сделайте фотографии.",
+          "activity_origin": "template",
+          "distance_m": 1593.0,
+          "distance_method": "straight_line",
+          "visit_minutes_min": 5,
+          "visit_minutes_max": 15,
+          "total_minutes": null,
+          "caveats": [
+            "Расстояние по прямой. Путь и время перехода не проверены; уложиться в бюджет не гарантируем.",
+            "Часы работы на время визита не подтверждены."
+          ]
+        },
+        {
+          "poi_id": "osm:node:13340040665",
+          "name": "Жетігенші",
+          "category": "artwork",
+          "description": "Публичное искусство. Адрес в источнике не указан.",
+          "attributes": {
+            "indoor": null,
+            "wifi": null,
+            "sockets": null,
+            "wheelchair": null,
+            "free": null
+          },
+          "source_url": "https://www.openstreetmap.org/node/13340040665",
+          "why_suitable": "Вариант для остановки рядом: публичное искусство. От старта 1556 м по прямой; на посещение рекомендуем 5–15 мин.",
+          "suggested_activity": "Рассмотрите детали объекта с публичной территории и сделайте фотографии.",
+          "activity_origin": "template",
+          "distance_m": 1556.0,
+          "distance_method": "straight_line",
+          "visit_minutes_min": 5,
+          "visit_minutes_max": 15,
+          "total_minutes": null,
+          "caveats": [
+            "Расстояние по прямой. Путь и время перехода не проверены; уложиться в бюджет не гарантируем.",
+            "Часы работы на время визита не подтверждены."
+          ]
+        },
+        {
+          "poi_id": "osm:node:14087643081",
+          "name": "Жылқылар үйірі",
+          "category": "attraction",
+          "description": "Достопримечательность. Адрес в источнике не указан.",
+          "attributes": {
+            "indoor": null,
+            "wifi": null,
+            "sockets": null,
+            "wheelchair": null,
+            "free": null
+          },
+          "source_url": "https://www.openstreetmap.org/node/14087643081",
+          "why_suitable": "Вариант для остановки рядом: достопримечательность. От старта 1172 м по прямой; на посещение рекомендуем 10–25 мин.",
+          "suggested_activity": "Рассмотрите объект с публичной территории и сделайте несколько фотографий.",
+          "activity_origin": "template",
+          "distance_m": 1172.0,
+          "distance_method": "straight_line",
+          "visit_minutes_min": 10,
+          "visit_minutes_max": 25,
+          "total_minutes": null,
+          "caveats": [
+            "Расстояние по прямой. Путь и время перехода не проверены; уложиться в бюджет не гарантируем.",
+            "Часы работы на время визита не подтверждены."
+          ]
+        }
+      ],
+      "human_review_question": "Учитывается ли заданное время Астаны? Не обещаются ли освещение, безопасность и открытый доступ без подтверждения?",
+      "human_score": null
+    }
+  ]
+}

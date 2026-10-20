@@ -9,7 +9,7 @@ const path = require('node:path');
 const assert = require('node:assert/strict');
 
 const BASE = process.env.QADAM_URL || 'http://127.0.0.1:8000';
-const OUTPUT = path.resolve(__dirname, '../artifacts');
+const OUTPUT = process.env.QADAM_ARTIFACTS ? path.resolve(process.env.QADAM_ARTIFACTS) : path.resolve(__dirname, '../artifacts');
 const checks = [];
 const record = (name, detail) => checks.push({ name, passed: true, detail });
 

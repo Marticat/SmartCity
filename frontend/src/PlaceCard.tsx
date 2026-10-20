@@ -1,11 +1,29 @@
 import { ArrowUpRight, Clock3, ExternalLink, MapPin, ShieldCheck, Sparkles, ChevronDown, Info } from 'lucide-react'
 import type { Recommendation } from './types'
-import { categoryName, formatDate, ru, safeUrl } from './i18n'
+import { categoryName, evidenceName, formatDate, ru, safeUrl } from './i18n'
+
+function provenance(value: unknown) {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) return null
+  const record = value as Record<string, unknown>
+  return {
+    url: typeof record.source_url === 'string' ? safeUrl(record.source_url) : undefined,
+    name: typeof record.source_name === 'string' ? record.source_name : 'Источник сведений',
+    collected: typeof record.collected_at === 'string' ? record.collected_at : null,
+  }
+}
 
 export default function PlaceCard({ item, index, selected, onSelect, wheelchairRequired = false }: {
   item: Recommendation; index: number; selected: boolean; onSelect: () => void; wheelchairRequired?: boolean
 }) {
   const { poi } = item
+  const descriptionSource = provenance(poi.field_provenance.description)
+  const officialDescription = poi.description_origin === 'official_source_summary'
+  const attributeSources = Object.entries(poi.field_provenance).flatMap(([key, value]) => {
+    if (!key.startsWith('attributes.')) return []
+    const source = provenance(value)
+    return source?.url && source.url !== safeUrl(poi.source_url)
+      ? [{ key, label: evidenceName(key), ...source }] : []
+  })
   const distance = item.distance_m >= 1000 ? `${(item.distance_m / 1000).toFixed(1)} км` : `${Math.round(item.distance_m)} м`
   // API caveats are authoritative. Collapse only messages already shown explicitly.
   const caveats = [...new Set(item.caveats.map(caveat => caveat.trim()))].filter(caveat => {
@@ -27,7 +45,7 @@ export default function PlaceCard({ item, index, selected, onSelect, wheelchairR
     </div>
     <div className="place-metrics"><span><MapPin size={14} />{distance} {item.distance_method === 'straight_line' ? 'по прямой' : 'пешком'}</span>
       <span><Clock3 size={14} />{item.visit_minutes_min}–{item.visit_minutes_max} мин на месте</span></div>
-    <p className="place-why">{item.why_suitable}</p>
+    <p className="place-why"><span className="explanation-label">{item.activity_origin === 'ai' ? 'ПОЧЕМУ ПОДОЙДЁТ · ОБЪЯСНЕНИЕ ИИ' : 'ПОЧЕМУ ПОДОЙДЁТ · ПО ДАННЫМ'}</span>{item.why_suitable}</p>
     <div className="activity"><Sparkles size={16} /><div><span>{item.activity_origin === 'ai' ? 'ИДЕЯ ИИ' : 'ИДЕЯ ДЛЯ ПРОГУЛКИ · ШАБЛОН'}</span><p>{item.suggested_activity}</p></div></div>
     <div className="place-known">
       <span className={item.opening_status === 'open' ? 'verified' : 'unknown'}>{item.opening_status === 'open' ? 'Открыто по данным расписания' : item.opening_status === 'closed' ? 'Закрыто по данным расписания' : 'Часы работы не подтверждены'}</span>
@@ -37,16 +55,24 @@ export default function PlaceCard({ item, index, selected, onSelect, wheelchairR
     </div>
     <details className="source-details"><summary><ShieldCheck size={14} />Источники и сведения<ChevronDown size={14} /></summary>
       <div className="source-body">
-        <p><strong>Факт из источника:</strong> {poi.description || categoryName(poi.category)}</p>
+        <p><strong>{officialDescription ? 'Краткое описание по официальному источнику:' : 'По данным OSM:'}</strong> {poi.description || categoryName(poi.category)}</p>
+        {descriptionSource?.url && <div className="provenance-reference">
+          <a href={descriptionSource.url} target="_blank" rel="noopener noreferrer">{descriptionSource.name}<ExternalLink size={12} /></a>
+          <span>Описание получено: {formatDate(descriptionSource.collected)}</span>
+        </div>}
         {poi.address && <p><strong>Адрес:</strong> {poi.address}</p>}
         <p><strong>Расписание:</strong> {poi.opening_hours_raw || 'нет данных'}</p>
         <dl className="attributes">{Object.entries(ru.attributes).map(([key, label]) =>
           <div key={key}><dt>{label}</dt><dd>{poi.attributes[key] === true ? 'Подтверждено' : poi.attributes[key] === false ? 'Нет' : 'Нет данных'}</dd></div>)}</dl>
-        <p>Загружено: {formatDate(poi.collected_at)}. Это дата сбора, не подтверждение заведением.</p>
-        <p>Изменение в источнике: {formatDate(poi.source_updated_at)}.</p>
+        {attributeSources.map(source => <div className="provenance-reference" key={source.key}>
+          <span>{source.label}:</span><a href={source.url} target="_blank" rel="noopener noreferrer">{source.name}<ExternalLink size={12} /></a>
+          <span>Получено: {formatDate(source.collected)}</span>
+        </div>)}
+        <p>Данные OSM загружены: {formatDate(poi.collected_at)}. Это дата сбора, не подтверждение заведением.</p>
+        <p>Изменение в OSM: {formatDate(poi.source_updated_at)}.</p>
         <p>Координаты: {poi.coordinate_kind === 'node' || poi.coordinate_kind === 'point' ? 'точка объекта' : 'центр объекта; вход может находиться в другом месте'}.</p>
         {detailCaveats.map(caveat => <p key={caveat}>{caveat}</p>)}
-        {!!item.evidence_field_ids.length && <p>Поля для объяснения: {item.evidence_field_ids.join(', ')}.</p>}
+        {!!item.evidence_field_ids.length && <p>Основание для объяснения: {[...new Set(item.evidence_field_ids.map(evidenceName))].join(', ')}.</p>}
         <a href={safeUrl(poi.source_url)} target="_blank" rel="noopener noreferrer">Запись OpenStreetMap<ExternalLink size={13} /></a>
       </div>
     </details>
