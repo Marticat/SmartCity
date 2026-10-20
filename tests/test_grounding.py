@@ -120,13 +120,13 @@ def test_provider_prose_is_reviewed_then_delivered(monkeypatch, recommendation_f
         async def __aenter__(self): return self
         async def __aexit__(self, *args): calls.append("closed")
         async def generate_content(self, **kwargs):
-            calls.append(kwargs["config"].response_schema)
+            calls.append(kwargs["config"].response_json_schema)
             return SimpleNamespace(text=answers.pop(0))
     monkeypatch.setenv("GEMINI_API_KEY", "test-only")
     monkeypatch.setattr(genai, "Client", Client)
     result, warning = asyncio.run(GeminiGenerator().generate([rec], parse_intent(RecommendRequest(query="кофе"))))
     assert warning is None and "{{" not in result.recommendations[0].why_suitable
-    assert calls == [GeneratedResponse, GroundingReview, "closed"]
+    assert calls == [GeneratedResponse.model_json_schema(), GroundingReview.model_json_schema(), "closed"]
 
 
 def test_repeated_reviewer_rejection_falls_back(monkeypatch, recommendation_factory):
@@ -138,9 +138,9 @@ def test_repeated_reviewer_rejection_falls_back(monkeypatch, recommendation_fact
         async def __aenter__(self): return self
         async def __aexit__(self, *args): pass
         async def generate_content(self, **kwargs):
-            schema = kwargs["config"].response_schema
+            schema = kwargs["config"].response_json_schema
             calls.append(schema)
-            body = payload(rec) if schema == GeneratedResponse else GroundingReview(
+            body = payload(rec) if schema == GeneratedResponse.model_json_schema() else GroundingReview(
                 all_claims_supported=False, activities_are_only_suggestions=True,
                 constraints_preserved=True, reviewed_poi_ids=[rec.poi.id], issues=["unsupported"])
             return SimpleNamespace(text=body.model_dump_json())

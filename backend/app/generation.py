@@ -181,19 +181,24 @@ class GeminiGenerator:
             "suggested_activity: invent a useful small personal activity tied to themes, starting with an imperative "
             "such as 'Попробуйте', 'Выберите', 'Сравните'. It is a suggestion, not a promise of an event, service, exhibit, access or safety. "
             "Do not propose visiting a hall that the description says is closed. Never infer quietness or functioning screens. "
+            "Never describe a place as cozy, pleasant, comfortable, atmospheric, welcoming or ideal: "
+            "these are unverified properties, including in summary and suggested_activity. "
+            "Do not imply a planned route or guaranteed entry. A suggestion can be to record personal impressions, "
+            "discuss interests or choose a topic, without promising surroundings, a seat, an order or access. "
             "No raw URLs, numbers, markdown, invented amenities or certainty. "
-            "summary: brief invitation reflecting themes, no new facts or guarantee every preference was met. "
+            "summary: neutral invitation reflecting themes, no new facts or guarantee every preference was met. "
+            "For example: 'Рассмотрите эти варианты для короткой остановки.' "
             "caveats may only copy mandatory_caveats; backend retains all. clarifying_question=null. "
             + json.dumps(context, ensure_ascii=False)
         )
         async def run():
             client = genai.Client(api_key=os.environ["GEMINI_API_KEY"], http_options=types.HttpOptions(
-                timeout=8000, retry_options=types.HttpRetryOptions(attempts=1)))
+                timeout=15000, retry_options=types.HttpRetryOptions(attempts=1)))
             async with client.aio as async_client:
                 correction = ""
                 for attempt in range(2):
                     response = await async_client.models.generate_content(model=LLM_MODEL, contents=prompt+correction,
-                        config=types.GenerateContentConfig(response_mime_type="application/json", response_schema=GeneratedResponse, temperature=0.4))
+                        config=types.GenerateContentConfig(response_mime_type="application/json", response_json_schema=GeneratedResponse.model_json_schema(), temperature=0.4))
                     try:
                         parsed = GeneratedResponse.model_validate_json(response.text)
                         rendered = validate_grounded(parsed, candidates)
@@ -206,7 +211,7 @@ class GeminiGenerator:
                             "Return all reviewed POI IDs; false with short issues if uncertain. A place category alone confirms no amenity. "
                             + json.dumps({"context": context, "proposed": rendered.model_dump()}, ensure_ascii=False))
                         reviewed = await async_client.models.generate_content(model=LLM_MODEL, contents=review_prompt,
-                            config=types.GenerateContentConfig(response_mime_type="application/json", response_schema=GroundingReview, temperature=0))
+                            config=types.GenerateContentConfig(response_mime_type="application/json", response_json_schema=GroundingReview.model_json_schema(), temperature=0))
                         review = GroundingReview.model_validate_json(reviewed.text)
                         return validate_review(review, rendered), None
                     except (ValueError, TypeError):

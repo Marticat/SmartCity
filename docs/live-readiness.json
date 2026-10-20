@@ -1,18 +1,24 @@
 {
-  "checked_at": "2026-10-20T09:33:58.113658+00:00",
-  "all_selected_passed": false,
+  "checked_at": "2026-10-20T10:56:37.498014+00:00",
+  "all_selected_passed": true,
   "credentials_stored": false,
   "raw_provider_responses_stored": false,
   "checks": {
     "gemini": {
-      "status": "skipped",
-      "reason": "missing_server_variable",
-      "required_variable": "GEMINI_API_KEY"
-    },
-    "ors": {
-      "status": "skipped",
-      "reason": "missing_server_variable",
-      "required_variable": "ORS_API_KEY"
+      "status": "passed",
+      "reason": "real_grounded_rag_response",
+      "model": "gemini-3.5-flash-lite",
+      "mode": "rag",
+      "dataset_checksum": "73d19201cb01a2eaaea87661edad69d694ed13a4eb797b5423678659bb59e74d",
+      "public_anchor_id": "osm:node:9047331879",
+      "recommendation_ids": [
+        "osm:node:13173517356",
+        "osm:node:14275682079",
+        "osm:node:9047331879"
+      ],
+      "elapsed_ms": 5573.9,
+      "auxiliary_services": "weather/routing disabled for this isolated provider check",
+      "generated_text_stored": false
     }
   }
 }

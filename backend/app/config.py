@@ -9,7 +9,7 @@ DATA_DIR = Path(os.getenv("DATA_DIR", str(ROOT / "data")))
 MODEL_NAME = os.getenv("EMBEDDING_MODEL", "intfloat/multilingual-e5-small")
 MODEL_REVISION = os.getenv("EMBEDDING_REVISION", "main")
 MODEL_PATH = DATA_DIR / "models" / "multilingual-e5-small"
-LLM_MODEL = os.getenv("LLM_MODEL", "gemini-3.8-flash")
+LLM_MODEL = os.getenv("LLM_MODEL", "gemini-3.5-flash-lite")
 USER_AGENT = "QADAM-Astana/1.0 (educational POI research; batch collection)"
 # Deliberate demo rectangle, not an assertion of administrative boundaries.
 # Bounds contain the OSM city centre and the verified EXPO area.

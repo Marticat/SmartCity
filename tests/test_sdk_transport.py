@@ -32,7 +32,15 @@ def test_real_sdk_serializes_both_schemas_and_parses_responses(monkeypatch, reco
         assert ":generateContent" in request.url.path
         config = body["generationConfig"]
         assert config["responseMimeType"] == "application/json"
-        assert "properties" in config["responseSchema"]
+        # Pydantic's extra="forbid" needs JSON Schema, not Gemini's legacy
+        # Schema protobuf (which rejects additional_properties over the wire).
+        assert "responseSchema" not in config
+        schema = config["responseJsonSchema"]
+        assert "properties" in schema
+        assert schema["additionalProperties"] is False
+        if "$defs" in schema:
+            assert schema["$defs"]["GeneratedRecommendation"]["additionalProperties"] is False
+        assert "additional_properties" not in json.dumps(schema)
         requests.append(body)
         answer = answers.pop(0)
         return httpx.Response(200, json={"candidates": [{
@@ -43,6 +51,8 @@ def test_real_sdk_serializes_both_schemas_and_parses_responses(monkeypatch, reco
     original_client = genai.Client
 
     def offline_client(**kwargs):
+        # The live API rejects explicitly configured deadlines below 10s.
+        assert kwargs["http_options"].timeout >= 10000
         kwargs["http_options"] = kwargs["http_options"].model_copy(update={
             "httpx_async_client": httpx.AsyncClient(transport=httpx.MockTransport(respond)),
         })
