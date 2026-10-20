@@ -1,0 +1,13 @@
+fastapi==0.115.12
+uvicorn==0.34.2
+pydantic==2.11.4
+httpx==0.28.1
+python-dotenv==1.1.0
+numpy==2.2.5
+sentence-transformers==4.1.0
+transformers==4.51.3
+torch==2.7.0
+google-genai==1.75.0
+tzdata==2025.2
+pytest==8.3.5
+holidays==0.107

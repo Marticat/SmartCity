@@ -1,0 +1,147 @@
+{
+  "measured_at": "2026-10-20T08:51:31.685291+00:00",
+  "runs": 10,
+  "health": {
+    "status": "ok",
+    "dataset_ready": true,
+    "semantic_ready": true,
+    "llm_configured": false
+  },
+  "anchor_public_poi_id": "osm:way:1196402246",
+  "first_request_ms": 548.31,
+  "warm_request_median_ms": 41.34,
+  "warm_request_max_ms": 58.46,
+  "note": "Full HTTP endpoint, warmed server. First request is separate, not process cold start. LLM is included only when mode=rag. Weather may be cached. Local machine, no load test.",
+  "results": [
+    {
+      "run": 1,
+      "wall_ms": 548.31,
+      "server_ms": 539.59,
+      "mode": "search_only",
+      "weather": "available",
+      "poi_ids": [
+        "osm:way:1196402246",
+        "osm:way:1204592699",
+        "osm:way:258615112"
+      ],
+      "retrieval": "semantic + FTS5 / RRF"
+    },
+    {
+      "run": 2,
+      "wall_ms": 39.92,
+      "server_ms": 36.67,
+      "mode": "search_only",
+      "weather": "available",
+      "poi_ids": [
+        "osm:way:1196402246",
+        "osm:way:1204592699",
+        "osm:way:258615112"
+      ],
+      "retrieval": "semantic + FTS5 / RRF"
+    },
+    {
+      "run": 3,
+      "wall_ms": 41.34,
+      "server_ms": 38.49,
+      "mode": "search_only",
+      "weather": "available",
+      "poi_ids": [
+        "osm:way:1196402246",
+        "osm:way:1204592699",
+        "osm:way:258615112"
+      ],
+      "retrieval": "semantic + FTS5 / RRF"
+    },
+    {
+      "run": 4,
+      "wall_ms": 39.27,
+      "server_ms": 36.7,
+      "mode": "search_only",
+      "weather": "available",
+      "poi_ids": [
+        "osm:way:1196402246",
+        "osm:way:1204592699",
+        "osm:way:258615112"
+      ],
+      "retrieval": "semantic + FTS5 / RRF"
+    },
+    {
+      "run": 5,
+      "wall_ms": 58.46,
+      "server_ms": 55.58,
+      "mode": "search_only",
+      "weather": "available",
+      "poi_ids": [
+        "osm:way:1196402246",
+        "osm:way:1204592699",
+        "osm:way:258615112"
+      ],
+      "retrieval": "semantic + FTS5 / RRF"
+    },
+    {
+      "run": 6,
+      "wall_ms": 46.13,
+      "server_ms": 42.15,
+      "mode": "search_only",
+      "weather": "available",
+      "poi_ids": [
+        "osm:way:1196402246",
+        "osm:way:1204592699",
+        "osm:way:258615112"
+      ],
+      "retrieval": "semantic + FTS5 / RRF"
+    },
+    {
+      "run": 7,
+      "wall_ms": 49.99,
+      "server_ms": 46.2,
+      "mode": "search_only",
+      "weather": "available",
+      "poi_ids": [
+        "osm:way:1196402246",
+        "osm:way:1204592699",
+        "osm:way:258615112"
+      ],
+      "retrieval": "semantic + FTS5 / RRF"
+    },
+    {
+      "run": 8,
+      "wall_ms": 45.24,
+      "server_ms": 41.06,
+      "mode": "search_only",
+      "weather": "available",
+      "poi_ids": [
+        "osm:way:1196402246",
+        "osm:way:1204592699",
+        "osm:way:258615112"
+      ],
+      "retrieval": "semantic + FTS5 / RRF"
+    },
+    {
+      "run": 9,
+      "wall_ms": 40.91,
+      "server_ms": 37.55,
+      "mode": "search_only",
+      "weather": "available",
+      "poi_ids": [
+        "osm:way:1196402246",
+        "osm:way:1204592699",
+        "osm:way:258615112"
+      ],
+      "retrieval": "semantic + FTS5 / RRF"
+    },
+    {
+      "run": 10,
+      "wall_ms": 39.03,
+      "server_ms": 36.08,
+      "mode": "search_only",
+      "weather": "available",
+      "poi_ids": [
+        "osm:way:1196402246",
+        "osm:way:1204592699",
+        "osm:way:258615112"
+      ],
+      "retrieval": "semantic + FTS5 / RRF"
+    }
+  ]
+}

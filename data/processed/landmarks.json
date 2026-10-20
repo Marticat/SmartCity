@@ -1,0 +1,149 @@
+[
+  {
+    "id": "osm:way:230401645",
+    "name": "Бәйтерек",
+    "latitude": 51.1282882,
+    "longitude": 71.4304546,
+    "category": "landmark",
+    "source_url": "https://www.openstreetmap.org/way/230401645",
+    "coordinate_kind": "polygon_center",
+    "alternative_names": [
+      "Bayterek",
+      "Бәйтерек",
+      "Байтерек"
+    ],
+    "tags": {
+      "access": "yes",
+      "addr:city": "Астана",
+      "addr:country": "KZ",
+      "addr:housenumber": "14",
+      "addr:street": "Нұржол желек жолы",
+      "building": "yes",
+      "building:levels": "27",
+      "historic": "monument",
+      "layer": "1",
+      "name": "Бәйтерек",
+      "name:de": "Bajterek-Turm",
+      "name:en": "Bayterek",
+      "name:ja": "バイテレック・タワー・タワー",
+      "name:kk": "Бәйтерек",
+      "name:ml": "ബൈറ്റെറെക് ടവർ",
+      "name:ru": "Байтерек",
+      "wikidata": "Q804210",
+      "wikipedia": "kk:Бәйтерек (монумент)",
+      "wikipedia:ru": "ru:Байтерек (монумент)"
+    },
+    "collected_at": "2026-10-20T08:43:07.086113+00:00",
+    "source_updated_at": "2026-08-09T20:44:02Z"
+  },
+  {
+    "id": "osm:way:454853233",
+    "name": "EXPO",
+    "latitude": 51.0927879,
+    "longitude": 71.4214816,
+    "category": "landmark",
+    "source_url": "https://www.openstreetmap.org/way/454853233",
+    "coordinate_kind": "polygon_center",
+    "alternative_names": [],
+    "tags": {
+      "addr:city": "Астана",
+      "addr:country": "KZ",
+      "addr:housenumber": "53/1",
+      "addr:street": "Мәңгілік Ел даңғылы",
+      "amenity": "exhibition_centre",
+      "building": "yes",
+      "building:levels": "2",
+      "name": "EXPO"
+    },
+    "collected_at": "2026-10-20T08:43:07.086113+00:00",
+    "source_updated_at": "2025-12-26T12:13:36Z"
+  },
+  {
+    "id": "osm:way:499328514",
+    "name": "Mega Silk Way",
+    "latitude": 51.0890897,
+    "longitude": 71.4073303,
+    "category": "landmark",
+    "source_url": "https://www.openstreetmap.org/way/499328514",
+    "coordinate_kind": "polygon_center",
+    "alternative_names": [],
+    "tags": {
+      "addr:city": "Астана",
+      "addr:country": "KZ",
+      "addr:housenumber": "62",
+      "addr:street": "Қабанбай Батыр даңғылы",
+      "air_conditioning": "yes",
+      "building": "yes",
+      "building:levels": "2",
+      "layer": "-1",
+      "name": "Mega Silk Way",
+      "opening_hours": "Mo-Su 10:00-22:00",
+      "payment:american_express": "yes",
+      "payment:cash": "yes",
+      "payment:coins": "yes",
+      "payment:credit_cards": "yes",
+      "payment:debit_cards": "yes",
+      "payment:mastercard": "yes",
+      "payment:notes": "yes",
+      "payment:visa": "yes",
+      "phone": "7010",
+      "shop": "mall",
+      "source": "sentinel-2,MapBox",
+      "stroller": "yes",
+      "toilets": "yes"
+    },
+    "collected_at": "2026-10-20T08:43:07.086113+00:00",
+    "source_updated_at": "2026-08-17T02:13:14Z"
+  },
+  {
+    "id": "osm:way:1196402246",
+    "name": "Ботаникалық бақ",
+    "latitude": 51.1061652,
+    "longitude": 71.4165705,
+    "category": "landmark",
+    "source_url": "https://www.openstreetmap.org/way/1196402246",
+    "coordinate_kind": "polygon_center",
+    "alternative_names": [
+      "Botanical Garden",
+      "Ботаникалық бақ",
+      "Ботанический сад"
+    ],
+    "tags": {
+      "leisure": "park",
+      "name": "Ботаникалық бақ",
+      "name:de": "Botanischer Garten",
+      "name:en": "Botanical Garden",
+      "name:kk": "Ботаникалық бақ",
+      "name:ru": "Ботанический сад",
+      "phone": "+7 707 7051661",
+      "start_date": "2018-07-02",
+      "website": "https://www.astanabotsad.kz/",
+      "wikidata": "Q104866948",
+      "wikimedia_commons": "Category:Astana botanical garden",
+      "wikipedia": "kk:Ботаникалық бақ (Астана)"
+    },
+    "collected_at": "2026-10-20T08:43:07.086113+00:00",
+    "source_updated_at": "2026-09-26T20:20:55Z"
+  },
+  {
+    "id": "osm:way:1456208623",
+    "name": "ЭКСПО-2017",
+    "latitude": 51.0910047,
+    "longitude": 71.4141021,
+    "category": "landmark",
+    "source_url": "https://www.openstreetmap.org/way/1456208623",
+    "coordinate_kind": "polygon_center",
+    "alternative_names": [
+      "EXPO-2017",
+      "ЭКСПО-2017"
+    ],
+    "tags": {
+      "name": "ЭКСПО-2017",
+      "name:en": "EXPO-2017",
+      "name:ru": "ЭКСПО-2017",
+      "place": "quarter"
+    },
+    "collected_at": "2026-10-20T08:43:07.086113+00:00",
+    "source_updated_at": "2026-06-08T09:17:01Z"
+  }
+]

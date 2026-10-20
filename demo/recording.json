@@ -1,0 +1,33 @@
+{
+  "recorded_at": "2026-10-20T08:49:21.933Z",
+  "viewport": "1440x1000",
+  "real_api": true,
+  "fixtures": false,
+  "voiceover": false,
+  "map_tiles": "normal browser requests; no prefetch",
+  "public_anchor_id": "osm:way:454853233",
+  "responses": [
+    {
+      "mode": "search_only",
+      "poi_count": 3,
+      "semantic_ready": true
+    },
+    {
+      "mode": "search_only",
+      "poi_count": 3,
+      "semantic_ready": true
+    },
+    {
+      "mode": "search_only",
+      "poi_count": 0,
+      "semantic_ready": true
+    },
+    {
+      "mode": "search_only",
+      "poi_count": 0,
+      "semantic_ready": true
+    }
+  ],
+  "recording_process_wall_seconds": 168,
+  "decoded_video_duration_seconds": 149.4
+}

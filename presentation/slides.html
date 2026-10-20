@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ru">
+<meta charset="utf-8">
+<title>QADAM — презентация проекта</title>
+<style>
+@font-face{font-family:Arimo;src:url('assets/arimo-cyrillic-400-normal.woff2');unicode-range:U+0400-052F}@font-face{font-family:Arimo;src:url('assets/arimo-cyrillic-700-normal.woff2');font-weight:700;unicode-range:U+0400-052F}@font-face{font-family:Arimo;src:url('assets/arimo-latin-400-normal.woff2');unicode-range:U+0000-00FF}@font-face{font-family:Arimo;src:url('assets/arimo-latin-700-normal.woff2');font-weight:700;unicode-range:U+0000-00FF}
+*{box-sizing:border-box}html,body{margin:0;background:#deded8;color:#1d2523;font-family:Arimo,Arial,sans-serif}.slide{width:1280px;height:720px;background:#f6f5f0;padding:62px 74px;position:relative;overflow:hidden;margin:24px auto;break-after:page}.slide.dark{background:#236b57;color:#f6f5f0}.eyebrow{font-size:18px;letter-spacing:2px;text-transform:uppercase;margin:0 0 35px;color:#236b57}.dark .eyebrow{color:#d9e8b7}h1{font-size:126px;letter-spacing:-6px;line-height:.95;margin:54px 0 25px}h2{font-size:54px;line-height:1.05;letter-spacing:-1.8px;margin:0 0 34px;max-width:1060px}h3{font-size:29px;line-height:1.25;margin:0 0 14px}p{font-size:26px;line-height:1.42;margin:0 0 24px}.lead{font-size:39px;line-height:1.2;max-width:800px}.muted{color:#67736e}.dark .muted{color:#d2e2dc}.small{font-size:18px;line-height:1.45}.number{position:absolute;bottom:30px;right:50px;font-size:15px;color:#7b8780}.dark .number{color:#c8d8d1}.columns{display:grid;grid-template-columns:1fr 1fr 1fr;gap:48px;margin-top:56px}.column-index{font-size:65px;font-weight:700;color:#236b57;margin-bottom:28px}.rule{border-top:1px solid #b8c3bb;padding-top:24px}.split{display:grid;grid-template-columns:400px minmax(0,1fr);gap:50px}.path{font-size:31px;line-height:1.6;max-width:1060px}.path strong{color:#236b57}.note{position:absolute;bottom:53px;left:74px;right:84px;font-size:18px;color:#67736e;line-height:1.4}.quote{font-size:44px;line-height:1.3;max-width:1000px;margin:55px 0 40px}.stat{font-size:70px;color:#236b57;font-weight:700;margin-bottom:8px}.screen{width:100%;max-height:420px;object-fit:contain;object-position:top;box-shadow:0 10px 30px #15241b14}.step{display:grid;grid-template-columns:55px 1fr;gap:16px;margin-bottom:27px}.step b{font-size:28px;color:#236b57}.step p{font-size:23px;margin:0}.large-list p{font-size:29px;margin:25px 0}.cover-sub{font-size:29px;margin-top:30px}.cover-foot{position:absolute;bottom:60px;font-size:18px;letter-spacing:1px}.status{font-size:23px;color:#915b31}
+@media print{@page{size:1280px 720px;margin:0}html,body{background:white}.slide{margin:0;break-inside:avoid}.slide:last-child{break-after:auto}}
+</style>
+<section class="slide dark">
+  <p class="eyebrow">Астана · Smart City</p>
+  <h1>QADAM</h1>
+  <p class="lead">Хорошая прогулка<br>начинается рядом</p>
+  <p class="cover-sub muted">Есть час. Есть город.<br>Нужны три понятных варианта.</p>
+  <span class="cover-foot">ПРОТОТИП · ОКТЯБРЬ 2026</span><span class="number">01 / 08</span>
+</section>
+<section class="slide">
+  <p class="eyebrow">Контекст вместо длинного списка</p>
+  <h2>На что у тебя есть время?</h2>
+  <div class="columns">
+    <div><div class="column-index">01</div><h3>Прогуляться</h3><p>30–90 минут рядом.<br>Место, занятие и понятная оценка.</p></div>
+    <div><div class="column-index">02</div><h3>Кофе и ноутбук</h3><p>Обязательную розетку подтверждаем данными.</p></div>
+    <div><div class="column-index">03</div><h3>С ребёнком</h3><p>Парки, площадки и музеи с учётом контекста.</p></div>
+  </div>
+  <p class="note">Для жителей, студентов и гостей города. Решение за полминуты — гипотеза UX, которую ещё нужно проверить с людьми.</p>
+  <span class="number">02 / 08</span>
+</section>
+<section class="slide">
+  <p class="eyebrow">Пользовательский путь</p>
+  <h2>Точка → интерес → варианты</h2>
+  <div class="split">
+    <div>
+      <div class="step"><b>1</b><p>Выбрать EXPO из локальных ориентиров.</p></div>
+      <div class="step"><b>2</b><p>Попросить прогулку на 60 минут.</p></div>
+      <div class="step"><b>3</b><p>Посмотреть источник и место на карте.</p></div>
+      <div class="step"><b>4</b><p>Сократить время — получить новый подбор.</p></div>
+    </div>
+    <img class="screen" src="assets/product.png" alt="Реальный интерфейс QADAM с результатами и картой">
+  </div>
+  <span class="number">03 / 08</span>
+</section>
+<section class="slide">
+  <p class="eyebrow">Данные и RAG</p>
+  <h2>Места из города,<br>объяснения из найденных данных</h2>
+  <p class="path"><strong>OpenStreetMap</strong> → snapshot и нормализация<br><strong>Локальный индекс</strong> → география и ограничения<br><strong>E5 + FTS5</strong> → ранжированный набор POI<br><strong>Gemini</strong> → проверка ID и evidence → карточки</p>
+  <p class="note" id="dataset-note">814 POI · сбор 20.10.2026 · 5 ориентиров отдельно. © OpenStreetMap contributors · ODbL 1.0.</p>
+  <span class="number">04 / 08</span>
+</section>
+<section class="slide">
+  <p class="eyebrow">Доверие к ответу</p>
+  <h2>Неизвестное остаётся неизвестным</h2>
+  <div class="columns" style="margin-top:48px">
+    <div class="rule"><h3>Факт</h3><p>Название, категория и свойства со ссылкой на источник.</p></div>
+    <div class="rule"><h3>Расчёт</h3><p>Расстояние и время посещения. Без routing нет обещания успеть.</p></div>
+    <div class="rule"><h3>Идея</h3><p>Чем заняться. Отдельная подпись у предложения генератора.</p></div>
+  </div>
+  <p class="note">Часы, розетки и безбарьерность не выводятся из категории места. Погода имеет отметку времени; недоступный сервис не подменяется прогнозом.</p>
+  <span class="number">05 / 08</span>
+</section>
+<section class="slide">
+  <p class="eyebrow">Проверка прототипа</p>
+  <h2>Результаты, которые можно повторить</h2>
+  <div id="measured-results" class="large-list"><p><strong>59</strong> автоматических тестов · <strong>12</strong> браузерных проверок</p><p><strong>11 / 12</strong> заданных мест найдены в top-3</p><p><strong>41 мс</strong> — медиана 9 тёплых API запросов без LLM</p></div>
+  <div class="rule" style="margin-top:30px"><h3>Сложный сценарий: обязательная розетка</h3><p>Без подтверждения — отсутствие подходящих мест.<br>Это полезный результат, а не повод выдумать услугу.</p></div>
+  <p class="note">Маленькая выборка поиска по названиям, не общая оценка релевантности. Live LLM не проверен: нужен ключ. Метод: docs/verification.md.</p>
+  <span class="number">06 / 08</span>
+</section>
+<section class="slide">
+  <p class="eyebrow">Приватность и развитие</p>
+  <h2>Локальный подбор.<br>Понятные внешние обращения.</h2>
+  <div class="split" style="grid-template-columns:1fr 1fr">
+    <div><h3>Прототип</h3><p>Без аккаунта и истории поиска. Геолокация необязательна.</p><p class="small muted">LLM получает категории и разрешённые данные POI. Погода — округлённую точку. Карта обращается к серверу тайлов.</p></div>
+    <div><h3>B2B-гипотеза</h3><p>Городские сервисы, гостиницы, университеты и культурные площадки.</p><p class="small muted">Партнёрства и выручка не заявлены. Продвижение — только с маркировкой и сохранением релевантности.</p></div>
+  </div>
+  <p class="note">Данные могут быть неполными. Доступность места и пути нужно проверять; обещаний безопасности и гарантии времени нет.</p>
+  <span class="number">07 / 08</span>
+</section>
+<section class="slide dark">
+  <p class="eyebrow">Следующий шаг</p>
+  <h2 style="font-size:64px;margin-top:44px">Проверить на прогулке</h2>
+  <p class="lead">Реальные входы.<br>Подтверждённые свойства.<br>Обратная связь пользователей.</p>
+  <p class="muted" style="margin-top:42px;font-size:24px">Локальное демо: http://127.0.0.1:8000<br>Запуск и материалы: README.md</p>
+  <p id="external-blockers" class="small muted">Для полного RAG нужен серверный GEMINI_API_KEY.<br>Публичная публикация и YouTube выполняются из аккаунта владельца.</p>
+  <span class="number">08 / 08</span>
+</section>
+<script>
+addEventListener('keydown',event=>{
+ if(!['ArrowRight','ArrowLeft','PageDown','PageUp'].includes(event.key))return;
+ event.preventDefault();
+ const slides=[...document.querySelectorAll('.slide')];
+ const current=slides.reduce((best,slide,index)=>Math.abs(slide.getBoundingClientRect().top)<Math.abs(slides[best].getBoundingClientRect().top)?index:best,0);
+ const next=Math.max(0,Math.min(slides.length-1,current+(['ArrowRight','PageDown'].includes(event.key)?1:-1)));
+ slides[next].scrollIntoView({behavior:'smooth'});
+});
+</script>
+</html>

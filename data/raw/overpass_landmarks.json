@@ -1,0 +1,1859 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-10-20T08:42:01Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+    {
+      "type": "node",
+      "id": 2388707906,
+      "lat": 51.1294931,
+      "lon": 71.4182513,
+      "timestamp": "2016-06-14T09:19:54Z",
+      "version": 3,
+      "changeset": 40012950,
+      "user": "rashaurl",
+      "uid": 1023906,
+      "tags": {
+        "amenity": "community_centre",
+        "contact:email": "office@astana-expo.com",
+        "contact:fax": "+7(7172) 52-43-03",
+        "contact:phone": "+7(7172) 52-42-33",
+        "contact:website": "http://www.astana-expo.com",
+        "name": "Астана-Экспо КС",
+        "tourism": "gallery"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2636792628,
+      "lat": 51.130003,
+      "lon": 71.4344846,
+      "timestamp": "2026-06-03T08:53:20Z",
+      "version": 5,
+      "changeset": 183581537,
+      "user": "Ruslan Fatih",
+      "uid": 12875574,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Монумент Байтерек",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2715049258,
+      "lat": 51.0924187,
+      "lon": 71.4034923,
+      "timestamp": "2026-06-23T13:29:44Z",
+      "version": 4,
+      "changeset": 184477291,
+      "user": "MNbrn",
+      "uid": 6319160,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Экспо-Плаза",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2715049259,
+      "lat": 51.0939087,
+      "lon": 71.4045112,
+      "timestamp": "2026-08-18T01:36:27Z",
+      "version": 5,
+      "changeset": 187615061,
+      "user": "ofr1tz",
+      "uid": 3790985,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Экспо-Плаза",
+        "public_transport": "platform",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4242565091,
+      "lat": 51.1291561,
+      "lon": 71.4203964,
+      "timestamp": "2016-06-14T09:12:57Z",
+      "version": 1,
+      "changeset": 40012950,
+      "user": "rashaurl",
+      "uid": 1023906,
+      "tags": {
+        "amenity": "community_centre",
+        "contact:email": "office@astana-expo.com",
+        "contact:fax": "+7(7172) 27-81-81",
+        "contact:phone": "+7(7172) 27-82-82",
+        "contact:website": "http://www.astana-expo.com",
+        "name": "Астана-Экспо КС"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4506675831,
+      "lat": 51.1265392,
+      "lon": 71.4361766,
+      "timestamp": "2016-11-17T17:04:47Z",
+      "version": 1,
+      "changeset": 43734422,
+      "user": "市川ゆり子",
+      "uid": 388809,
+      "tags": {
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "name": "EXPO HOSTEL",
+        "name:ja": "エキスポホステル",
+        "rooms": "3",
+        "smoking": "no",
+        "source": "GPS;photograph",
+        "tourism": "hostel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4930524423,
+      "lat": 51.0947311,
+      "lon": 71.4254389,
+      "timestamp": "2026-03-11T06:03:01Z",
+      "version": 11,
+      "changeset": 179674402,
+      "user": "Ruslan Fatih",
+      "uid": 12875574,
+      "tags": {
+        "name": "Экспо-маркет",
+        "name:ru": "магазин ЭКСПО Маркет",
+        "shop": "convenience"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10576157316,
+      "lat": 51.0910001,
+      "lon": 71.4236332,
+      "timestamp": "2023-01-23T09:55:29Z",
+      "version": 1,
+      "changeset": 131599376,
+      "user": "Konstantin!",
+      "uid": 1209663,
+      "tags": {
+        "name": "Байтерек БЦ",
+        "office": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10677613224,
+      "lat": 51.1097974,
+      "lon": 71.4225746,
+      "timestamp": "2025-12-27T20:53:53Z",
+      "version": 2,
+      "changeset": 176503088,
+      "user": "MNbrn",
+      "uid": 6319160,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Ботаникалық бақ",
+        "name:ru": "Ботанический сад",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10677632238,
+      "lat": 51.109949,
+      "lon": 71.4239199,
+      "timestamp": "2025-12-27T20:53:53Z",
+      "version": 2,
+      "changeset": 176503088,
+      "user": "MNbrn",
+      "uid": 6319160,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Ботаникалық бақ",
+        "name:ru": "Ботанический сад",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13081694260,
+      "lat": 51.1232327,
+      "lon": 71.428798,
+      "timestamp": "2026-08-04T23:46:18Z",
+      "version": 7,
+      "changeset": 186951706,
+      "user": "Aianov",
+      "uid": 20180657,
+      "tags": {
+        "light_rail": "yes",
+        "name": "Бәйтерек",
+        "name:en": "Baiterek",
+        "name:kk": "Бәйтерек",
+        "name:ru": "Байтерек",
+        "public_transport": "stop_position",
+        "railway": "stop"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13612447986,
+      "lat": 51.1231985,
+      "lon": 71.4287838,
+      "timestamp": "2026-08-04T23:46:18Z",
+      "version": 2,
+      "changeset": 186951706,
+      "user": "Aianov",
+      "uid": 20180657,
+      "tags": {
+        "light_rail": "yes",
+        "name": "Бәйтерек",
+        "name:en": "Baiterek",
+        "name:kk": "Бәйтерек",
+        "name:ru": "Байтерек",
+        "network": "Tarlan Astana",
+        "operator": "City Transportation Systems",
+        "public_transport": "stop_position",
+        "railway": "stop"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13612447987,
+      "lat": 51.1232099,
+      "lon": 71.4287898,
+      "timestamp": "2026-08-04T23:46:18Z",
+      "version": 2,
+      "changeset": 186951706,
+      "user": "Aianov",
+      "uid": 20180657,
+      "tags": {
+        "addr:city": "Астана",
+        "light_rail": "yes",
+        "name": "Бәйтерек",
+        "name:en": "Baiterek",
+        "name:kk": "Бәйтерек",
+        "name:ru": "Байтерек",
+        "network": "Tarlan Astana",
+        "operator": "City Transportation Systems",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "112",
+        "station": "light_rail",
+        "wikidata": "Q137551671"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13926684562,
+      "lat": 51.0862285,
+      "lon": 71.4163157,
+      "timestamp": "2026-06-10T16:59:28Z",
+      "version": 1,
+      "changeset": 183934028,
+      "user": "Ruslan Fatih",
+      "uid": 12875574,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Национальный музей Экспо",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13926684563,
+      "lat": 51.0864934,
+      "lon": 71.4160791,
+      "timestamp": "2026-06-10T16:59:28Z",
+      "version": 1,
+      "changeset": 183934028,
+      "user": "Ruslan Fatih",
+      "uid": 12875574,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Национальный музей Экспо",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "way",
+      "id": 230401644,
+      "timestamp": "2022-08-26T14:45:51Z",
+      "version": 18,
+      "changeset": 125410844,
+      "user": "FlyingWitchDog",
+      "uid": 14052707,
+      "center": {
+        "lat": 51.1282856,
+        "lon": 71.430457
+      },
+      "nodes": [
+        2389116233,
+        2389116245,
+        2680323689,
+        5791855288,
+        2389116249,
+        5791855287,
+        2389116242,
+        5791855286,
+        2389116236,
+        2680323687,
+        5791855285,
+        2389116243,
+        5791855284,
+        2389116235,
+        5791855283,
+        2389116251,
+        5791855282,
+        2389116254,
+        5791855281,
+        2389116231,
+        5791855280,
+        2389116252,
+        5791855279,
+        2389116234,
+        5791855278,
+        2389116253,
+        5791855277,
+        2389116232,
+        5791855276,
+        2389116233
+      ],
+      "tags": {
+        "building:colour": "#C3B391",
+        "building:levels": "30",
+        "building:min_level": "27",
+        "building:part": "yes",
+        "name": "Байтерек",
+        "name:en": "Baiterek Tower",
+        "name:ja": "バイテレック・タワー",
+        "roof:shape": "orb"
+      }
+    },
+    {
+      "type": "way",
+      "id": 230401645,
+      "timestamp": "2026-08-09T20:44:02Z",
+      "version": 33,
+      "changeset": 187200384,
+      "user": "Aianov",
+      "uid": 20180657,
+      "center": {
+        "lat": 51.1282882,
+        "lon": 71.4304546
+      },
+      "nodes": [
+        2680323704,
+        2680323702,
+        2389116271,
+        2680323699,
+        2680323693,
+        2680323696,
+        2389116270,
+        2680323690,
+        2680323685,
+        14084367281,
+        2389116265,
+        2680323695,
+        2680323692,
+        2680323697,
+        2389116263,
+        2680323700,
+        2680323703,
+        2680323706,
+        2389116259,
+        2680323709,
+        2680323715,
+        2680323712,
+        2389116257,
+        2680323718,
+        2680323719,
+        14084367282,
+        2389116269,
+        2680323714,
+        2680323716,
+        2680323710,
+        2389116268,
+        2680323707,
+        2680323704
+      ],
+      "tags": {
+        "access": "yes",
+        "addr:city": "Астана",
+        "addr:country": "KZ",
+        "addr:housenumber": "14",
+        "addr:street": "Нұржол желек жолы",
+        "building": "yes",
+        "building:levels": "27",
+        "historic": "monument",
+        "layer": "1",
+        "name": "Бәйтерек",
+        "name:de": "Bajterek-Turm",
+        "name:en": "Bayterek",
+        "name:ja": "バイテレック・タワー・タワー",
+        "name:kk": "Бәйтерек",
+        "name:ml": "ബൈറ്റെറെക് ടവർ",
+        "name:ru": "Байтерек",
+        "wikidata": "Q804210",
+        "wikipedia": "kk:Бәйтерек (монумент)",
+        "wikipedia:ru": "ru:Байтерек (монумент)"
+      }
+    },
+    {
+      "type": "way",
+      "id": 424980095,
+      "timestamp": "2025-12-19T15:41:57Z",
+      "version": 10,
+      "changeset": 176146037,
+      "user": "MNbrn",
+      "uid": 6319160,
+      "center": {
+        "lat": 51.0930992,
+        "lon": 71.424778
+      },
+      "nodes": [
+        4243274096,
+        4243273898,
+        4243273894,
+        4243316089,
+        4243277691,
+        4243315689,
+        4243277491,
+        4243273491,
+        4243273891,
+        4243273791,
+        4243274091,
+        4243273293,
+        4243315589,
+        4243273892,
+        4243277694,
+        4243215692,
+        4243273090,
+        4243273698,
+        4243315691,
+        4243316092,
+        4243274096
+      ],
+      "tags": {
+        "addr:city": "Астана",
+        "addr:country": "KZ",
+        "addr:housenumber": "53",
+        "addr:street": "Мәңгілік Ел даңғылы",
+        "building": "residential",
+        "building:levels": "12",
+        "name": "ЖК Променад Экспо",
+        "name:en": "Promande Expo Block C"
+      }
+    },
+    {
+      "type": "way",
+      "id": 454853233,
+      "timestamp": "2025-12-26T12:13:36Z",
+      "version": 12,
+      "changeset": 176436013,
+      "user": "Aianov",
+      "uid": 20180657,
+      "center": {
+        "lat": 51.0927879,
+        "lon": 71.4214816
+      },
+      "nodes": [
+        4513465423,
+        4513465424,
+        4527619833,
+        4527619832,
+        4527619831,
+        4527619830,
+        4527619829,
+        4513465425,
+        4513465426,
+        4527619837,
+        4527619836,
+        4527619835,
+        4527619834,
+        4513489352,
+        4513465423
+      ],
+      "tags": {
+        "addr:city": "Астана",
+        "addr:country": "KZ",
+        "addr:housenumber": "53/1",
+        "addr:street": "Мәңгілік Ел даңғылы",
+        "amenity": "exhibition_centre",
+        "building": "yes",
+        "building:levels": "2",
+        "name": "EXPO"
+      }
+    },
+    {
+      "type": "way",
+      "id": 499328473,
+      "timestamp": "2026-03-11T06:03:50Z",
+      "version": 11,
+      "changeset": 179674430,
+      "user": "Ruslan Fatih",
+      "uid": 12875574,
+      "center": {
+        "lat": 51.0965194,
+        "lon": 71.412939
+      },
+      "nodes": [
+        4906135175,
+        4906135176,
+        4906135174,
+        4906135188,
+        4906135187,
+        4906135186,
+        4906135185,
+        4906135184,
+        4906135180,
+        4906135182,
+        4906135183,
+        4906135171,
+        4906135175
+      ],
+      "tags": {
+        "addr:city": "Астана",
+        "addr:country": "KZ",
+        "addr:housenumber": "58",
+        "addr:street": "Ұлы Дала даңғылы",
+        "addr:street:ru": "проспект Улы Дала",
+        "building": "apartments",
+        "building:levels": "5",
+        "name": "ЖК EXPO Plaza C"
+      }
+    },
+    {
+      "type": "way",
+      "id": 499328477,
+      "timestamp": "2025-12-19T15:41:57Z",
+      "version": 10,
+      "changeset": 176146037,
+      "user": "MNbrn",
+      "uid": 6319160,
+      "center": {
+        "lat": 51.0968596,
+        "lon": 71.4096757
+      },
+      "nodes": [
+        4906135436,
+        4906135435,
+        4906135434,
+        4906135431,
+        4906135430,
+        4906135429,
+        4906135428,
+        4906135427,
+        4906135426,
+        4906135425,
+        4906135424,
+        4906135423,
+        4906135422,
+        4906135421,
+        4906135220,
+        4906135219,
+        4906135436
+      ],
+      "tags": {
+        "addr:city": "Астана",
+        "addr:country": "KZ",
+        "addr:housenumber": "56",
+        "addr:postcode": "Z05P1P7",
+        "addr:street": "Ұлы Дала даңғылы",
+        "building": "apartments",
+        "building:entrances": "9",
+        "building:flats": "232",
+        "building:levels": "8",
+        "name": "ЖК EXPO Plaza B"
+      }
+    },
+    {
+      "type": "way",
+      "id": 499328478,
+      "timestamp": "2026-03-11T06:03:50Z",
+      "version": 13,
+      "changeset": 179674430,
+      "user": "Ruslan Fatih",
+      "uid": 12875574,
+      "center": {
+        "lat": 51.0971612,
+        "lon": 71.4074662
+      },
+      "nodes": [
+        4906135450,
+        4906135447,
+        4906135448,
+        4906135449,
+        4906135437,
+        4906135441,
+        4906135443,
+        4906135439,
+        4906135454,
+        4906135453,
+        4906135440,
+        4906135444,
+        4906135452,
+        4906135450
+      ],
+      "tags": {
+        "addr:city": "Астана",
+        "addr:country": "KZ",
+        "addr:housenumber": "54",
+        "addr:postcode": "Z05P1P7",
+        "addr:street": "Ұлы Дала даңғылы",
+        "building": "apartments",
+        "building:entrances": "9",
+        "building:flats": "232",
+        "building:levels": "8",
+        "name": "ЖК EXPO Plaza A"
+      }
+    },
+    {
+      "type": "way",
+      "id": 499328486,
+      "timestamp": "2026-03-11T06:03:50Z",
+      "version": 11,
+      "changeset": 179674430,
+      "user": "Ruslan Fatih",
+      "uid": 12875574,
+      "center": {
+        "lat": 51.0951736,
+        "lon": 71.4094233
+      },
+      "nodes": [
+        4906135640,
+        4906135639,
+        4906135638,
+        4906135637,
+        4906135636,
+        4906135635,
+        5306138659,
+        5306138658,
+        4906135634,
+        4906135633,
+        4906135632,
+        4906135631,
+        4906135640
+      ],
+      "tags": {
+        "addr:city": "Астана",
+        "addr:country": "KZ",
+        "addr:housenumber": "58Бк5",
+        "addr:street": "Қабанбай Батыр даңғылы",
+        "building": "yes",
+        "building:levels": "9",
+        "name": "Экспо Бульвар 4"
+      }
+    },
+    {
+      "type": "way",
+      "id": 499328514,
+      "timestamp": "2026-08-17T02:13:14Z",
+      "version": 16,
+      "changeset": 187563807,
+      "user": "Ruslan Fatih",
+      "uid": 12875574,
+      "center": {
+        "lat": 51.0890897,
+        "lon": 71.4073303
+      },
+      "nodes": [
+        4906136039,
+        4906136038,
+        4906136037,
+        5761275946,
+        10980119728,
+        5761275945,
+        5761275947,
+        4906136036,
+        4906136035,
+        5034101914,
+        4906136034,
+        5761275944,
+        5761275943,
+        5761275942,
+        13404024645,
+        5034101913,
+        5761275941,
+        5761275940,
+        5761275939,
+        4906136033,
+        5761275938,
+        5761275937,
+        4906136032,
+        5761275936,
+        5761275935,
+        5761275934,
+        5761275933,
+        13053943094,
+        4906136031,
+        5761275949,
+        5761275950,
+        13404024646,
+        4906136030,
+        4906136029,
+        5761275932,
+        5034101922,
+        5034101921,
+        5034101920,
+        5034101919,
+        13404024647,
+        5034101918,
+        5034101917,
+        5034101916,
+        4906136028,
+        5034101915,
+        4906136027,
+        5761275948,
+        4906136026,
+        7694574440,
+        7694574442,
+        5761275928,
+        7694574439,
+        7694574441,
+        5761275929,
+        4906136025,
+        13903506323,
+        13404024649,
+        5761275930,
+        13404024648,
+        5761275931,
+        4906136039
+      ],
+      "tags": {
+        "addr:city": "Астана",
+        "addr:country": "KZ",
+        "addr:housenumber": "62",
+        "addr:street": "Қабанбай Батыр даңғылы",
+        "air_conditioning": "yes",
+        "building": "yes",
+        "building:levels": "2",
+        "layer": "-1",
+        "name": "Mega Silk Way",
+        "opening_hours": "Mo-Su 10:00-22:00",
+        "payment:american_express": "yes",
+        "payment:cash": "yes",
+        "payment:coins": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "payment:mastercard": "yes",
+        "payment:notes": "yes",
+        "payment:visa": "yes",
+        "phone": "7010",
+        "shop": "mall",
+        "source": "sentinel-2,MapBox",
+        "stroller": "yes",
+        "toilets": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 506036357,
+      "timestamp": "2026-05-14T08:50:14Z",
+      "version": 11,
+      "changeset": 182636576,
+      "user": "┳┳╄╅┵┾┾┾",
+      "uid": 13860679,
+      "center": {
+        "lat": 51.0936477,
+        "lon": 71.4274607
+      },
+      "nodes": [
+        4958326760,
+        13827061193,
+        13827061192,
+        4958326759,
+        4958326758,
+        13827061225,
+        13827061224,
+        4958326757,
+        13827061223,
+        4958326756,
+        13827061222,
+        13827061221,
+        13827061220,
+        4958326755,
+        5542502199,
+        4958326754,
+        4958326753,
+        4958326752,
+        4958326751,
+        4958326760
+      ],
+      "tags": {
+        "addr:city": "Астана",
+        "addr:country": "KZ",
+        "addr:housenumber": "52кВ3",
+        "addr:street": "Мәңгілік Ел даңғылы",
+        "building": "apartments",
+        "building:levels": "12",
+        "name": "ЖК Promenade Expo"
+      }
+    },
+    {
+      "type": "way",
+      "id": 509262324,
+      "timestamp": "2026-07-31T00:54:28Z",
+      "version": 6,
+      "changeset": 186678498,
+      "user": "TrickyFoxy",
+      "uid": 11528195,
+      "center": {
+        "lat": 51.0860924,
+        "lon": 71.4133302
+      },
+      "nodes": [
+        4985151192,
+        13053942984,
+        6878738103,
+        4985151191,
+        4985151190,
+        4985151189,
+        13053942988,
+        13053942989,
+        13053942987,
+        13053942992,
+        13053942985,
+        13053942986,
+        13053942990,
+        4985151187,
+        13053942991,
+        4985151192
+      ],
+      "tags": {
+        "fee": "yes",
+        "landuse": "construction",
+        "name": "Nexpo Global"
+      }
+    },
+    {
+      "type": "way",
+      "id": 578443245,
+      "timestamp": "2026-05-14T08:50:14Z",
+      "version": 6,
+      "changeset": 182636576,
+      "user": "┳┳╄╅┵┾┾┾",
+      "uid": 13860679,
+      "center": {
+        "lat": 51.0920199,
+        "lon": 71.4268799
+      },
+      "nodes": [
+        5542502186,
+        5542502185,
+        13827061215,
+        13827061214,
+        13827061213,
+        5542502184,
+        13827061212,
+        5542502183,
+        13827061211,
+        13827061210,
+        5542502182,
+        5542502181,
+        5542502180,
+        5542502179,
+        5542502186
+      ],
+      "tags": {
+        "addr:city": "Астана",
+        "addr:country": "KZ",
+        "addr:housenumber": "52кВ1",
+        "addr:street": "Мәңгілік Ел даңғылы",
+        "building": "apartments",
+        "name": "ЖК Promenade Expo"
+      }
+    },
+    {
+      "type": "way",
+      "id": 578443247,
+      "timestamp": "2026-05-14T08:50:14Z",
+      "version": 6,
+      "changeset": 182636576,
+      "user": "┳┳╄╅┵┾┾┾",
+      "uid": 13860679,
+      "center": {
+        "lat": 51.0928823,
+        "lon": 71.4269297
+      },
+      "nodes": [
+        5542502200,
+        4958326754,
+        5542502199,
+        13827061219,
+        5542502198,
+        5542502197,
+        13827061218,
+        13827061217,
+        5542502196,
+        5542502188,
+        13827061216,
+        5542502185,
+        5542502186,
+        5542502187,
+        5542502191,
+        5542502192,
+        5542502194,
+        5542502193,
+        5542502200
+      ],
+      "tags": {
+        "addr:city": "Астана",
+        "addr:country": "KZ",
+        "addr:housenumber": "52кВ2",
+        "addr:street": "Мәңгілік Ел даңғылы",
+        "building": "apartments",
+        "name": "ЖК Promenade Expo"
+      }
+    },
+    {
+      "type": "way",
+      "id": 963417188,
+      "timestamp": "2026-03-11T06:04:10Z",
+      "version": 2,
+      "changeset": 179674430,
+      "user": "Ruslan Fatih",
+      "uid": 12875574,
+      "center": {
+        "lat": 51.1010567,
+        "lon": 71.4154333
+      },
+      "nodes": [
+        8911623146,
+        8911623147,
+        8911623148,
+        8911623149,
+        8911623146
+      ],
+      "tags": {
+        "addr:city": "Астана",
+        "addr:country": "KZ",
+        "building": "apartments",
+        "name": "Дом на Ботаническом"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1196402246,
+      "timestamp": "2026-09-26T20:20:55Z",
+      "version": 15,
+      "changeset": 189604604,
+      "user": "Clarke22",
+      "uid": 703694,
+      "center": {
+        "lat": 51.1061652,
+        "lon": 71.4165705
+      },
+      "nodes": [
+        11101893923,
+        11101893924,
+        11101893925,
+        11101893928,
+        13923198952,
+        13923198943,
+        13923198941,
+        13923198937,
+        13923198953,
+        13461731632,
+        11101893926,
+        13461731623,
+        13461731622,
+        13461731610,
+        14220511191,
+        13461731614,
+        13461731613,
+        14220511190,
+        14220511189,
+        13461731653,
+        13461731657,
+        14220511181,
+        13461731664,
+        13461731558,
+        13461731560,
+        13461731551,
+        13461731550,
+        13461731547,
+        13461731544,
+        13461731543,
+        13461731739,
+        13461731740,
+        13461731747,
+        13461731755,
+        11101893927,
+        11101893923
+      ],
+      "tags": {
+        "leisure": "park",
+        "name": "Ботаникалық бақ",
+        "name:de": "Botanischer Garten",
+        "name:en": "Botanical Garden",
+        "name:kk": "Ботаникалық бақ",
+        "name:ru": "Ботанический сад",
+        "phone": "+7 707 7051661",
+        "start_date": "2018-07-02",
+        "website": "https://www.astanabotsad.kz/",
+        "wikidata": "Q104866948",
+        "wikimedia_commons": "Category:Astana botanical garden",
+        "wikipedia": "kk:Ботаникалық бақ (Астана)"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1268733720,
+      "timestamp": "2025-12-19T15:41:57Z",
+      "version": 3,
+      "changeset": 176146037,
+      "user": "MNbrn",
+      "uid": 6319160,
+      "center": {
+        "lat": 51.1007476,
+        "lon": 71.4164334
+      },
+      "nodes": [
+        11783576035,
+        11783576036,
+        11783576042,
+        11783576037,
+        11783576038,
+        11783576035
+      ],
+      "tags": {
+        "addr:city": "Астана",
+        "addr:housenumber": "28",
+        "addr:street": "Бұқар жырау көшесі",
+        "landuse": "residential",
+        "name": "Дом на Ботаническом",
+        "residential": "apartments"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1318492971,
+      "timestamp": "2026-07-31T00:54:28Z",
+      "version": 4,
+      "changeset": 186678498,
+      "user": "TrickyFoxy",
+      "uid": 11528195,
+      "center": {
+        "lat": 51.0850945,
+        "lon": 71.4189147
+      },
+      "nodes": [
+        12202427373,
+        12202427374,
+        12202427375,
+        12202427376,
+        12202427373
+      ],
+      "tags": {
+        "landuse": "residential",
+        "name": "Nexpo Trend",
+        "residential": "apartments"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1318492973,
+      "timestamp": "2026-07-31T00:54:28Z",
+      "version": 4,
+      "changeset": 186678498,
+      "user": "TrickyFoxy",
+      "uid": 11528195,
+      "center": {
+        "lat": 51.0871415,
+        "lon": 71.403886
+      },
+      "nodes": [
+        12202427384,
+        12202427385,
+        12202427386,
+        12202427387,
+        12202427384
+      ],
+      "tags": {
+        "landuse": "residential",
+        "name": "Nexpo Classic",
+        "residential": "apartments"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1318492974,
+      "timestamp": "2026-07-31T00:54:28Z",
+      "version": 4,
+      "changeset": 186678498,
+      "user": "TrickyFoxy",
+      "uid": 11528195,
+      "center": {
+        "lat": 51.0868242,
+        "lon": 71.4062162
+      },
+      "nodes": [
+        12202427388,
+        12202427389,
+        12202427390,
+        12202427391,
+        12202427388
+      ],
+      "tags": {
+        "landuse": "residential",
+        "name": "Nexpo Classic Style",
+        "residential": "apartments"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1431543335,
+      "timestamp": "2026-03-11T06:04:54Z",
+      "version": 2,
+      "changeset": 179674468,
+      "user": "Ruslan Fatih",
+      "uid": 12875574,
+      "center": {
+        "lat": 51.0843936,
+        "lon": 71.421946
+      },
+      "nodes": [
+        13158419516,
+        13158419517,
+        13158419518,
+        13158419519,
+        13158419520,
+        13158419521,
+        13158419522,
+        13158419523,
+        13158419524,
+        13158419525,
+        13158419526,
+        13158419527,
+        13158419528,
+        13158419529,
+        13158419530,
+        13158419531,
+        13158419516
+      ],
+      "tags": {
+        "addr:city": "Астана",
+        "addr:country": "KZ",
+        "building": "apartments",
+        "building:levels": "22",
+        "name": "ЖК Nexpo Union 2"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1431543337,
+      "timestamp": "2026-03-11T06:04:54Z",
+      "version": 2,
+      "changeset": 179674468,
+      "user": "Ruslan Fatih",
+      "uid": 12875574,
+      "center": {
+        "lat": 51.0851773,
+        "lon": 71.4223054
+      },
+      "nodes": [
+        13158419548,
+        13158419549,
+        13158419550,
+        13158419551,
+        13158419552,
+        13158419553,
+        13158419554,
+        13158419555,
+        13158419556,
+        13158419557,
+        13158419558,
+        13158419559,
+        13158419560,
+        13158419561,
+        13158419562,
+        13158419563,
+        13158419548
+      ],
+      "tags": {
+        "addr:city": "Астана",
+        "addr:country": "KZ",
+        "building": "apartments",
+        "building:levels": "20",
+        "name": "ЖК Nexpo Union"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1431543342,
+      "timestamp": "2025-09-20T17:32:35Z",
+      "version": 1,
+      "changeset": 172216115,
+      "user": "Sardar111",
+      "uid": 10035005,
+      "center": {
+        "lat": 51.088776,
+        "lon": 71.4232402
+      },
+      "nodes": [
+        13158419593,
+        13158419594,
+        13158419595,
+        13158419596,
+        13158419593
+      ],
+      "tags": {
+        "building": "construction",
+        "name": "ЖК Nexpo Aura"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1455980752,
+      "timestamp": "2025-12-04T12:20:21Z",
+      "version": 1,
+      "changeset": 175490022,
+      "user": "MNbrn",
+      "uid": 6319160,
+      "center": {
+        "lat": 51.0848201,
+        "lon": 71.421537
+      },
+      "nodes": [
+        13353113371,
+        13353113372,
+        13353113373,
+        13353113374,
+        13353113371
+      ],
+      "tags": {
+        "landuse": "residential",
+        "name": "Nexpo Union",
+        "residential": "apartments"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1455980753,
+      "timestamp": "2026-07-31T00:54:28Z",
+      "version": 3,
+      "changeset": 186678498,
+      "user": "TrickyFoxy",
+      "uid": 11528195,
+      "center": {
+        "lat": 51.0861359,
+        "lon": 71.4109917
+      },
+      "nodes": [
+        13353113375,
+        13353113376,
+        13353113377,
+        13353113378,
+        13353113375
+      ],
+      "tags": {
+        "landuse": "residential",
+        "name": "Nexpo City",
+        "residential": "apartments"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1455980754,
+      "timestamp": "2026-07-31T00:54:28Z",
+      "version": 3,
+      "changeset": 186678498,
+      "user": "TrickyFoxy",
+      "uid": 11528195,
+      "center": {
+        "lat": 51.086428,
+        "lon": 71.408767
+      },
+      "nodes": [
+        13353113379,
+        13353113380,
+        13353113381,
+        13353113382,
+        13353113379
+      ],
+      "tags": {
+        "landuse": "residential",
+        "name": "Nexpo Vision",
+        "residential": "apartments"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1455980755,
+      "timestamp": "2025-12-04T12:20:21Z",
+      "version": 1,
+      "changeset": 175490022,
+      "user": "MNbrn",
+      "uid": 6319160,
+      "center": {
+        "lat": 51.0921292,
+        "lon": 71.4068227
+      },
+      "nodes": [
+        13353113383,
+        13353113384,
+        13353113385,
+        13353113386,
+        13353113383
+      ],
+      "tags": {
+        "landuse": "residential",
+        "name": "EXPO Residence",
+        "residential": "apartments"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1455980759,
+      "timestamp": "2025-12-04T12:20:21Z",
+      "version": 1,
+      "changeset": 175490022,
+      "user": "MNbrn",
+      "uid": 6319160,
+      "center": {
+        "lat": 51.0966811,
+        "lon": 71.408551
+      },
+      "nodes": [
+        13353113394,
+        13353113395,
+        13353113396,
+        13353113397,
+        13353113398,
+        13353113399,
+        13353113394
+      ],
+      "tags": {
+        "landuse": "residential",
+        "name": "Expo Plaza",
+        "residential": "apartments"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1455980760,
+      "timestamp": "2025-12-04T12:20:21Z",
+      "version": 1,
+      "changeset": 175490022,
+      "user": "MNbrn",
+      "uid": 6319160,
+      "center": {
+        "lat": 51.0964714,
+        "lon": 71.4129046
+      },
+      "nodes": [
+        13353113400,
+        13353135701,
+        13353135702,
+        13353135703,
+        13353113400
+      ],
+      "tags": {
+        "landuse": "residential",
+        "name": "EXPO Plaza C",
+        "residential": "apartments"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1455980761,
+      "timestamp": "2025-12-04T12:20:21Z",
+      "version": 1,
+      "changeset": 175490022,
+      "user": "MNbrn",
+      "uid": 6319160,
+      "center": {
+        "lat": 51.094927,
+        "lon": 71.4149591
+      },
+      "nodes": [
+        13353135704,
+        13353135705,
+        13353135706,
+        13353135707,
+        13353135708,
+        13353135709,
+        13353135710,
+        13353135711,
+        13353135712,
+        13353135704
+      ],
+      "tags": {
+        "landuse": "residential",
+        "name": "Royal EXPO Apartments",
+        "residential": "apartments"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1455980762,
+      "timestamp": "2025-12-04T12:20:21Z",
+      "version": 1,
+      "changeset": 175490022,
+      "user": "MNbrn",
+      "uid": 6319160,
+      "center": {
+        "lat": 51.0957291,
+        "lon": 71.412598
+      },
+      "nodes": [
+        13353135713,
+        13353135714,
+        13086794894,
+        13086794893,
+        13353135713
+      ],
+      "tags": {
+        "landuse": "residential",
+        "name": "Prime EXPO",
+        "residential": "apartments"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1455980763,
+      "timestamp": "2026-07-31T00:54:28Z",
+      "version": 3,
+      "changeset": 186678498,
+      "user": "TrickyFoxy",
+      "uid": 11528195,
+      "center": {
+        "lat": 51.0947262,
+        "lon": 71.4210908
+      },
+      "nodes": [
+        13353135715,
+        13353135716,
+        13353135717,
+        13353135718,
+        13353135719,
+        13353135715
+      ],
+      "tags": {
+        "landuse": "residential",
+        "name": "EXPO New Life",
+        "residential": "apartments"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1455980764,
+      "timestamp": "2025-12-04T12:20:21Z",
+      "version": 1,
+      "changeset": 175490022,
+      "user": "MNbrn",
+      "uid": 6319160,
+      "center": {
+        "lat": 51.0945227,
+        "lon": 71.4226379
+      },
+      "nodes": [
+        13353135720,
+        13353135721,
+        13353135722,
+        13353135723,
+        13353135720
+      ],
+      "tags": {
+        "landuse": "residential",
+        "name": "EXPO New Life 2",
+        "residential": "apartments"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1456208623,
+      "timestamp": "2026-06-08T09:17:01Z",
+      "version": 5,
+      "changeset": 183817799,
+      "user": "Ruslan Fatih",
+      "uid": 12875574,
+      "center": {
+        "lat": 51.0910047,
+        "lon": 71.4141021
+      },
+      "nodes": [
+        13355063283,
+        13911504398,
+        13355063284,
+        13355063285,
+        13355063286,
+        13355063287,
+        13901980877,
+        13901980874,
+        13901980873,
+        13901980869,
+        13901980868,
+        13919642033,
+        6552728604,
+        13919642032,
+        13919642038,
+        13919642039,
+        13919642126,
+        13919642125,
+        13919642108,
+        13355063288,
+        13355063289,
+        13355063290,
+        13355063291,
+        13355063292,
+        13355063293,
+        13355063294,
+        13355063295,
+        13355063296,
+        13355063297,
+        13355063298,
+        13355063299,
+        13355063300,
+        13355086601,
+        13395242927,
+        13395242924,
+        13395242911,
+        13395242910,
+        13395242906,
+        13395242907,
+        13395242903,
+        13395228012,
+        13355063283
+      ],
+      "tags": {
+        "name": "ЭКСПО-2017",
+        "name:en": "EXPO-2017",
+        "name:ru": "ЭКСПО-2017",
+        "place": "quarter"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1456208630,
+      "timestamp": "2025-12-05T09:08:04Z",
+      "version": 1,
+      "changeset": 175538086,
+      "user": "MNbrn",
+      "uid": 6319160,
+      "center": {
+        "lat": 51.1011468,
+        "lon": 71.413824
+      },
+      "nodes": [
+        13355086717,
+        13355086718,
+        13355086719,
+        13355086720,
+        13355086717
+      ],
+      "tags": {
+        "landuse": "residential",
+        "name": "Ботанический",
+        "residential": "apartments"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1457450147,
+      "timestamp": "2025-12-10T10:43:50Z",
+      "version": 1,
+      "changeset": 175752582,
+      "user": "MNbrn",
+      "uid": 6319160,
+      "center": {
+        "lat": 51.088746,
+        "lon": 71.4229536
+      },
+      "nodes": [
+        13366701615,
+        13366701623,
+        13366701624,
+        13366701626,
+        13366701625,
+        13366701615
+      ],
+      "tags": {
+        "landuse": "residential",
+        "name": "Nexpo Aura",
+        "residential": "apartments"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1461292522,
+      "timestamp": "2025-12-24T14:52:38Z",
+      "version": 1,
+      "changeset": 176365705,
+      "user": "MNbrn",
+      "uid": 6319160,
+      "center": {
+        "lat": 51.1137916,
+        "lon": 71.4217027
+      },
+      "nodes": [
+        13401561048,
+        13401561047,
+        13401561053,
+        13401561054,
+        13401561048
+      ],
+      "tags": {
+        "landuse": "residential",
+        "name": "Expo Towers",
+        "residential": "apartments"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1461478841,
+      "timestamp": "2026-04-28T12:37:41Z",
+      "version": 2,
+      "changeset": 181938780,
+      "user": "Abzzzal",
+      "uid": 13738036,
+      "center": {
+        "lat": 51.0854262,
+        "lon": 71.4031387
+      },
+      "nodes": [
+        13404037547,
+        13404037548,
+        13770518022,
+        13404037549,
+        13770518030,
+        13404037550,
+        13404037547
+      ],
+      "tags": {
+        "landuse": "residential",
+        "name": "Expo Avenue",
+        "residential": "apartments"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1513435684,
+      "timestamp": "2026-05-14T09:38:48Z",
+      "version": 1,
+      "changeset": 182638833,
+      "user": "MNbrn",
+      "uid": 6319160,
+      "center": {
+        "lat": 51.1565388,
+        "lon": 71.4401771
+      },
+      "nodes": [
+        4892345876,
+        4892345875,
+        4892345874,
+        4892345873,
+        4892345872,
+        4892345871,
+        4938765562,
+        4892345877,
+        4892345876
+      ],
+      "tags": {
+        "amenity": "kindergarten",
+        "name": "№1 \"Бәйтерек\" балабақшасы",
+        "name:kk": "№1 \"Бәйтерек\" балабақшасы",
+        "name:ru": "Ясли-сад №1 \"Байтерек\""
+      }
+    },
+    {
+      "type": "way",
+      "id": 1547354202,
+      "timestamp": "2026-08-17T01:59:08Z",
+      "version": 2,
+      "changeset": 187563593,
+      "user": "Ruslan Fatih",
+      "uid": 12875574,
+      "center": {
+        "lat": 51.1232109,
+        "lon": 71.4287889
+      },
+      "nodes": [
+        14073867896,
+        14073867897,
+        14073867904,
+        14073867898,
+        14073867906,
+        14073867907,
+        14073867899,
+        14073867896
+      ],
+      "tags": {
+        "addr:city": "Астана",
+        "building": "train_station",
+        "building:levels": "3",
+        "layer": "1",
+        "light_rail": "yes",
+        "name": "Бәйтерек",
+        "name:en": "Baiterek",
+        "name:kk": "Бәйтерек",
+        "name:ru": "Байтерек",
+        "network": "Tarlan Astana",
+        "nohousenumber": "yes",
+        "operator": "City Transportation Systems",
+        "public_transport": "station",
+        "railway": "station",
+        "ref": "111",
+        "station": "light_rail"
+      }
+    },
+    {
+      "type": "relation",
+      "id": 8643631,
+      "timestamp": "2025-01-21T18:13:50Z",
+      "version": 6,
+      "changeset": 161610925,
+      "user": "Donut Master 🍩",
+      "uid": 22321183,
+      "center": {
+        "lat": 51.0949569,
+        "lon": 71.4253338
+      },
+      "members": [
+        {
+          "type": "way",
+          "ref": 506036354,
+          "role": "outer"
+        },
+        {
+          "type": "way",
+          "ref": 506036355,
+          "role": "outer"
+        },
+        {
+          "type": "way",
+          "ref": 506036356,
+          "role": "outer"
+        },
+        {
+          "type": "way",
+          "ref": 506036353,
+          "role": "outer"
+        }
+      ],
+      "tags": {
+        "addr:city": "Астана",
+        "addr:housenumber": "51",
+        "addr:street": "Мәңгілік Ел даңғылы",
+        "building": "residential",
+        "building:levels": "12",
+        "building:use": "residential",
+        "layer": "1",
+        "name": "ЖК Променад Экспо Блок D",
+        "name:en": "Promenade Expo Block D",
+        "type": "multipolygon"
+      }
+    },
+    {
+      "type": "relation",
+      "id": 19917639,
+      "timestamp": "2025-12-04T12:20:21Z",
+      "version": 1,
+      "changeset": 175490022,
+      "user": "MNbrn",
+      "uid": 6319160,
+      "center": {
+        "lat": 51.0952551,
+        "lon": 71.4094626
+      },
+      "members": [
+        {
+          "type": "way",
+          "ref": 1455980757,
+          "role": "outer"
+        },
+        {
+          "type": "way",
+          "ref": 1455980756,
+          "role": "outer"
+        }
+      ],
+      "tags": {
+        "landuse": "residential",
+        "name": "EXPO Boulevard",
+        "residential": "apartments",
+        "type": "multipolygon"
+      }
+    },
+    {
+      "type": "relation",
+      "id": 19917640,
+      "timestamp": "2025-12-04T12:20:21Z",
+      "version": 1,
+      "changeset": 175490022,
+      "user": "MNbrn",
+      "uid": 6319160,
+      "center": {
+        "lat": 51.0934779,
+        "lon": 71.4266218
+      },
+      "members": [
+        {
+          "type": "way",
+          "ref": 1455980766,
+          "role": "outer"
+        },
+        {
+          "type": "way",
+          "ref": 1455980765,
+          "role": "outer"
+        }
+      ],
+      "tags": {
+        "landuse": "residential",
+        "name": "Promenade EXPO",
+        "residential": "apartments",
+        "type": "multipolygon"
+      }
+    },
+    {
+      "type": "relation",
+      "id": 20279183,
+      "timestamp": "2026-03-02T16:31:28Z",
+      "version": 1,
+      "changeset": 179263403,
+      "user": "Claudius Henrichs",
+      "uid": 18069,
+      "center": {
+        "lat": 51.1232156,
+        "lon": 71.4287909
+      },
+      "members": [
+        {
+          "type": "node",
+          "ref": 13612447987,
+          "role": ""
+        },
+        {
+          "type": "node",
+          "ref": 13081694260,
+          "role": "stop"
+        },
+        {
+          "type": "node",
+          "ref": 13612447986,
+          "role": "stop"
+        }
+      ],
+      "tags": {
+        "name": "Бәйтерек",
+        "name:en": "Baiterek",
+        "public_transport": "stop_area",
+        "type": "public_transport"
+      }
+    }
+  ]
+}

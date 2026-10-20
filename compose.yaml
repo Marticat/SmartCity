@@ -1,0 +1,20 @@
+services:
+  qadam:
+    build:
+      context: .
+      args:
+        VITE_TILE_URL: ${VITE_TILE_URL:-https://tile.openstreetmap.org/{z}/{x}/{y}.png}
+        VITE_TILE_ATTRIBUTION: ${VITE_TILE_ATTRIBUTION:-}
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      DATA_DIR: /app/data
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+      LLM_MODEL: ${LLM_MODEL:-gemini-3.8-flash}
+      ORS_API_KEY: ${ORS_API_KEY:-}
+      WEATHER_ENABLED: ${WEATHER_ENABLED:-true}
+      EMBEDDING_MODEL: ${EMBEDDING_MODEL:-intfloat/multilingual-e5-small}
+      EMBEDDING_REVISION: ${EMBEDDING_REVISION:-main}
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped

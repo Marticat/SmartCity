@@ -1,0 +1,17 @@
+.git
+.venv
+.env
+.env.*
+!.env.example
+frontend/node_modules
+frontend/dist
+__pycache__
+.pytest_cache
+artifacts
+tmp
+data/models
+data/cache
+data/index
+presentation
+demo
+QADAM_Astana_Codex_Master_Prompt.md

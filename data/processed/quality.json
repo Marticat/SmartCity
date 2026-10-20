@@ -1,0 +1,23 @@
+{
+  "categories": {
+    "theatre": 9,
+    "cafe": 317,
+    "playground": 329,
+    "gallery": 2,
+    "artwork": 14,
+    "attraction": 15,
+    "museum": 8,
+    "park": 120
+  },
+  "opening_hours": 116,
+  "address": 57,
+  "source_description": 0,
+  "derived_description": 814,
+  "known_attributes": {
+    "indoor": 8,
+    "wifi": 24,
+    "sockets": 0,
+    "wheelchair": 37,
+    "free": 1
+  }
+}

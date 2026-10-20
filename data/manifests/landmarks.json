@@ -1,0 +1,49 @@
+{
+  "collected_at": "2026-10-20T08:43:07.086113+00:00",
+  "query": "[out:json][timeout:90];\nnwr[\"name\"~\"EXPO|Экспо|Нұр.Әлем|Нур.Алем|Nur.Alem|MEGA.Silk.Way|Бәйтерек|Байтерек|Baiterek|Bayterek|Ботан|Botanical\",i](51.02,71.3,51.23,71.55);\nout meta center;",
+  "source_url": "https://overpass-api.de/api/interpreter",
+  "bbox_south_west_north_east": [
+    51.02,
+    71.3,
+    51.23,
+    71.55
+  ],
+  "raw_count": 58,
+  "accepted_count": 5,
+  "checksum": "550ce1d94eebdc51d0c711f612fa0db6b631dc4c712e21ba5eb961b80c142782",
+  "raw_checksum": "4c5f6b8547ad0ed3011fbd5708fed2af6d90bea8652c7a6b9251f602e9213361",
+  "license": "ODbL 1.0",
+  "usage": "Local origin search only; no invented recommendation category",
+  "bbox_verification": [
+    {
+      "name": "Бәйтерек",
+      "latitude": 51.1282882,
+      "longitude": 71.4304546,
+      "source_url": "https://www.openstreetmap.org/way/230401645"
+    },
+    {
+      "name": "EXPO",
+      "latitude": 51.0927879,
+      "longitude": 71.4214816,
+      "source_url": "https://www.openstreetmap.org/way/454853233"
+    },
+    {
+      "name": "Mega Silk Way",
+      "latitude": 51.0890897,
+      "longitude": 71.4073303,
+      "source_url": "https://www.openstreetmap.org/way/499328514"
+    },
+    {
+      "name": "Ботаникалық бақ",
+      "latitude": 51.1061652,
+      "longitude": 71.4165705,
+      "source_url": "https://www.openstreetmap.org/way/1196402246"
+    },
+    {
+      "name": "ЭКСПО-2017",
+      "latitude": 51.0910047,
+      "longitude": 71.4141021,
+      "source_url": "https://www.openstreetmap.org/way/1456208623"
+    }
+  ]
+}

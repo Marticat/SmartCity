@@ -1,0 +1,273 @@
+{
+  "measured_at": "2026-10-20T08:43:02.664299+00:00",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "python": "3.10.3",
+  "dataset_checksum": "1e3d4fde38ac8be5aec2ae7860c1623ea59fb3ebeccbd247dc2802650c3473de",
+  "labels_checksum": "28a9dec2a9d31cab7dc6dd4f64449e61c0839137ea4c663dea202217211b93eb",
+  "model": "intfloat/multilingual-e5-small",
+  "model_revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+  "semantic_ready": true,
+  "mode": "hybrid_retrieval",
+  "cases": 15,
+  "named_query_hit_at_3": 0.9166666666666666,
+  "named_query_precision_at_3": 0.3055555555555555,
+  "precision_note": "Each named query has one relevant POI; fixed-denominator precision@3 is capped at 1/3. hit@3 is the useful named-location measure.",
+  "constraint_violation_rate": 0.0,
+  "cold_store_and_model_load_ms": 47369.14,
+  "warm_retrieval_median_ms": 46.5,
+  "warm_retrieval_max_ms": 733.11,
+  "provider_calls": 0,
+  "results": [
+    {
+      "id": "museum_national",
+      "returned_ids": [
+        "osm:node:4894937300",
+        "osm:way:963855443"
+      ],
+      "relevant_ids": [
+        "osm:node:4894937300"
+      ],
+      "hit": true,
+      "precision_at_3": 0.3333333333333333,
+      "constraint_violations": [],
+      "expected_empty": false,
+      "empty_correct": null,
+      "retrieval_ms": 327.06
+    },
+    {
+      "id": "museum_seifullin",
+      "returned_ids": [
+        "osm:way:240376692",
+        "osm:way:240391776",
+        "osm:way:51431624"
+      ],
+      "relevant_ids": [
+        "osm:way:240376692"
+      ],
+      "hit": true,
+      "precision_at_3": 0.3333333333333333,
+      "constraint_violations": [],
+      "expected_empty": false,
+      "empty_correct": null,
+      "retrieval_ms": 49.23
+    },
+    {
+      "id": "park_botanical",
+      "returned_ids": [
+        "osm:way:1196402246",
+        "osm:way:734514013",
+        "osm:node:14087643081"
+      ],
+      "relevant_ids": [
+        "osm:way:1196402246"
+      ],
+      "hit": true,
+      "precision_at_3": 0.3333333333333333,
+      "constraint_violations": [],
+      "expected_empty": false,
+      "empty_correct": null,
+      "retrieval_ms": 733.11
+    },
+    {
+      "id": "park_lovers",
+      "returned_ids": [
+        "osm:way:37884583",
+        "osm:way:69232075",
+        "osm:way:607452625"
+      ],
+      "relevant_ids": [
+        "osm:way:37884583"
+      ],
+      "hit": true,
+      "precision_at_3": 0.3333333333333333,
+      "constraint_violations": [],
+      "expected_empty": false,
+      "empty_correct": null,
+      "retrieval_ms": 45.17
+    },
+    {
+      "id": "park_pushkin",
+      "returned_ids": [
+        "osm:way:68678495",
+        "osm:way:113021079",
+        "osm:way:243930491"
+      ],
+      "relevant_ids": [
+        "osm:way:258158810"
+      ],
+      "hit": false,
+      "precision_at_3": 0.0,
+      "constraint_violations": [],
+      "expected_empty": false,
+      "empty_correct": null,
+      "retrieval_ms": 45.43
+    },
+    {
+      "id": "park_chess",
+      "returned_ids": [
+        "osm:way:262166875",
+        "osm:way:1428964223",
+        "osm:way:765450049"
+      ],
+      "relevant_ids": [
+        "osm:way:262166875"
+      ],
+      "hit": true,
+      "precision_at_3": 0.3333333333333333,
+      "constraint_violations": [],
+      "expected_empty": false,
+      "empty_correct": null,
+      "retrieval_ms": 46.5
+    },
+    {
+      "id": "park_triathlon",
+      "returned_ids": [
+        "osm:way:1363058986",
+        "osm:way:500056825",
+        "osm:way:37884583"
+      ],
+      "relevant_ids": [
+        "osm:way:1363058986"
+      ],
+      "hit": true,
+      "precision_at_3": 0.3333333333333333,
+      "constraint_violations": [],
+      "expected_empty": false,
+      "empty_correct": null,
+      "retrieval_ms": 48.93
+    },
+    {
+      "id": "bridge_atyrau",
+      "returned_ids": [
+        "osm:way:1239177393",
+        "osm:node:14087643081",
+        "osm:way:37883865"
+      ],
+      "relevant_ids": [
+        "osm:way:1239177393"
+      ],
+      "hit": true,
+      "precision_at_3": 0.3333333333333333,
+      "constraint_violations": [],
+      "expected_empty": false,
+      "empty_correct": null,
+      "retrieval_ms": 49.46
+    },
+    {
+      "id": "arch",
+      "returned_ids": [
+        "osm:way:549307755",
+        "osm:node:14104582301",
+        "osm:node:13667384701"
+      ],
+      "relevant_ids": [
+        "osm:way:549307755"
+      ],
+      "hit": true,
+      "precision_at_3": 0.3333333333333333,
+      "constraint_violations": [],
+      "expected_empty": false,
+      "empty_correct": null,
+      "retrieval_ms": 56.75
+    },
+    {
+      "id": "coffee_drinkit",
+      "returned_ids": [
+        "osm:node:11783576043",
+        "osm:node:13681674667",
+        "osm:node:11290690869"
+      ],
+      "relevant_ids": [
+        "osm:node:11783576043"
+      ],
+      "hit": true,
+      "precision_at_3": 0.3333333333333333,
+      "constraint_violations": [],
+      "expected_empty": false,
+      "empty_correct": null,
+      "retrieval_ms": 45.89
+    },
+    {
+      "id": "coffee_boom",
+      "returned_ids": [
+        "osm:node:8121843217",
+        "osm:node:5878572885",
+        "osm:node:5878547585"
+      ],
+      "relevant_ids": [
+        "osm:node:8121843217"
+      ],
+      "hit": true,
+      "precision_at_3": 0.3333333333333333,
+      "constraint_violations": [],
+      "expected_empty": false,
+      "empty_correct": null,
+      "retrieval_ms": 45.8
+    },
+    {
+      "id": "coffee_hotspot",
+      "returned_ids": [
+        "osm:node:4722247997",
+        "osm:node:5181103422",
+        "osm:way:1337736026"
+      ],
+      "relevant_ids": [
+        "osm:node:4722247997"
+      ],
+      "hit": true,
+      "precision_at_3": 0.3333333333333333,
+      "constraint_violations": [],
+      "expected_empty": false,
+      "empty_correct": null,
+      "retrieval_ms": 45.36
+    },
+    {
+      "id": "strict_socket",
+      "returned_ids": [],
+      "relevant_ids": [],
+      "hit": false,
+      "precision_at_3": 0.0,
+      "constraint_violations": [],
+      "expected_empty": true,
+      "empty_correct": true,
+      "retrieval_ms": 1.17
+    },
+    {
+      "id": "strict_wifi",
+      "returned_ids": [
+        "osm:node:8121843217",
+        "osm:node:11206429884",
+        "osm:node:11783576043"
+      ],
+      "relevant_ids": [
+        "osm:node:8121843217"
+      ],
+      "hit": true,
+      "precision_at_3": 0.3333333333333333,
+      "constraint_violations": [],
+      "expected_empty": false,
+      "empty_correct": null,
+      "retrieval_ms": 50.1
+    },
+    {
+      "id": "strict_exclusion",
+      "returned_ids": [
+        "osm:way:258147836",
+        "osm:way:258173903",
+        "osm:way:258158810"
+      ],
+      "relevant_ids": [
+        "osm:way:258158810",
+        "osm:way:258173901",
+        "osm:way:500056825",
+        "osm:way:37883865"
+      ],
+      "hit": true,
+      "precision_at_3": 0.3333333333333333,
+      "constraint_violations": [],
+      "expected_empty": false,
+      "empty_correct": null,
+      "retrieval_ms": 42.66
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "collected_at": "2026-10-20T08:38:35.367740+00:00",
+  "source": "OpenStreetMap / Overpass API",
+  "source_url": "https://overpass-api.de/api/interpreter",
+  "license": "ODbL 1.0",
+  "attribution": "© OpenStreetMap contributors",
+  "area": {
+    "kind": "demo_bounding_box",
+    "bbox_south_west_north_east": [
+      51.02,
+      71.3,
+      51.23,
+      71.55
+    ],
+    "description": "Central Astana and EXPO demo rectangle; not an administrative boundary"
+  },
+  "query": "[out:json][timeout:120];\n(\n nwr[\"amenity\"~\"^(cafe|theatre)$\"](51.02,71.3,51.23,71.55);\n nwr[\"leisure\"~\"^(park|playground)$\"](51.02,71.3,51.23,71.55);\n nwr[\"tourism\"~\"^(museum|gallery|viewpoint|attraction|artwork)$\"](51.02,71.3,51.23,71.55);\n);\nout meta center;",
+  "raw_count": 865,
+  "accepted_count": 814,
+  "rejected_count": 51,
+  "rejection_reasons": {
+    "missing_name": 41,
+    "spatial_name_duplicate": 2,
+    "restricted_access": 8
+  },
+  "checksum": "4db3250364d8808631d559fd381318fa730d36dda331734407d958b5efc4ced7",
+  "raw_checksum": "c7858cf788dd68b655b4ac21813ffb7f8e3b81b91c726133f38008ffb80e1332",
+  "source_base_timestamp": "2026-10-20T08:36:01Z",
+  "quality": {
+    "categories": {
+      "theatre": 9,
+      "cafe": 317,
+      "playground": 329,
+      "gallery": 2,
+      "artwork": 14,
+      "attraction": 15,
+      "museum": 8,
+      "park": 120
+    },
+    "opening_hours": 116,
+    "address": 57,
+    "source_description": 0,
+    "derived_description": 814,
+    "known_attributes": {
+      "indoor": 8,
+      "wifi": 24,
+      "sockets": 0,
+      "wheelchair": 37,
+      "free": 1
+    }
+  }
+}

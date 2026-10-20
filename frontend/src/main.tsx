@@ -1,0 +1,15 @@
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import '@fontsource/arimo/latin-400.css'
+import '@fontsource/arimo/cyrillic-400.css'
+import '@fontsource/arimo/latin-500.css'
+import '@fontsource/arimo/cyrillic-500.css'
+import '@fontsource/arimo/latin-600.css'
+import '@fontsource/arimo/cyrillic-600.css'
+import '@fontsource/arimo/latin-700.css'
+import '@fontsource/arimo/cyrillic-700.css'
+import 'leaflet/dist/leaflet.css'
+import './styles.css'
+import App from './App'
+
+ReactDOM.createRoot(document.getElementById('root')!).render(<React.StrictMode><App /></React.StrictMode>)

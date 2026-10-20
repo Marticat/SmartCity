@@ -1,0 +1,4 @@
+{
+  "purpose": "Developer smoke examples only; excluded from frozen benchmark",
+  "queries": ["У EXPO 60 минут пешком", "С ребёнком 45 минут", "Только в помещении", "Два часа до вылета"]
+}

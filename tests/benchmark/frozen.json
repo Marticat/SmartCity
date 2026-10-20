@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "dataset_checksum": "4db3250364d8808631d559fd381318fa730d36dda331734407d958b5efc4ced7",
+  "labeling": "QA manually selected 12 named-place queries and relevant IDs from OSM snapshot before running retrieval, plus 3 strict-constraint cases. Narrow named-place relevance; all nonlisted IDs count as irrelevant. Not representative of broad conversational discovery.",
+  "visit_datetime": "2026-10-20T12:00:00+05:00",
+  "cases": [
+    {"id":"museum_national","query":"Национальный музей Қазақстан Республикасының Ұлттық Мұражайы","anchor_id":"osm:node:4894937300","relevant_ids":["osm:node:4894937300"],"forbidden_categories":["cafe","park"],"minutes":60},
+    {"id":"museum_seifullin","query":"Музей Сәкен Сейфуллин музейі","anchor_id":"osm:way:240376692","relevant_ids":["osm:way:240376692"],"forbidden_categories":["cafe","park"],"minutes":60},
+    {"id":"park_botanical","query":"Ботаникалық бақ","anchor_id":"osm:way:1196402246","relevant_ids":["osm:way:1196402246"],"forbidden_categories":[],"minutes":60},
+    {"id":"park_lovers","query":"Ғашықтар саябағы","anchor_id":"osm:way:37884583","relevant_ids":["osm:way:37884583"],"forbidden_categories":[],"minutes":60},
+    {"id":"park_pushkin","query":"Парк Пушкинский, не кафе","anchor_id":"osm:way:258158810","relevant_ids":["osm:way:258158810"],"forbidden_categories":["cafe","museum"],"minutes":60},
+    {"id":"park_chess","query":"Сквер шахматистов","anchor_id":"osm:way:262166875","relevant_ids":["osm:way:262166875"],"forbidden_categories":[],"minutes":60},
+    {"id":"park_triathlon","query":"Триатлон саябағы","anchor_id":"osm:way:1363058986","relevant_ids":["osm:way:1363058986"],"forbidden_categories":[],"minutes":60},
+    {"id":"bridge_atyrau","query":"Атырау көпірі","anchor_id":"osm:way:1239177393","relevant_ids":["osm:way:1239177393"],"forbidden_categories":[],"minutes":60},
+    {"id":"arch","query":"Мәңгілік Ел салтанат қақпасы","anchor_id":"osm:way:549307755","relevant_ids":["osm:way:549307755"],"forbidden_categories":[],"minutes":60},
+    {"id":"coffee_drinkit","query":"Кофе Drinkit","anchor_id":"osm:node:11783576043","relevant_ids":["osm:node:11783576043"],"forbidden_categories":["park","museum"],"minutes":30},
+    {"id":"coffee_boom","query":"Кафе Boom Boom Room","anchor_id":"osm:node:8121843217","relevant_ids":["osm:node:8121843217"],"forbidden_categories":["park","museum"],"minutes":30},
+    {"id":"coffee_hotspot","query":"Кофе Hot Spot Coffee","anchor_id":"osm:node:4722247997","relevant_ids":["osm:node:4722247997"],"forbidden_categories":["park","museum"],"minutes":30},
+    {"id":"strict_socket","query":"Кофе с обязательной розеткой","anchor_id":"osm:node:9047331879","relevant_ids":[],"expect_empty":true,"constraints":{"sockets_required":true},"forbidden_categories":["park","museum"],"minutes":60},
+    {"id":"strict_wifi","query":"Кафе Boom Boom Room с Wi-Fi","anchor_id":"osm:node:8121843217","relevant_ids":["osm:node:8121843217"],"constraints":{"wifi_required":true},"forbidden_categories":["park","museum"],"minutes":30},
+    {"id":"strict_exclusion","query":"Не кафе, хочу парк","anchor_id":"osm:way:258158810","relevant_ids":["osm:way:258158810","osm:way:258173901","osm:way:500056825","osm:way:37883865"],"forbidden_categories":["cafe","museum","playground","attraction"],"minutes":30}
+  ]
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "preset": "walk",
+    "mode": "search_only",
+    "poi_ids": [
+      "osm:way:1460763574",
+      "osm:way:1456208624",
+      "osm:way:1204592699"
+    ],
+    "categories": [
+      "attraction",
+      "park",
+      "park"
+    ],
+    "summary": "Нашли 3 варианта рядом. Выберите место для своей прогулки."
+  },
+  {
+    "preset": "coffee",
+    "mode": "search_only",
+    "poi_ids": [
+      "osm:node:12990081501",
+      "osm:node:9047331879",
+      "osm:node:6408255389"
+    ],
+    "categories": [
+      "cafe",
+      "cafe",
+      "cafe"
+    ],
+    "summary": "Нашли 3 варианта рядом. Выберите место для своей прогулки."
+  },
+  {
+    "preset": "family",
+    "mode": "search_only",
+    "poi_ids": [
+      "osm:way:1126613519",
+      "osm:way:694207888",
+      "osm:way:693661487"
+    ],
+    "categories": [
+      "playground",
+      "playground",
+      "playground"
+    ],
+    "summary": "Нашли 3 варианта рядом. Выберите место для своей прогулки."
+  },
+  {
+    "preset": "indoor",
+    "mode": "search_only",
+    "poi_ids": [
+      "osm:way:1102776052",
+      "osm:way:1102779048",
+      "osm:way:1105111360"
+    ],
+    "categories": [
+      "playground",
+      "playground",
+      "playground"
+    ],
+    "summary": "Нашли 3 варианта рядом. Выберите место для своей прогулки."
+  }
+]
