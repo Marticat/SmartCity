@@ -20,3 +20,8 @@ demo/raw/
 artifacts/slide-debug.png
 artifacts/narration/
 .DS_Store
+
+# Local presentation and submission instructions
+/presentation/
+/artifacts/slides/
+/demo/YOUTUBE_UPLOAD.md

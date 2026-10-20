@@ -120,10 +120,7 @@ python -m scripts.check_live_readiness
 - [Контракт API](docs/api-contract.md), [сценарии](docs/test-scenarios.md), [результаты проверок](docs/verification.md)
 - [Приватность и ограничения](docs/privacy-and-limitations.md), [размещение](docs/deployment.md)
 - [Что конкретно осталось владельцу: ключи, проверка, публикация](docs/readiness.md)
-- [Редактируемые слайды](presentation/slides.html), [заметки на 6 минут](presentation/speaker-notes.md), [PDF](presentation/QADAM.pdf)
 - [Демо 2:30 с синтетической русской озвучкой](demo/QADAM-demo-narrated.mp4), [субтитры](demo/QADAM-ru.srt)
 - [Сценарий и повторная сборка видео](demo/script.md), [исходная запись без звука](demo/QADAM-demo.webm)
-- [Инструкция YouTube: загрузка, название, описание и таймкоды](demo/YOUTUBE_UPLOAD.md)
-- [Готовый промпт для презентации на 8 слайдов](presentation/PRESENTATION_PROMPT.md)
 
 Срез данных: 20 октября 2026, 08:38 UTC, 814 принятых из 865 исходных объектов. © OpenStreetMap contributors, ODbL 1.0. Код — MIT; лицензии данных, шрифтов и сервисов [отдельны](docs/third-party-notices.md).
